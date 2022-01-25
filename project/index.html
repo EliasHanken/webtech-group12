@@ -9,11 +9,27 @@
 <body>
     <center>
         <h1>Welcome</h1>
-        <div id="images">
-            <img src="https://www.picsum.photos/400/300?param=1" alt="lorem ipsum picture">
-            <img src="https://www.picsum.photos/400/300?param=2" alt="lorem ipsum picture">
-            <img src="https://www.picsum.photos/400/300?param=3" alt="lorem ipsum picture">
-        </div>
+        <picture>
+            <source media="(max-width: 640px)" srcset="https://www.picsum.photos/150/150?param=1 750w" 
+            sizes="100vw">
+            <source sizes="80vw"
+            srcset="https://www.picsum.photos/400/300?param=1 1200w">
+            <img src="https://www.picsum.photos/400/300?param=1" alt="A test image">
+        </picture>
+        <picture>
+            <source media="(max-width: 640px)" srcset="https://www.picsum.photos/150/150?param=2 750w" 
+            sizes="100vw">
+            <source sizes="80vw"
+            srcset="https://www.picsum.photos/400/300?param=2 1200w">
+            <img src="https://www.picsum.photos/400/300?param=2" alt="A test image">
+        </picture>
+        <picture>
+            <source media="(max-width: 640px)" srcset="https://www.picsum.photos/150/150?param=3 750w" 
+            sizes="100vw">
+            <source sizes="80vw"
+            srcset="https://www.picsum.photos/400/300?param=3 1200w">
+            <img src="https://www.picsum.photos/400/300?param=3" alt="A test image">
+        </picture>
     </center>
     
 </body>
