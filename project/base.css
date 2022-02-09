@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Nunito&family=Poppins:wght@500&family=Roboto+Mono&family=Roboto:wght@100;400&family=Rubik:ital@1&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------
+   Sizing, padding. Styles not related to shadows
+   ---------------------------------------------- */
+html {
+    /* Reset 1 rem to 10px */
+    font-size: 62.5%;
+    padding: 2rem 4rem;
+    font-family: 'Roboto',sans-serif;
+}
+
+main {
+    min-width: 80rem;
+}
+
+h1 {
+    font-size: 4.8rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 2.6rem;
+}
