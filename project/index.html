@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="top-nav.css">
     <title>Gruppe 12</title>
 </head>
 <body>
@@ -43,15 +44,18 @@
             Logo to access start page.
             Navigation: How it works, Pricing, Locations, Support,
             Buttons: Log In, Register.
-    -->
-    <div class="nav-bar-container">
-        <div class="nav-bar-locations">
-            <ul>
-                <li> <a href="index.html">How it works</a> </li>
+
+            <li> <a href="index.html">How it works</a> </li>
                 <li> <a href="index.html">Pricing</a> </li>
                 <li> <a href="index.html">Locations</a> </li>
                 <li> <a href="index.html">Support</a> </li>
-            </ul>
+    -->
+    <div class="nav-bar-container">
+        <div class="nav-bar-locations">
+            <a class="active" href="#home" class="topNav">Home</a>
+            <a href="#info" class="topNav">Info</a>
+            <a href="#Store" class="topNav">Store</a>
+            <a href="#Support" class="topNav">Support</a>
         </div>
         
     </div>
@@ -92,44 +96,8 @@
     </div>
 </body>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-    .nav-bar-container{
-        display: flex;
-        width: 100%;
-        height: 4rem;
-        position: absolute;
-        background-color: #F5EEE0;
-        border: 1px solid black;
-    }
 
-    .nav-bar-container ul li{
-        list-style-type: none;
-    }
 
-    .nav-bar-container ul li a{
-        text-decoration: none;
-        font-size: 1.4rem;
-        color: #08223f;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .nav-bar-locations{
-        align-items: center;
-        height: 4rem;
-        border: 1px solid black;
-        width: 60rem;
-    }
-
-    .nav-bar-locations ul li{
-        margin: 0rem 3rem;
-        border: 1px solid black;
-        display: inline;
-    }
-
-    .nav-bar-locations ul{
-        border: 1px solid black;
-        margin: 1rem;
-    }
 </style>
 </html>
