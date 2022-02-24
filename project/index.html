@@ -8,6 +8,8 @@
     <title>Gruppe 12</title>
 </head>
 <body>
+    <!-- 
+        If any picsum images needed..
     <center>
         <h1>Welcome</h1>
         <picture>
@@ -32,6 +34,102 @@
             <img src="https://www.picsum.photos/400/300?param=3" alt="A test image">
         </picture>
     </center>
-    
+    -->
+
+    <!--
+        Navigation bar container.
+
+        Should contain:
+            Logo to access start page.
+            Navigation: How it works, Pricing, Locations, Support,
+            Buttons: Log In, Register.
+    -->
+    <div class="nav-bar-container">
+        <div class="nav-bar-locations">
+            <ul>
+                <li> <a href="index.html">How it works</a> </li>
+                <li> <a href="index.html">Pricing</a> </li>
+                <li> <a href="index.html">Locations</a> </li>
+                <li> <a href="index.html">Support</a> </li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!--
+        Slide show container.
+
+        Should contain:
+            Arrows to switch between images.
+            'Find your bike' on top of the container.
+            [Join Today] button under 'Find your bike'.
+    -->
+    <div class="slide-show-container">
+    </div>
+
+    <!--
+        Should contain:
+            Main values, Main theme, target audience for the website, shortly about the company.
+            With learn more buttons under each element.
+    -->
+    <div class="info-container">
+    </div>
+
+    <!--
+        Should contain 2 different review cards.
+    -->
+    <div class="reviews-container">
+    </div>
+
+    <!--
+        Footer container.
+
+        Should contain:
+            Company, Logo, Help Desk.
+            Trademark
+    -->
+    <div class="footer-container">
+    </div>
 </body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+    .nav-bar-container{
+        display: flex;
+        width: 100%;
+        height: 4rem;
+        position: absolute;
+        background-color: #F5EEE0;
+        border: 1px solid black;
+    }
+
+    .nav-bar-container ul li{
+        list-style-type: none;
+    }
+
+    .nav-bar-container ul li a{
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: #08223f;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .nav-bar-locations{
+        align-items: center;
+        height: 4rem;
+        border: 1px solid black;
+        width: 60rem;
+    }
+
+    .nav-bar-locations ul li{
+        margin: 0rem 3rem;
+        border: 1px solid black;
+        display: inline;
+    }
+
+    .nav-bar-locations ul{
+        border: 1px solid black;
+        margin: 1rem;
+    }
+</style>
 </html>
