@@ -1,60 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-@media(min-width:768px){
+@media(min-width:650px){
+    .nav-bar-container{
+        display: flex;
+        height: 4rem;
+        background-color: #5085A5;
+        align-items: center;
+    }
 
-}
+    .nav-bar-content{
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        flex: 3;
+        justify-content: space-around;
+    }
 
-.nav-bar-container{
-    display: flex;
-    height: 4rem;
-    background-color: #5085A5;
-    align-items: center;
-}
+    .nav-bar-container a{
+        text-decoration: none;
+        font-size: 1.7rem;
+        margin-right: 1rem;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+    }
 
-.nav-bar-content{
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    flex: 3;
-    justify-content: space-around;
-}
+    .nav-bar-locations{
+        display: flex;
+        width: 60rem;
+    }
+    .nav-bar-locations {
+        margin: 0rem 3rem;
+        display: inline;
+    }
 
-.nav-bar-container a{
-    text-decoration: none;
-    font-size: 1.7rem;
-    margin-right: 1rem;
-    color: #F7F9FB;
-    font-family: 'Montserrat', sans-serif;
-}
+    .nav-personal-box{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 4rem;
+        width: 10rem;
+        flex: 2;
+    }
 
-.nav-bar-locations{
-    display: flex;
-    width: 60rem;
-}
-.nav-bar-locations {
-    margin: 0rem 3rem;
-    display: inline;
-}
-
-.nav-personal-box{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 4rem;
-    width: 10rem;
-    align-items: center;
-    flex: 2;
-}
-
-.nav-account-box{
-    display: flex;
-    justify-content: center;
-    padding: 0.7rem;
-}
+    .nav-account-box{
+        display: flex;
+        justify-content: center;
+        padding: 0.7rem;
+    }
 
 
-.nav-shopping-cart-box{
-    display: flex;
-    justify-content: center;
-    padding: 0.7rem;
+    .nav-shopping-cart-box{
+        display: flex;
+        justify-content: center;
+        padding: 0.7rem;
+    }
 }
+
+@media(max-width:650px) {
+    .nav-bar-container{
+        display: flex;
+        height: 14rem;
+        background-color: #5085A5;
+        align-items: center;
+    }
+
+    .nav-bar-content{
+        height: 12rem;
+        display: flex;
+        flex: 3;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .nav-bar-container a{
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        margin: 2rem;
+    }
+
+    .nav-personal-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 2rem;
+        height: 10rem;
+    }
+
+    .nav-account-box{
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+
+
+    .nav-shopping-cart-box{
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem;
+    }
+}
+
+
