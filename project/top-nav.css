@@ -1,21 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-.nav-bar-container{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    height: 4rem;
-    background-color: #F5EEE0;
+
+@media(min-width:768px){
+
 }
 
 .nav-bar-container{
-    list-style-type: none;
+    display: flex;
+    height: 4rem;
+    background-color: #5085A5;
+    align-items: center;
+}
+
+.nav-bar-content{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    flex: 3;
+    justify-content: space-around;
 }
 
 .nav-bar-container a{
     text-decoration: none;
-    font-size: 2.3rem;
+    font-size: 1.7rem;
     margin-right: 1rem;
-    color: #08223f;
+    color: #F7F9FB;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -26,4 +34,27 @@
 .nav-bar-locations {
     margin: 0rem 3rem;
     display: inline;
+}
+
+.nav-personal-box{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 4rem;
+    width: 10rem;
+    align-items: center;
+    flex: 2;
+}
+
+.nav-account-box{
+    display: flex;
+    justify-content: center;
+    padding: 0.7rem;
+}
+
+
+.nav-shopping-cart-box{
+    display: flex;
+    justify-content: center;
+    padding: 0.7rem;
 }
