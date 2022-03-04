@@ -13,7 +13,9 @@
         display: flex;
         align-items: center;
         flex: 3;
-        justify-content: space-around;
+        justify-content: flex-start;
+        width: 100%;
+
     }
 
     .nav-bar-container a{
@@ -21,37 +23,36 @@
         font-size: 1.7rem;
         margin-right: 1rem;
         color: #F7F9FB;
-        font-family: 'Montserrat', sans-serif;
+        font-family:BdCn20,Helvetica,Arial,sans-serif;
+        letter-spacing: 0.1rem;
     }
-
-    .nav-bar-locations{
+    .nav-bar-logo-img {
         display: flex;
-        width: 60rem;
-    }
-    .nav-bar-locations {
-        margin: 0rem 3rem;
-        display: inline;
+        width: auto;
+        height: 4rem;
+        padding-left: 0.5rem;
+        margin-right: 2rem;
     }
 
     .nav-personal-box{
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-start;
         height: 4rem;
-        width: 10rem;
-        flex: 2;
+        width: 100%;
+        flex: 0.1;
     }
 
     .nav-account-box{
         display: flex;
-        justify-content: center;
+        justify-content: right  ;
         padding: 0.7rem;
     }
 
 
     .nav-shopping-cart-box{
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         padding: 0.7rem;
     }
 }
@@ -68,7 +69,7 @@
         height: 12rem;
         display: flex;
         flex: 3;
-        justify-content: space-around;
+        justify-content: flex-start;
         flex-direction: column;
     }
 
@@ -77,21 +78,27 @@
         font-size: 1.5rem;
         color: #F7F9FB;
         font-family: 'Montserrat', sans-serif;
-        margin: 2rem;
+        margin: 1rem;
+    }
+
+    .nav-bar-logo-img {
+        display: flex;
+        height: 4rem;
+        width: auto;
     }
 
     .nav-personal-box{
         display: flex;
-        flex-direction: column;
+        /**flex-direction: column;*/
         justify-content: center;
-        margin: 2rem;
+        margin: 1rem;
         height: 10rem;
     }
 
     .nav-account-box{
         display: flex;
         justify-content: center;
-        padding: 1.5rem;
+        padding: 0.5rem;
     }
 
 
