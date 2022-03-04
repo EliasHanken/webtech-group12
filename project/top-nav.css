@@ -3,34 +3,29 @@
 @media(min-width:650px){
     .nav-bar-container{
         display: flex;
-        height: 4rem;
-        background-color: #5085A5;
+        height: 6rem;
+        background-color: #eeeeee;
         align-items: center;
+        justify-content: center;
     }
 
     .nav-bar-content{
-        height: 4rem;
+        height: 6rem;
         display: flex;
         align-items: center;
-        flex: 3;
         justify-content: flex-start;
+        border-left: 0.1rem #303030 solid;
+        flex: 1;
     }
 
     .nav-bar-container a{
         text-decoration: none;
-        font-size: 1.7rem;
-        margin-right: 1rem;
-        color: #F7F9FB;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .nav-bar-locations{
-        display: flex;
-        width: 60rem;
-    }
-    .nav-bar-locations {
-        margin: 0rem 3rem;
-        display: inline;
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+        color: #303030;
+        font-family: TradeGothicLTCom-BdCn20,Helvetica,Arial,serif;
+        margin: 2rem;
+        font-weight: 600;
     }
 
     .nav-personal-box{
@@ -39,7 +34,7 @@
         justify-content: flex-end;
         height: 4rem;
         width: 10rem;
-        flex: 2;
+        flex: 0;
     }
 
     .nav-account-box{
@@ -53,18 +48,20 @@
         display: flex;
         justify-content: center;
         padding: 0.7rem;
+
     }
 
-    .nav-bar-logo{
+    .nav-bar-logo-box{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 4rem;
+        height: 6rem;
+        flex: 0;
+        filter: ;
     }
 
-    .nav-bar-logo img{
-        height: 3rem;
-        padding: 1rem;
+    .nav-bar-logo-box img{
+        height: 4rem;
         filter: contrast(120%);
     }
 }
