@@ -18,12 +18,12 @@
         flex: 1;
     }
 
-    .nav-bar-container a{
+    .nav-bar-container a {
         text-decoration: none;
         font-size: 2rem;
         letter-spacing: 0.1rem;
         color: #303030;
-        font-family: TradeGothicLTCom-BdCn20,Helvetica,Arial,serif;
+        font-family: TradeGothicLTCom-BdCn20, Helvetica, Arial, serif;
         margin: 2rem;
         font-weight: 600;
     }
@@ -31,7 +31,7 @@
     .nav-personal-box{
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-start;
         height: 4rem;
         width: 10rem;
         flex: 0;
@@ -39,14 +39,14 @@
 
     .nav-account-box{
         display: flex;
-        justify-content: center;
+        justify-content: right;
         padding: 0.7rem;
     }
 
 
     .nav-shopping-cart-box{
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         padding: 0.7rem;
 
     }
@@ -78,7 +78,7 @@
         height: 12rem;
         display: flex;
         flex: 3;
-        justify-content: space-around;
+        justify-content: flex-start;
         flex-direction: column;
     }
 
@@ -87,21 +87,27 @@
         font-size: 1.5rem;
         color: #F7F9FB;
         font-family: 'Montserrat', sans-serif;
-        margin: 2rem;
+        margin: 1rem;
+    }
+
+    .nav-bar-logo-img {
+        display: flex;
+        height: 4rem;
+        width: auto;
     }
 
     .nav-personal-box{
         display: flex;
-        flex-direction: column;
+        /**flex-direction: column;*/
         justify-content: center;
-        margin: 2rem;
+        margin: 1rem;
         height: 10rem;
     }
 
     .nav-account-box{
         display: flex;
         justify-content: center;
-        padding: 1.5rem;
+        padding: 0.5rem;
     }
 
 
