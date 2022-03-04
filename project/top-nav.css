@@ -13,7 +13,7 @@
         display: flex;
         align-items: center;
         flex: 3;
-        justify-content: space-around;
+        justify-content: flex-start;
     }
 
     .nav-bar-container a{
@@ -53,6 +53,19 @@
         display: flex;
         justify-content: center;
         padding: 0.7rem;
+    }
+
+    .nav-bar-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+    }
+
+    .nav-bar-logo img{
+        height: 3rem;
+        padding: 1rem;
+        filter: contrast(120%);
     }
 }
 
@@ -99,6 +112,15 @@
         display: flex;
         justify-content: center;
         padding: 1.5rem;
+    }
+
+    .nav-bar-logo{
+        height: 4rem;
+    }
+
+    .nav-bar-logo img{
+        height: 3rem;
+        filter: contrast(120%);
     }
 }
 
