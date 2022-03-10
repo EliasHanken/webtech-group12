@@ -39,6 +39,7 @@
 
     .nav-account-box{
         display: flex;
+        cursor: pointer;
         justify-content: right;
         padding: 0.7rem;
     }
@@ -46,6 +47,7 @@
 
     .nav-shopping-cart-box{
         display: flex;
+        cursor: pointer;
         justify-content: flex-end;
         padding: 0.7rem;
 
