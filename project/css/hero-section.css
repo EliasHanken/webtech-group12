@@ -1,39 +1,52 @@
-#hero-section {
-    position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.hero-section {
     border: 1px solid black;
     min-width: 100rem;
     height: 40vw;
     background-image: url("../images/hero-image-cropped.jpg");
     background-size: 100%;
-    min-height: 42rem;
-    max-height: 60rem;
+    max-height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#hero-section h1 {
-    position: absolute;
+.hero-section h1 {
     color: #08223F;
     font-size: 4.8rem;
     font-weight: normal;
-    margin: 10rem 4rem;
-    top: 45%;
-    left: 2%;
+    color: #F7F9FB;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
+
 
 .color-overlay {
     background-color: #D18E35 ;
     opacity: 25%;
     height: 40vW;
     width: 100%;
-    min-height: 42rem;
-    max-height: 60rem;
+    position: absolute;
 }
 
-#hero-section .cta-button {
-    position: absolute;
+.hero-section .cta-button {
     background-color: #D18E35;
-    margin-left: 8rem;
-    margin-top: 26%;
-    font-size: 2.4rem;
-    padding: 1.5rem 2rem;
+    font-size: 2.2rem;
+    height: 4rem;
+    width: 15rem;
     border-radius: 0.8rem;
+    margin-top:5rem;
+    border: 1px solid black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero-section-content{
+    z-index: 5;
+    height: 30rem;
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
