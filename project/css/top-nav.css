@@ -107,6 +107,7 @@
 
     .nav-account-box{
         display: flex;
+        cursor: pointer;
         justify-content: center;
         padding: 0.5rem;
     }
@@ -114,6 +115,7 @@
 
     .nav-shopping-cart-box{
         display: flex;
+        cursor: pointer;
         justify-content: center;
         padding: 1.5rem;
     }

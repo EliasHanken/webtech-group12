@@ -15,6 +15,7 @@
 
 .hero-section h1 {
     color: #08223F;
+    cursor: default;
     font-size: 4.8rem;
     font-weight: normal;
     color: #F7F9FB;
@@ -35,8 +36,9 @@
     background-color: #D18E35;
     transition: 0.2s;
     font-size: 2.2rem;
-    height: 4rem;
-    width: 15rem;
+    height: 5rem;
+    width: auto;
+    padding: 1rem;
 
     border-radius: 0.8rem;
     margin-top:5rem;
@@ -48,6 +50,7 @@
     cursor: pointer;
     box-shadow: 0 0 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
     font-size: 2.6rem;
+
 
 }
 
