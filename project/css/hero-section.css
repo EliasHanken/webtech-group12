@@ -3,7 +3,7 @@
     border: 1px solid black;
     min-width: 100rem;
     height: 40vw;
-    background-image: url("images/hero-image-cropped.jpg");
+    background-image: url("../images/hero-image-cropped.jpg");
     background-size: 100%;
     min-height: 42rem;
     max-height: 60rem;
