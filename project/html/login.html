@@ -5,18 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
-    <link href="css/base.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/login-page.css">
 </head>
 <body>
-    <h2 id="login-heading">Log in</h2>
-    <p id="enticement-paragraph">Log in to receive special deals</p>
+<form class="login">
+
     <div class="login-box">
-        <h3 id="login-box-header">Log in</h3>
-        <input type="text" name="Email" placeholder="Email address">
-        <input type="password" name="password" placeholder="password">
-        <button id="register">Register</button>
-        <button id="login-button">Login</button>
+        <h2 id="login-heading">Log in</h2>
+        <p id="enticement-paragraph">Log in to receive special deals</p>
+        <div id="input-box">
+            <input id="email-input" type="text" name="Email" placeholder="Email address">
+            <div class="break"></div>
+            <input id="password-input" type="password" name="password" placeholder="Password">
+        </div>
+
+
+        <div id="button-box">
+            <button id="register">Register</button>
+            <input type="submit" value="Log in" id="login-button"></input>
+        </div>
+
     </div>
+</form>
 <script src="../js/login.js"></script>
 </body>
 </html>
