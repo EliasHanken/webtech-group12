@@ -41,6 +41,8 @@
         display: flex;
         cursor: pointer;
         justify-content: right;
+        height: auto;
+        width: auto;
         padding: 0.7rem;
     }
 
