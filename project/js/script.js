@@ -1,7 +1,9 @@
-window.onload = startUp();
+window.onload = startUp;
 
 function startUp() {
     document.getElementById("login").onclick = login;
+    document.getElementById("")
+
 }
 
 function login() {
