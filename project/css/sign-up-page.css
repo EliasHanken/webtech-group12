@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #F7F9FB;
+    height: 100%;
+
+}
+
+.sign-up {
+    margin-top: 20rem;
+    height: auto;
+    padding: 1rem;
+}
+
+#sign-up-heading {
+    text-align: center;
+    font-size: 3.6rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#enticement-paragraph {
+    text-align: center;
+    font-size: 2.4rem;
+    padding: 0.5rem 0.5rem 2rem;
+}
+
+.signup-box {
+    width: 100%;
+    height: 100%;
+    border: #303030 solid 0.2rem;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0,0,0,0.3);
+}
+
+#input-box1 {
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#input-box2 {
+    display: flex;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+ #button-box {
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+     height: 5rem;
+ }
+
+ #email-input {
+     height: 3rem;
+     padding-left: 0.5rem;
+     border: black solid 0.1rem;
+     margin-right: 0.5rem;
+     font-size: 1.6rem;
+     width: 100%;
+     border-radius: 0.5rem;
+ }
+
+ #name-input {
+     height: 3rem;
+     padding-left: 0.5rem;
+     border: black solid 0.1rem;
+     margin-left: 0.5rem;
+     font-size: 1.6rem;
+     width: 100%;
+     border-radius: 0.5rem;
+ }
+
+ #password-input {
+     height: 3rem;
+     padding-left: 0.5rem;
+     border: black solid 0.1rem;
+     margin-right: 0.5rem;
+     font-size: 1.6rem;
+     width: 100%;
+     border-radius: 0.5rem;
+ }
+
+ #confirm-password-input {
+     height: 3rem;
+     padding-left: 0.5rem;
+     border: black solid 0.1rem;
+     margin-left: 0.5rem;
+     font-size: 1.6rem;
+     width: 100%;
+     border-radius: 0.5rem;
+ }
+
+ #login-button {
+     margin: 0.5rem 17.5rem 0.5rem 0.8rem;
+     text-align: center;
+     width: 10rem;
+     font-weight: bold;
+     height: auto;
+     padding: 0.5rem;
+     background-color: #D18E35;
+     border-radius: 0.5rem;
+     font-size: 1.6rem;
+     transition: 0.2s;
+ }
+
+ #login-button:hover {
+     color:#F7F9FB;
+     box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0,0.4);
+     cursor: pointer;
+ }
+
+ #sign-up {
+     margin: 0.5rem 0.8rem 0.5rem 17.5rem;
+     text-align: center;
+     width: 10rem;
+     font-weight: bold;
+     height: auto;
+     padding: 0.5rem;
+     background-color: #D18E35;
+     border-radius: 0.5rem;
+     font-size: 1.6rem;
+     transition: 0.2s;
+ }
+
+ #sign-up:hover {
+     color:#F7F9FB;
+     box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0,0.4);
+     cursor: pointer;
+ }
