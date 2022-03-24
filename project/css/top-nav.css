@@ -9,13 +9,17 @@
         justify-content: center;
     }
 
-    .nav-bar-content{
+    .nav-bar-content {
         height: 6rem;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         border-left: 0.1rem #303030 solid;
         flex: 1;
+    }
+
+    .nav-bar-hamburger-menu {
+        display: none;
     }
 
     .nav-bar-container a {
@@ -87,7 +91,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        padding-left: 0.5rem;
+        padding-left: 0.3rem;
         border-left: 0.1rem #303030 solid;
     }
 
@@ -100,21 +104,24 @@
         margin: 1rem;
         font-weight: 600;
     }
+    .nav-bar-hamburger-menu {
+        display: none;
+    }
 
     .nav-personal-box {
         display: flex;
-        align-items: center;
+        align-content: center;
         justify-content: flex-end;
     }
     .nav-account-box {
         cursor: pointer;
-        height: 3rem;
+        height: auto;
         width: auto;
         padding: 0.4rem;
     }
     .nav-shopping-cart-box {
         cursor: pointer;
-        height: 3rem;
+        height: auto;
         width: auto;
         padding: 0.4rem;
     }
@@ -133,5 +140,7 @@
         height: 3rem;
     }
 }
+
+
 
 
