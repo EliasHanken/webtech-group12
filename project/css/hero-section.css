@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
+@media (min-width: 650px) {
     .hero-section {
-        display: flex;
         border: 1px solid black;
-        height: auto;
+        height: 100%;
         background-image: url("../images/hero-image-cropped.jpg");
         background-size: 100%;
         max-height: 100%;
+
+    }
+    .hero-section-header {
+        display: flex;
         justify-content: center;
         align-items: center;
+
     }
 
-    .hero-section h1 {
+    #hook-text {
+        margin-top: 3rem;
         cursor: default;
         background-color: rgba(0, 0, 0, 0.3);
         box-shadow: 0 0 0 1rem rgba(0,0,0,0.3);
@@ -25,29 +30,27 @@
 
     }
 
-    .color-overlay {
-        background-color: #D18E35;
-        opacity: 5%;
-        height: 100%;
-        width: 100%;
-        position: absolute;
+    .hero-section-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem;
     }
 
-    .hero-section .cta-button {
+    .cta-button {
         background-color: #D18E35;
         transition: 0.2s;
         font-size: 2.2rem;
         height: 5rem;
         width: auto;
         padding: 1rem;
-
         border-radius: 0.8rem;
         margin-top:5rem;
         border: 1px solid black;
         font-family: 'Montserrat', sans-serif;
     }
 
-    .hero-section .cta-button:hover {
+    .cta-button:hover {
         cursor: pointer;
         box-shadow: 0 0 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
         height: 6rem;
@@ -55,14 +58,68 @@
         font-size: 2.6rem;
         color: #F7F9FB;
     }
-    .hero-section-content {
-        z-index: 5;
-        height: 30rem;
-        width: 40rem;
-        display: flex;
-        flex-direction: column;
+} @media (max-width: 650px) {
+
+    .hero-section {
+        border: 1px solid black;
+        height: auto;
+        background-image: url("../images/hero-image-cropped.jpg");
+        background-size: 100%;
         justify-content: center;
-        align-items: center;
+        align-content: center;
     }
 
+    .hero-section h1 {
+        margin-top: 2rem;
+        cursor: default;
+        background-color: rgba(0,0,0, 0.3);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.3);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 3.6rem;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+
+    .hero-section-header {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-section-button {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 3rem;
+
+    }
+    .cta-button {
+        background-color: #D18E35;
+        font-size: 2.0rem;
+        margin-bottom: 3rem;
+        height: 4rem;
+        width: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-radius: 0.5em;
+        border: 0.1rem solid black;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        transition: 0.2s;
+    }
+
+    .cta-button:hover {
+        cursor: pointer;
+        box-shadow: 0 0 0.4rem 0.4rem rgba(0, 0, 0,     0.4);
+        height: 5rem;
+        margin-bottom: 2rem;
+        color: #F7F9FB;
+        font-size: 2.2rem;
+
+    }
+
+
+}
 
