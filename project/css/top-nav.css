@@ -22,7 +22,7 @@
         text-decoration: none;
         font-size: 2rem;
         letter-spacing: 0.1rem;
-        color: black;
+        color: #303030;
         font-family: TradeGothicLTCom-BdCn20, Helvetica, Arial, serif;
         margin: 2rem;
         font-weight: 600;
@@ -108,13 +108,13 @@
     }
     .nav-account-box {
         cursor: pointer;
-        height: auto;
+        height: 3rem;
         width: auto;
         padding: 0.4rem;
     }
     .nav-shopping-cart-box {
         cursor: pointer;
-        height: auto;
+        height: 3rem;
         width: auto;
         padding: 0.4rem;
     }
