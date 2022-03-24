@@ -34,7 +34,7 @@
         justify-content: end;
         height: 4rem;
         width: 9rem;
-        flex: 0;
+
     }
 
     .nav-account-box{
@@ -55,7 +55,7 @@
     }
 
     .icons {
-        margin-right: 1rem;
+        margin-right: 0.5rem;
     }
 
     .nav-bar-logo-box{
@@ -73,65 +73,64 @@
 }
 
 @media(max-width:650px) {
-    .nav-bar-container{
+    .nav-bar-container {
         display: flex;
-        height: 14rem;
-        background-color: #5085A5;
+        height: 4rem;
+        width: 100%;
+        background-color: #f9f9f9;
+        justify-content: flex-start;
         align-items: center;
     }
-
-    .nav-bar-content{
-        height: 12rem;
+    .nav-bar-content {
+        height: 4rem;
+        width: 100%;
         display: flex;
-        flex: 3;
         justify-content: flex-start;
-        flex-direction: column;
+        align-items: center;
+        padding-left: 0.5rem;
+        border-left: 0.1rem #303030 solid;
     }
 
-    .nav-bar-container a{
+    .nav-bar-container a {
         text-decoration: none;
-        font-size: 1.5rem;
-        color: #F7F9FB;
-        font-family: 'Montserrat', sans-serif;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        color: #303030;
+        font-family: TradeGothicLTCom-BdCn20, Helvetica, Arial, serif;
         margin: 1rem;
+        font-weight: 600;
     }
 
-    .nav-bar-logo-img {
+    .nav-personal-box {
         display: flex;
-        height: 4rem;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .nav-account-box {
+        cursor: pointer;
+        height: auto;
         width: auto;
+        padding: 0.4rem;
     }
-
-    .nav-personal-box{
-        display: flex;
-        /**flex-direction: column;*/
-        justify-content: center;
-        margin: 0.5rem;
-        height: 10rem;
-    }
-
-    .nav-account-box{
-        display: flex;
+    .nav-shopping-cart-box {
         cursor: pointer;
-        justify-content: center;
-        padding: 0.5rem;
+        height: auto;
+        width: auto;
+        padding: 0.4rem;
+    }
+    .icons {
+        margin-right: 0.5rem;
     }
 
-
-    .nav-shopping-cart-box{
+    .nav-bar-logo-box {
         display: flex;
-        cursor: pointer;
         justify-content: center;
-        padding: 0.5rem;
-    }
-
-    .nav-bar-logo{
+        align-items: center;
         height: 4rem;
     }
 
-    .nav-bar-logo img{
+    .nav-bar-logo-box img {
         height: 3rem;
-        filter: contrast(120%);
     }
 }
 
