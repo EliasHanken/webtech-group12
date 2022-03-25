@@ -1,0 +1,10 @@
+.info-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color:#f9f9f9;
+    padding: 0.5rem;
+}
+
+.info-grid-item {
+
+}
