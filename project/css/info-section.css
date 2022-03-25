@@ -1,10 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Nunito&family=Poppins:wght@500&family=Roboto+Mono&family=Roboto:wght@100;400&family=Rubik:ital@1&display=swap');
+
+.info-container {
+    background-color:#F7F9FB;
+}
+
 .info-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
-    background-color:#f9f9f9;
+    grid-template-columns: auto auto;
     padding: 0.5rem;
 }
 
-.info-grid-item {
+#info-container-header {
+    padding-left: 10%;
+    padding-top: 5rem;
+}
 
+.info-grid-cell {
+    /*text-align: center;*/
+    border: 0.1rem solid black;
+    margin: 1rem;
+}
+
+.info-grid-cell-header {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.info-grid-cell-text {
+    font-size: 1.7rem;
 }
