@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Nunito&family=Poppins:wght@500&family=Roboto+Mono&family=Roboto:wght@100;400&family=Rubik:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.info-container {
+    background-color:#F7F9FB;
+}
+
+.info-setup{
+    padding: 0.5rem;
+}
+
+.info-cell-row {
+    display: flex;
+    justify-content: left;
+}
+
+#info-container-header {
+    padding-left: 10%;
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.info-cell {
+    /*text-align: center;*/
+    border: 0.1rem solid black;
+    margin: 1rem;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.info-cell-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
+}
+
+.info-cell-text {
+    font-size: 1.8rem;
+}
+/* TODO optimize content and fix code duplication */
+@media (min-width: 650px) {
+    .info-banner {
+        border: 1px solid black;
+        height: 60rem;
+        background-image: url("../images/temp_aalesund.jpg");
+        background-size: 100%;
+        max-height: 100%;
+
+    }
+    .info-banner-header {
+        display: flex;
+        justify-content: center;
+        margin-top: 10rem;
+
+    }
+
+    #display-text {
+        margin-top: 2rem;
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 0 1rem rgba(0,0,0,0.6);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        font-size: 4.8rem;
+        font-weight: 600;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+
+    }
+
+    .reviews {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+    #new-york {
+        margin-top: 10rem;
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.6);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+
+    #cnn {
+        margin-top: 10rem;
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.6);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+
+    #mtv3 {
+        margin-top: 10rem;
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.6);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+
+    .founder-container {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 2rem 2rem 5%;
+    }
+
+    .founder-image-container {
+        margin: 1.5rem;
+    }
+
+    .founder-card {
+        box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+        width: 90%;
+    }
+
+    .founder-text-and-signature {
+        margin: 1rem;
+        padding: 0 2rem 0 2rem;
+        font-size: 1.5rem;
+        width: 80%;
+        height: auto;
+    }
+
+    .company-background {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 2rem 2rem 5%;
+    }
+    .background-segment {
+        box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+        width: 90%;
+    }
+
+}
+/* TODO fix content for smaller screen */
+@media (max-width: 650px) {
+
+    .info-banner {
+        border: 1px solid black;
+        height: auto;
+        background-image: url("../images/temp_aalesund.jpg");
+        background-size: 100%;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #display-text {
+        margin-top: 2rem;
+        cursor: default;
+        background-color: rgba(0,0,0, 0.6);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.6);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 3.6rem;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+
+    .info-banner-header {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
