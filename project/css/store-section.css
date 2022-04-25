@@ -1,1 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.item-container {
+    background-color: #F7F9FB;
+
+}
+
+#store-header {
+    font-size: 3.6rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.items-for-sale {
+    padding: 0.5rem;
+}
+
+.item-row {
+    display: flex;
+    justify-content: center;
+}
+
+.main-item {
+    background-color: darkgray;
+    border: 0.2rem solid grey;
+    margin: 1rem;
+
+    padding: 1rem;
+    width: 50%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 1rem 1rem rgba(191,191,191, 0.4);
+}
+
+.item-cell {
+    background-color: darkgray;
+    border: 0.2rem solid grey;
+    margin: 1rem;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 1rem 1rem rgba(191,191,191, 0.4);
+}
+
+.item-cell img {
+    max-height: 100%;
+    max-width: 100%;
+}
+.main-item img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.item-header {
+    font-size: 2.6rem;
+    font-weight: bolder;
+}
+
+.item-images {
+    height: 40rem;
+    width: 60rem;
+    margin: auto;
+}
+
+.item-price {
+    font-size: 2.4rem;
+    background-color: lightgray;
+    width: 10rem;
+    margin-left: 80%;
+    text-align: center;
+    border: 0.1rem solid grey;
+    border-radius: 0.5rem;
+}
+
+#colors {
+    background-color: lightgray;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    border:0.2rem solid #2C2A2A;
+    box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.2);
+    margin-bottom: 3rem;
+}
+
+
+
+
+
+
