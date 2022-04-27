@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/testimonial-css.css">
     <link rel="stylesheet" href="css/carouselStyles.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/cart.css">
     <script defer src="js/script.js"></script>
-    <script defer src="js/login.js"></script>
+    <script defer src="js/cart.js"></script>
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
     <title>Home</title>
 </head>
@@ -51,7 +52,7 @@
         </div>
         <div class="nav-personal-box">
             <div class="nav-shopping-cart-box">
-                <a href="html/shopping-cart.html" class="icons"><i id="shopping-cart" class="fa-solid fa-cart-shopping fa-2x"></i></a>
+                <button type="button" onclick="append()" class="icons"><i id="shopping-cart" class="fa-solid fa-cart-shopping fa-2x"></i></button>
             </div>
             <div class="nav-account-box">
                  <a href="html/login.html" class="icons"><i id="login" class="fa-solid fa-circle-user fa-2x"></i></a>
@@ -68,6 +69,12 @@
         <div class="hero-section-button">
             <button id="rent-bike" class="cta-button">Rent your bike</button>
         </div>
+    </div>
+
+    <!--
+        Basic container for the shopping cart modal
+    -->
+    <div id="cartModalDiv">
     </div>
 
     <!--
