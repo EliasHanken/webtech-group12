@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+/*-- VARIABLES CSS--*/
+/*Colores*/
+:root{
+    --first-color: #E3F8FF;
+    --second-color: #DCFAFB;
+    --third-color: #FFE8DF;
+    --accent-color: #FF5151;
+    --dark-color: #161616;
+}
+
+.main{
+    margin-top: 12%;
+}
+
+/*-- COMPONENT --*/
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.3rem 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 3rem;
+    border: 1px solid black;
+}
+article:nth-child(1){
+    background-color: var(--first-color);
+}
+article:nth-child(2){
+    background-color: var(--second-color);
+}
+article:nth-child(3){
+    background-color: var(--third-color);
+}
+article:nth-child(4){
+    background-color: var(--second-color);
+}
+.card__img{
+    width: 180px;
+    height: auto;
+    padding: 3rem 0;
+    transition: 1.5s;
+}
+.card__name{
+    position: absolute;
+    left: -25%;
+    top: 0;
+    width: 3.5rem;
+    height: 100%;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    background-color: var(--dark-color);
+    color: #fff;
+    font-weight: bold;
+    transition: 1.5s;
+}
+.card__icon{
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+.card__icon:hover{
+    color: var(--accent-color);
+}
+.card__precis{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    transition: 1.5s;
+}
+.card__preci{
+    display: block;
+    text-align: center;
+}
+.card__preci--before{
+    color: var(--accent-color);
+    margin-bottom: .25rem;
+}
+.card__preci--now{
+    font-weight: bold;
+}
+/*Move left*/
+.card:hover{
+    box-shadow: 0 .5rem 1rem #D1D9E6;
+}
+.card:hover .card__name{
+    left: 0;
+}
+.card:hover .card__img{
+    transform: rotate(30deg);
+    margin-left: 3.5rem;
+}
+.card:hover .card__precis{
+    margin-left: 3.5rem;
+    padding: 0 1.5rem;
+}
+
+
+
+.owl-carousel .owl-nav .owl-prev {
+    padding: 0 !important;
+    position: absolute;
+    margin-left: 0.5%;
+    top: 45%;
+    font-size: 5rem !important;
+   
+}
+
+.owl-carousel .owl-nav .owl-next{
+    padding: 0 !important;
+    position: absolute;
+    margin-left: 99%;
+    top: 45%;
+    font-size: 5rem !important;
+}
+
+
+
+
