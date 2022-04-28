@@ -4,28 +4,38 @@
     background-color:#F7F9FB;
 }
 
-.info-grid {
-    display: grid;
-    grid-template-columns: auto auto;
+.info-setup{
     padding: 0.5rem;
 }
 
-#info-container-header {
-    padding-left: 10%;
-    padding-top: 5rem;
+.info-cell-row {
+    display: flex;
+    justify-content: left;
 }
 
-.info-grid-cell {
+#info-container-header {
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.info-cell {
     /*text-align: center;*/
     border: 0.1rem solid black;
     margin: 1rem;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
-.info-grid-cell-header {
+.info-cell-header {
     font-size: 2rem;
     font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
 }
 
-.info-grid-cell-text {
-    font-size: 1.7rem;
+.info-cell-text {
+    font-size: 1.8rem;
 }

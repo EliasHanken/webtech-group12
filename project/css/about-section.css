@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Nunito&family=Poppins:wght@500&family=Roboto+Mono&family=Roboto:wght@100;400&family=Rubik:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.info-container {
+    background-color:#F7F9FB;
+}
+
+.info-setup{
+    padding: 0.5rem;
+}
+
+.info-cell-row {
+    display: flex;
+    justify-content: left;
+}
+
+#info-container-header {
+    padding-left: 10%;
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.info-cell {
+    /*text-align: center;*/
+    border: 0.1rem solid black;
+    margin: 1rem;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.info-cell-header {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
+}
+
+.info-cell-text {
+    font-size: 1.8rem;
+}
+/* TODO optimize content and fix code duplication */
+@media (min-width: 650px) {
+    .info-banner {
+        border: 1px solid black;
+        height: 60rem;
+        background-image: url("../images/temp_aalesund.jpg");
+        background-size: 100%;
+        max-height: 100%;
+
+    }
+    .info-banner-header {
+        display: flex;
+        justify-content: center;
+        margin-top: 10rem;
+    }
+
+    #display-text {
+        margin-top: 2rem;
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 0 1rem rgba(0,0,0,0.6);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        font-size: 4.8rem;
+        font-weight: 600;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        animation: fadeInAnimationDisplay ease 1.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeInAnimationDisplay {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .reviews {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+    #new-york {
+        margin-top: 10rem;
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.6);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInAnimationNewYork ease 1.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: 0.8s;
+
+    }
+
+    @keyframes fadeInAnimationNewYork {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #cnn {
+        margin-top: 10rem;
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.6);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInAnimationCnn ease 1.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: 1.8s;
+    }
+    @keyframes fadeInAnimationCnn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #mtv3 {
+        margin-top: 10rem;
+        cursor: default;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.6);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInAnimationMtv3 ease 1.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: 2.8s;
+    }
+    @keyframes fadeInAnimationMtv3 {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+
+    .company-background {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 2rem 2rem 5%;
+
+    }
+    .background-segment {
+        box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+        width: 90%;
+        padding: 2rem 2rem 2rem 5%;
+        border: 0.1rem solid black;
+    }
+    #background-header{
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
+    .founder-container {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 2rem 2rem 5%;
+    }
+
+    .founder-text-image {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .founder-image-container {
+        margin: 1.5rem;
+    }
+
+    .founder-image {
+        border-radius: 50%;
+        max-width: 20rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 2);
+    }
+
+    .founder-card {
+        box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+        width: 90%;
+        padding: 2rem 2rem 2rem 5%;
+        border: 0.1rem solid black;
+    }
+
+    .founder-text-and-signature {
+        margin: 1rem;
+        padding: 0 2rem 0 2rem;
+        font-size: 1.5rem;
+        width: 80%;
+        height: auto;
+    }
+
+    .founder-text, .founder-signature {
+        padding: 1rem;
+    }
+}
+/* TODO fix content for smaller screen */
+@media (max-width: 650px) {
+
+    .info-banner {
+        border: 1px solid black;
+        height: auto;
+        background-image: url("../images/temp_aalesund.jpg");
+        background-size: 100%;
+        justify-content: center;
+        align-content: center;
+    }
+
+    #display-text {
+        margin-top: 2rem;
+        cursor: default;
+        background-color: rgba(0,0,0, 0.6);
+        box-shadow: 0 0 0 0.5rem rgba(0,0,0,0.6);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 3.6rem;
+        color: #F7F9FB;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+
+    .info-banner-header {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+}
