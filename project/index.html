@@ -15,6 +15,16 @@
     <script defer src="js/script.js"></script>
     <script defer src="js/cart.js"></script>
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
+    <script src="js/ProductCardGenerator.js"></script>
+    <!-- ICONS -->
+    <script  src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <!-- Jquery CDN  -->
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <!-- Owl Slider  -->
+    <script src="js/owl.carousel.js"></script>
     <title>Home</title>
 </head>
 <body>
@@ -140,9 +150,9 @@
             [Join Today] button under 'Find your bike'.
     -->
     <main class="owl-carousel">
-        <article class="card">
+        <article class="card" id="carousel-card-1">
             <div class="card__img">
-                <img src="images/bike.png" alt="">
+                <!--<img src="images/bike.png" alt="">-->
             </div>
             <div class="card__name">
                 <p>Bike</p>
@@ -153,7 +163,7 @@
                 </a>
 
                 <div>
-                    <span class="card__preci card__preci--before">$990.00</span>
+                    <span class="card__preci card__preci--before">Card 1</span>
                     <span class="card__preci card__preci--now">$749.00</span>
                 </div>
                 <a href="" class="card__icon">
@@ -162,9 +172,9 @@
             </div>
         </article>
 
-        <article class="card">
+        <article class="card" id="carousel-card-2">
             <div class="card__img">
-                <img src="images/canvas-bag.png" alt="">
+                <!--<img src="images/canvas-bag.png" alt="">-->
             </div>
             <div class="card__name">
                 <p>Canvas bag</p>
@@ -174,7 +184,7 @@
                     <ion-icon name="heart-outline"></ion-icon>
                 </a>
                 <div>
-                    <span class="card__preci card__preci--before">$990.00</span>
+                    <span class="card__preci card__preci--before">Card 2</span>
                     <span class="card__preci card__preci--now">$749.00</span>
                 </div>
                 <a href="" class="card__icon">
@@ -183,9 +193,9 @@
             </div>
         </article>
 
-        <article class="card">
+        <article class="card" id="carousel-card-3">
             <div class="card__img">
-                <img src="images/borsalino_helmet.png" alt="">
+                <!--<img src="images/borsalino_helmet.png" alt="">-->
             </div>
             <div class="card__name">
                 <p>Borsalino helmet</p>
@@ -196,7 +206,7 @@
                 </a>
 
                 <div>
-                    <span class="card__preci card__preci--before">$990.00</span>
+                    <span class="card__preci card__preci--before">Card 3</span>
                     <span class="card__preci card__preci--now">$749.00</span>
                 </div>
                 <a href="" class="card__icon">
@@ -205,9 +215,9 @@
             </div>
         </article>
 
-        <article class="card">
+        <article class="card" id="carousel-card-4">
             <div class="card__img">
-                <img src="images/chalk.png" alt="">
+                <!--<img src="images/chalk.png" alt="">-->
             </div>
             <div class="card__name">
                 <p>Chalk</p>
@@ -218,7 +228,7 @@
                 </a>
 
                 <div>
-                    <span class="card__preci card__preci--before">$990.00</span>
+                    <span class="card__preci card__preci--before">Card 4</span>
                     <span class="card__preci card__preci--now">$749.00</span>
                 </div>
                 <a href="" class="card__icon">
@@ -227,6 +237,7 @@
             </div>
         </article>
     </main>
+    <button id="btnTestButton" onclick="generateProductCard()">TestButton</button>
 
 
 
@@ -280,18 +291,6 @@
     <div class="footer-container">
     </div>
 
-    <!-- ICONS -->
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
-    <!-- Jquery CDN  -->
-    <script
-            src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
-
-    <!-- Owl Slider  -->
-    <script src="js/owl.carousel.js"></script>
-
     <script>
         $('.owl-carousel').owlCarousel({
             loop: true,
@@ -315,6 +314,9 @@
                 },
             }
         })
+
+
+        window.onload(generateProductCard());
     </script>
 </body>
 </html>
