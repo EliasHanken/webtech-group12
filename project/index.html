@@ -149,93 +149,7 @@
             'Find your bike' on top of the container.
             [Join Today] button under 'Find your bike'.
     -->
-    <main class="owl-carousel">
-        <article class="card" id="carousel-card-1">
-            <div class="card__img">
-                <!--<img src="images/bike.png" alt="">-->
-            </div>
-            <div class="card__name">
-                <p>Bike</p>
-            </div>
-            <div class="card__precis">
-                <a href="" class="card__icon">
-                    <ion-icon name="heart-outline"></ion-icon>
-                </a>
-
-                <div>
-                    <span class="card__preci card__preci--before">Card 1</span>
-                    <span class="card__preci card__preci--now">$749.00</span>
-                </div>
-                <a href="" class="card__icon">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </a>
-            </div>
-        </article>
-
-        <article class="card" id="carousel-card-2">
-            <div class="card__img">
-                <!--<img src="images/canvas-bag.png" alt="">-->
-            </div>
-            <div class="card__name">
-                <p>Canvas bag</p>
-            </div>
-            <div class="card__precis">
-                <a href="" class="card__icon">
-                    <ion-icon name="heart-outline"></ion-icon>
-                </a>
-                <div>
-                    <span class="card__preci card__preci--before">Card 2</span>
-                    <span class="card__preci card__preci--now">$749.00</span>
-                </div>
-                <a href="" class="card__icon">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </a>
-            </div>
-        </article>
-
-        <article class="card" id="carousel-card-3">
-            <div class="card__img">
-                <!--<img src="images/borsalino_helmet.png" alt="">-->
-            </div>
-            <div class="card__name">
-                <p>Borsalino helmet</p>
-            </div>
-            <div class="card__precis">
-                <a href="" class="card__icon">
-                    <ion-icon name="heart-outline"></ion-icon>
-                </a>
-
-                <div>
-                    <span class="card__preci card__preci--before">Card 3</span>
-                    <span class="card__preci card__preci--now">$749.00</span>
-                </div>
-                <a href="" class="card__icon">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </a>
-            </div>
-        </article>
-
-        <article class="card" id="carousel-card-4">
-            <div class="card__img">
-                <!--<img src="images/chalk.png" alt="">-->
-            </div>
-            <div class="card__name">
-                <p>Chalk</p>
-            </div>
-            <div class="card__precis">
-                <a href="" class="card__icon">
-                    <ion-icon name="heart-outline"></ion-icon>
-                </a>
-
-                <div>
-                    <span class="card__preci card__preci--before">Card 4</span>
-                    <span class="card__preci card__preci--now">$749.00</span>
-                </div>
-                <a href="" class="card__icon">
-                    <ion-icon name="cart-outline"></ion-icon>
-                </a>
-            </div>
-        </article>
+    <main class="owl-carousel" id="owl-carousel-index-page">
     </main>
     <button id="btnTestButton" onclick="generateProductCard()">TestButton</button>
 
@@ -291,14 +205,18 @@
     <div class="footer-container">
     </div>
 
+
+
     <script>
+        generateProductCardsTotal();
+
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 15,
             nav: true,
             navSpeed: 1000,
-            items: 2,
-            autoplay: false,
+            items: 3,
+            autoplay: true,
             autoplayTimeout: 5000,
             autoplaySpeed: 2000,
             autoplayHoverPause: true,
@@ -310,13 +228,10 @@
                     items: 2
                 },
                 600: {
-                    items: 2
+                    items: 3
                 },
             }
         })
-
-
-        window.onload(generateProductCard());
     </script>
 </body>
 </html>

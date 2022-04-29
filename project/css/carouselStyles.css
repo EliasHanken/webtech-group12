@@ -38,13 +38,13 @@ article:nth-child(3){
 article:nth-child(4){
     background-color: var(--second-color);
 }
-.card__img{
+.card-img{
     width: 180px;
     height: 15rem;
     padding: 3rem 0;
     transition: 1.5s;
 }
-.card__name{
+.card-name{
     position: absolute;
     left: -25%;
     top: 0;
@@ -58,11 +58,11 @@ article:nth-child(4){
     font-weight: bold;
     transition: 1.5s;
 }
-.card__icon{
+.card-icon{
     font-size: 1.5rem;
     color: var(--dark-color);
 }
-.card__icon:hover{
+.card-icon:hover{
     color: var(--accent-color);
 }
 .card__precis{
@@ -72,25 +72,21 @@ article:nth-child(4){
     align-items: flex-end;
     transition: 1.5s;
 }
-.card__preci{
+.card-price{
     display: block;
     text-align: center;
 }
-.card__preci--before{
-    color: var(--accent-color);
-    margin-bottom: .25rem;
-}
-.card__preci--now{
+.card-price{
     font-weight: bold;
 }
 /*Move left*/
 .card:hover{
     box-shadow: 0 .5rem 1rem #D1D9E6;
 }
-.card:hover .card__name{
+.card:hover .card-name{
     left: 0;
 }
-.card:hover .card__img{
+.card:hover .card-img{
     transform: rotate(30deg);
     margin-left: 3.5rem;
 }
