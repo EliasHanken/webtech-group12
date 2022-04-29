@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/top-nav.css">
     <link rel="stylesheet" href="../css/hero-section.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
+    <script defer src="../js/cart.js"></script>
 </head>
 <body>
 <div class="nav-bar-container" id="topNav">
@@ -30,12 +32,17 @@
     </div>
     <div class="nav-personal-box">
         <div class="nav-shopping-cart-box">
-            <a href="shopping-cart.html"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+            <a onclick="openCart()"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
         </div>
         <div class="nav-account-box">
             <a href="login.html"><i class="fa-solid fa-circle-user fa-2x"></i></a>
         </div>
     </div>
+</div>
+<!--
+    Basic container for the shopping cart modal
+-->
+<div id="cartModalDiv">
 </div>
 </body>
 </html>

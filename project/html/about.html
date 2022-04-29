@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/top-nav.css">
     <link rel="stylesheet" href="../css/about-section.css">
+    <link rel="stylesheet" href="../css/cart.css">
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
+    <script defer src="../js/cart.js"></script>
     <title>Info</title>
 </head>
 <body>
@@ -30,7 +32,7 @@
     </div>
     <div class="nav-personal-box">
         <div class="nav-shopping-cart-box">
-            <a href="shopping-cart.html"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+            <a onclick="openCart()"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
         </div>
         <div class="nav-account-box">
             <a href="login.html"><i class="fa-solid fa-circle-user fa-2x"></i></a>
@@ -49,6 +51,9 @@
         <div id="cnn">I used to hate bikes, now I own 3764 thanks to KRRR! 10/10 <br> -CNN</div>
         <div id="mtv3">What have we done to deserve this gift from god? 10/10 <br> -MTV3</div>
     </div>
+</div>
+
+<div id="cartModalDiv">
 </div>
 
 <div class="company-background">
@@ -85,6 +90,7 @@
         </div>
     </div>
 </div>
+
 
 
 <!-- TODO Company investors and more business and background stuff -->
