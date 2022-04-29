@@ -1,7 +1,11 @@
+/*
+TODO Change all colours and fonts to the chosen ones for the site
+ */
+
 #cartModalDiv {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: -10rem;
     width: 100%;
@@ -24,6 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 2rem;
 }
 
 .cartContainer {
@@ -58,4 +63,77 @@
     cursor: pointer;
     border-bottom: 1px solid #E44C4C;
 }
+
+#cartItems {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.item {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border: 0.1rem solid black;
+    padding: 0.5rem;
+}
+
+.cartImages {
+    width: 15%;
+    text-align: center;
+}
+
+.itemInfo {
+    height: 100%
+}
+
+.itemTitle {
+    padding-top: 1rem;
+    line-height: 1rem;
+    font-size: 2.5rem;
+    font-family: ‘Open Sans’, serif;
+    font-weight: 200;
+    color: #202020;
+}
+
+.itemDescription {
+    padding: 1rem;
+    line-height: 1rem;
+    font-size: 1rem;
+    font-family: ‘Open Sans’, serif;
+    font-weight: 600;
+    color: #909090;
+}
+.itemCounter {
+    width: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addButton, .removeButton {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-family: ‘Open Sans’, serif;
+    font-weight: 900;
+    color: #202020;
+    cursor: pointer;
+}
+
+.itemCount {
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: ‘Open Sans’, serif;
+    font-weight: 900;
+    color: #202020;
+}
+
+
 
