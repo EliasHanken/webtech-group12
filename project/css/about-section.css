@@ -46,7 +46,7 @@
     .info-banner {
         border: 1px solid black;
         height: 60rem;
-        background-image: url("../images/temp_aalesund.jpg");
+        background-image: url("../images/aalesund.jpg");
         background-size: 100%;
         max-height: 100%;
 
@@ -237,7 +237,7 @@
     .info-banner {
         border: 1px solid black;
         height: auto;
-        background-image: url("../images/temp_aalesund.jpg");
+        background-image: url("../images/aalesund.jpg");
         background-size: 100%;
         justify-content: center;
         align-content: center;

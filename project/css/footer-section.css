@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Nunito&family=Poppins:wght@500&family=Roboto+Mono&family=Roboto:wght@100;400&family=Rubik:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.footer-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: rgba(128,128,128,0.3);
+}
+
+.logo {
+    margin: 2rem;
+}
+
+.footer-name {
+    font-size: 1.2rem;
+
+}
+
+.footer-logo {
+    height: 6rem;
+    width: 6rem;
+    margin-left: 4rem;
+}
+
+.footer-support {
+    
+}
+
