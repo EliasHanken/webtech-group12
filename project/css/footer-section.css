@@ -2,11 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 .footer-container {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     width: 100%;
     height: auto;
     background-color: rgba(128,128,128,0.3);
+
 }
 
 .logo {
@@ -25,6 +27,28 @@
 }
 
 .footer-support {
-    
+    color: black;
+    font-size: 1.4rem;
+    margin-left: auto;
+    margin-top: 5rem;
+    margin-right: 4rem;
+
+}
+
+.footer-support-text{
+    color: black;
+}
+
+.footer-credits {
+    position: absolute;
+    text-align: center;
+    left: auto;
+    top: 9rem;
+    margin: 2rem;
+}
+
+.footer-credits a {
+    color: black;
+    text-underline: none;
 }
 
