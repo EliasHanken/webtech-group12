@@ -38,8 +38,8 @@ function createItems(){
         if(isAdmin(authenticatedUser)){
             addNavDiv("Admin","/admin.html");
         }
-        addNavigationLink(`Welcome, ${authenticatedUser.username}!`, "/profile.html");
-        addNavigationLink("Logout", null, doLogout);
+        addNavDiv(`Welcome, ${authenticatedUser.username}!`, "/profile.html");
+        addNavDiv("Logout", null, doLogout);
     }
 }
 
