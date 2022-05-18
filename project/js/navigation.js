@@ -19,6 +19,17 @@ function createNavigation() {
     }
 }
 
+function createItems(){
+    const authenticatedUser = getAuthenticatedUser();
+    if(authenticatedUser){
+        if(isAdmin(authenticatedUser)){
+            addNavDiv("Admin","/admin.html");
+        }
+        addNavigationLink(`Welcome, ${authenticatedUser.username}!`, "/profile.html");
+        addNavigationLink("Logout", null, doLogout);
+    }
+}
+
 /**
  * Add a single navigation link to the navigation area
  * @param title Title to be displayed
@@ -36,6 +47,19 @@ function addNavigationLink(title, relativeUrl, handlerFunction) {
     anchor.innerText = title;
     navItem.appendChild(anchor);
     navList.appendChild(navItem);
+}
+
+function addNavDiv(title, relativeUrl,handlerFunction){
+    const navContent = document.querySelector(".nav-bar-content");
+    const navDiv = document.createElement("div");
+    const anchor = document.createElement("a");
+    anchor.href = relativeUrl ? (BASE_URL + relativeUrl) : "#";
+    if (handlerFunction) {
+        anchor.addEventListener("click", handlerFunction);
+    }
+    anchor.innerText = title;
+    navDiv.appendChild(anchor);
+    navContent.appendChild(navDiv);
 }
 
 /**
