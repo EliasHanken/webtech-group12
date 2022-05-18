@@ -48,7 +48,7 @@ body {
     height: 5rem;
 }
 
-#email-input {
+#username {
     height: 3rem;
     padding-left: 0.5rem;
     border: black solid 0.1rem;
@@ -57,7 +57,7 @@ body {
     width: 100%;
     border-radius: 0.5rem;
 }
-#password-input {
+#password {
     height: 3rem;
     padding-left: 0.5rem;
     border: black solid 0.1rem;
@@ -85,7 +85,7 @@ body {
     cursor: pointer;
 }
 
-#login-button {
+#login-form-button {
     text-align: center;
     margin: 0.5rem 0.8rem 0.5rem 17.5rem;
     height: 3rem;
@@ -101,4 +101,11 @@ body {
     color: #F7F9FB;
     box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0,0.4);
     cursor: pointer;
+}
+#username{
+    size: 2rem;
+}
+#result-message{
+    text-align: center;
+    margin: 1rem;
 }
