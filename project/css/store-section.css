@@ -22,7 +22,7 @@
 }
 
 .main-item {
-    background-color: darkgray;
+    background-color: white;
     border: 0.2rem solid grey;
     margin: 1rem;
 
@@ -30,18 +30,18 @@
     width: 50%;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 0 1rem 1rem rgba(191,191,191, 0.4);
+    box-shadow: 0 0 1rem 1rem rgba(0,0,0, 0.4);
 }
 
 .item-cell {
-    background-color: darkgray;
+    background-color: white;
     border: 0.2rem solid grey;
     margin: 1rem;
     padding: 1rem;
     width: 50%;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 0 1rem 1rem rgba(191,191,191, 0.4);
+    box-shadow: 0 0 1rem 1rem rgba(0,0,0, 0.4);
 }
 
 .item-cell img {
