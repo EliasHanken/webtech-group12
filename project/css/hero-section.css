@@ -3,7 +3,7 @@
     .hero-section {
         border: 1px solid black;
         height: 60rem;
-        background-image: url("../images/hero-image-cropped.jpg");
+        background-image: url("../images/aalesund.jpg");
         background-size: 100%;
         max-height: 100%;
 
@@ -63,7 +63,7 @@
     .hero-section {
         border: 1px solid black;
         height: auto;
-        background-image: url("../images/hero-image-cropped.jpg");
+        background-image: url("../images/aalesund.jpg");
         background-size: 100%;
         justify-content: center;
         align-content: center;

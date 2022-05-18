@@ -1,0 +1,24 @@
+.checkoutLargeDiv {
+    display: flex;
+    justify-content: center;
+    background-color: #D18E35;
+    border-radius: 2rem;
+    border: 0.1rem solid black;
+}
+.checkoutDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F9FB;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 2rem;
+    border: 0.1rem solid black;
+    min-height: 40rem;
+    width: 100%;
+}
+
+.checkoutBanner {
+    border: 0.1rem solid black;
+    border-radius: 2rem;
+}

@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/top-nav.css">
     <link rel="stylesheet" href="../css/hero-section.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/footer-section.css">
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
+    <script defer src="../js/cart.js"></script>
 </head>
 <body>
 <div class="nav-bar-container" id="topNav">
@@ -30,11 +33,37 @@
     </div>
     <div class="nav-personal-box">
         <div class="nav-shopping-cart-box">
-            <a href="shopping-cart.html"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+            <a onclick="openCart()"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
         </div>
         <div class="nav-account-box">
             <a href="login.html"><i class="fa-solid fa-circle-user fa-2x"></i></a>
         </div>
+    </div>
+</div>
+
+<div class="hero-section">
+    <div class="color-overlay"></div>
+    <div class="hero-section-header">
+        <h1 id="hook-text">Order your bike <br> here</h1>
+    </div>
+</div>
+<!--
+    Basic container for the shopping cart modal
+-->
+<div id="cartModalDiv">
+</div>
+
+<div class="footer-container">
+    <div class="logo">
+        <img class="footer-logo" src="../images/logo-no-text-gray.png">
+        <p class="footer-name">Keep Rolling Rolling Rolling</p>
+    </div>
+    <div class="footer-support">
+        <a class="footer-support-text" href="../html/support.html">Support</a><br>
+        <a class="footer-support-text" href="../html/about.html">About</a>
+    </div>
+    <div class="footer-credits">
+        Logo made with <a href="https://logomakr.com/app">https://www.logomakr.com/app</a>
     </div>
 </div>
 </body>
