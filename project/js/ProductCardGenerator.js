@@ -154,10 +154,10 @@ function generateProductCardsTotal(){
     generateProductCardSkeleton();
 
     generateProductCardImgTags(
-        '<img src="images/bike.png" alt="Image of a bike">',
-        '<img src="images/canvas-bag.png" alt="Image of a canvas bag">',
-        '<img src="images/borsalino_helmet.png" alt="Image of a borsalino helmet">',
-        '<img src="images/chalk.png" alt="Image of sticks of chalk">'
+        '<img src="images/bike.jpg" alt="Image of a bike">',
+        '<img src="images/textile-bag-cropped.jpg" alt="Image of a canvas bag">',
+        '<img src="images/bike-helmet-cropped.jpg" alt="Image of a borsalino helmet">',
+        '<img src="images/chalk.jpg" alt="Image of sticks of chalk">'
     )
 
     generateProductCardNameTags(
