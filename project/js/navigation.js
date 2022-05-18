@@ -1,4 +1,16 @@
-const BASE_URL = "C:/Users/elias/Documents/dev/webtech-group12/project/html"; // Set this to whatever your BASE URL is
+
+
+const BASE_URL = calculatePath(); // Set this to whatever your BASE URL is
+
+/**
+ * Calculate absolute path.
+ * @returns the directory of the project in absolute path.
+ */
+function calculatePath(){
+    var currentPath = window.location.pathname;
+    var newDir = currentPath.substring(0,currentPath.lastIndexOf("/"));
+    return newDir;
+}
 
 /**
  * Create the navigation, adding links based on current user permission level
