@@ -23,7 +23,7 @@ function submitLoginForm(event) {
 function onLoginSuccess() {
     showFormSuccess("Logging you in..");
     setTimeout(() =>{
-        redirectToNoBase("C:/Users/elias/Documents/dev/webtech-group12/project/index.html");
+        redirectTo("index.html");
     },1500);
     
 }
