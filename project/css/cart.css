@@ -10,6 +10,10 @@ TODO Change all colours and fonts to the chosen ones for the site
     top: -10rem;
     width: 100%;
     height: 100%;
+    /*
+    TODO fix, scroll is ugly
+     */
+    overflow-y: auto;
 
     animation-name: animateTop;
     animation-duration: 1s;
@@ -21,22 +25,22 @@ TODO Change all colours and fonts to the chosen ones for the site
 }
 
 .cartDiv{
-    margin: 15%;
+    margin: 10%;
     padding: 2rem;
-    background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
-    height: 40rem;
+    background-color: #D18E35;
+    min-height: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
+    border: 0.1rem solid black;
 }
 
 .cartContainer {
-    width: 90%;
-    height: 90%;
+    width: 98%;
+    height: 98%;
     background-color: #ffffff;
     border-radius: 2rem;
-    box-shadow: 0rem 5rem 5rem #1687d933;
 }
 
 .cartHeader {
@@ -46,18 +50,18 @@ TODO Change all colours and fonts to the chosen ones for the site
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem
 }
 
 .cartH1 {
-    font-size: 2rem;
-    font-family: ‘Open Sans’, serif;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #2F3841;
 }
 
 .removeH2 {
-    font-size: 1rem;
-    font-family: ‘Open Sans’, serif;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #E44C4C;
     cursor: pointer;
@@ -66,17 +70,16 @@ TODO Change all colours and fonts to the chosen ones for the site
 
 #cartItems {
     margin: auto;
-    width: 100%;
+    width: 90%;
     height: 100%;
     padding: 2rem;
 }
 
 .item {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    border: 0.1rem solid black;
-    padding: 0.5rem;
+    padding: 2rem;
 }
 
 .cartImages {
@@ -92,7 +95,7 @@ TODO Change all colours and fonts to the chosen ones for the site
     padding-top: 1rem;
     line-height: 1rem;
     font-size: 2.5rem;
-    font-family: ‘Open Sans’, serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     color: #202020;
 }
@@ -101,27 +104,27 @@ TODO Change all colours and fonts to the chosen ones for the site
     padding: 1rem;
     line-height: 1rem;
     font-size: 1rem;
-    font-family: ‘Open Sans’, serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #909090;
 }
 .itemCounter {
-    width: 5%;
+    width: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .addButton, .removeButton {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     background-color: #d9d9d9;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-    font-family: ‘Open Sans’, serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     color: #202020;
     cursor: pointer;
@@ -129,11 +132,39 @@ TODO Change all colours and fonts to the chosen ones for the site
 
 .itemCount {
     padding: 1rem;
-    font-size: 1rem;
-    font-family: ‘Open Sans’, serif;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     color: #202020;
 }
 
+.cartFooter {
+    margin: auto;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 2rem
+}
+
+.checkOutButton {
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2F3841;
+    padding: 2rem;
+    background-color: #D18E35;
+    border: 0.1rem solid black;
+    transition: 0.2s;
+}
+
+.checkOutButton:hover {
+    color: #F7F9FB;
+    box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.4);
+    cursor: pointer;
+}
 
 
