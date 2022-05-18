@@ -23,7 +23,7 @@ function submitLoginForm(event) {
 function onLoginSuccess() {
     showFormSuccess("Logging you in..");
     setTimeout(() =>{
-        redirectTo("index.html");
+        redirectTo("/index.html");
     },1500);
     
 }

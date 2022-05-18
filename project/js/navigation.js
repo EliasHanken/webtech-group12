@@ -9,7 +9,8 @@ const BASE_URL = calculatePath(); // Set this to whatever your BASE URL is
 function calculatePath(){
     var currentPath = window.location.pathname;
     var newDir = currentPath.substring(0,currentPath.lastIndexOf("/"));
-    return newDir;
+    var newDir2 = newDir.substring(0,newDir.lastIndexOf("/"));
+    return newDir2;
 }
 
 /**
