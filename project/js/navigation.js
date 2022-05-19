@@ -48,6 +48,9 @@ function createItems(){
     if(authenticatedUser){
         if(isAdmin(authenticatedUser)){
             addNavDiv("Admin","/html/admin.html");
+            addNavDivCustom(`Welcome ${authenticatedUser.username}!`,null,".nav-personal-box");
+            addNavDivCustom("Logout",null,".nav-personal-box",null,doLogout);
+            addNavDivCustomWithI(".nav-personal-box","<a class=icons><i size=0.5rem id=login class='fa-solid fa-cart-shopping fa-2x'></i></a>",openCart);
         }else{
             addNavDiv("About","/html/about.html");
             addNavDiv("Store","/html/store.html");
