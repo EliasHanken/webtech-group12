@@ -174,3 +174,24 @@ function generateProductCardsTotal(){
         "250"
     )
 }
+
+/**
+ * Makes request for one product each from bike, textile bag, helmet and chalk.
+ * NB: ONLY GETTING BIKE FOR NOW.
+ */
+function requestProduct() {
+    let bikeRequest = new XMLHttpRequest();
+    bikeRequest.open("GET", "http://localhost:8080/bikes/")
+    bikeRequest.send();
+
+    bikeRequest.onload = parseBikeResponse;
+
+    function parseBikeResponse() {
+        const response = bikeRequest.responseText;
+        const bike = JSON.parse(response)
+        alert(response);
+
+        //alert("Bike ID: " + bike[0].bikeId + "\nDescription: " + bike[0].description + "\nModel:" +
+        //    bike[0].bikeModel + "\nimgLink: " + bike[0].imgLink);
+    }
+}
