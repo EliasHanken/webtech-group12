@@ -1,111 +1,236 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@media (min-width: 40rem) {
+    body {
+        display: flex;
+        background-color: #F7F9FB;
+        justify-content: center;
+        height: 100%;
+    }
+    .login {
+        margin-top: 20rem;
+        height: auto;
+        padding: 1rem;
 
-body {
-    display: flex;
-    background-color: #F7F9FB;
-    justify-content: center;
-    height: 100%;
+
+    }
+    #login-heading {
+        text-align: center;
+        font-size: 3.6rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #enticement-paragraph {
+        text-align: center;
+        font-size: 2.4rem;
+        padding: 0.5rem 0.5rem 2rem;
+    }
+
+    .login-box {
+        width: 100%;
+        height: 100%;
+        border: #303030 solid 0.2rem;
+        border-radius: 1rem;
+        background-color: gainsboro;
+        box-shadow: 0 0 0.5rem 0.5rem rgba(0,0,0,0.3);
+    }
+
+    #input-box {
+        display: flex;
+        justify-content: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #button-box {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 5rem;
+    }
+
+    #username {
+        height: 3rem;
+        padding-left: 0.5rem;
+        border: black solid 0.1rem;
+        margin-right: 0.5rem;
+        font-size: 1.6rem;
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+    #password {
+        height: 3rem;
+        padding-left: 0.5rem;
+        border: black solid 0.1rem;
+        margin-left: 0.5rem;
+        font-size: 1.6rem;
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+
+    #sign-up {
+        margin: 0.5rem 17.5rem 0.5rem 0.8rem;
+        text-align: center;
+        width: 10rem;
+        font-weight: bold;
+        height: auto;
+        padding: 0.5rem;
+        background-color: #D18E35;
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+        transition: 0.2s;
+    }
+    #sign-up:hover {
+        color: #F7F9FB;
+        box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.4);
+        cursor: pointer;
+    }
+
+    #login-form-button {
+        text-align: center;
+        margin: 0.5rem 0.8rem 0.5rem 17.5rem;
+        height: 3rem;
+        font-weight: bold;
+        width: 10rem;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        background-color: #D18E35;
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+        transition: 0.2s;
+    }
+    #login-form-button:hover {
+        color: #F7F9FB;
+        box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0,0.4);
+        cursor: pointer;
+    }
+    #username{
+        size: 2rem;
+    }
+    #result-message{
+        text-align: center;
+        margin: 1rem;
+    }
 }
-.login {
-    margin-top: 20rem;
-    height: auto;
-    padding: 1rem;
+@media (max-width: 40rem) {
+    body {
+        display: flex;
+        background-color: #F7F9FB;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .login {
+        margin-top: 20rem;
+        height: auto;
+        padding: 1rem;
+    }
+
+    #login-heading {
+        text-align: center;
+        font-size: 2.8rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #enticement-paragraph {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2rem;
+    }
+
+    .login-box {
+        width: 100%;
+        height: 100%;
+        border: #303030 solid 0.2rem;
+        border-radius: 1rem;
+        background-color:gainsboro;
+        box-shadow: 0 0 0.5rem 0.5rem rgba(0,0,0,0.3);
+    }
+
+    #input-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+    }
+
+    #button-box {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 5rem;
+    }
+
+    #username {
+        height: 3rem;
+        padding-left: 0.5rem;
+        border: black solid 0.1rem;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        font-size: 1.6rem;
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+
+    #password {
+        height: 3rem;
+        padding-left: 0.5rem;
+        border: black solid 0.1rem;
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        font-size: 1.6rem;
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+
+    #sign-up {
+        margin: 0.5rem 2rem 0.5rem 0.8rem;
+        text-align: center;
+        width: 8rem;
+        font-weight: bold;
+        height: auto;
+        padding: 0.5rem;
+        background-color: #D18E35;
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+        transition: 0.2s;
+    }
+
+    #sign-up:hover {
+        color: #F7F9FB;
+        box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.4);
+        cursor: pointer;
+    }
+
+    #login-form-button {
+        margin-right: 1rem;
+        text-align: center;
+        width: 8rem;
+        font-weight: bold;
+        height: auto;
+        padding: 0.5rem;
+        background-color: #D18E35;
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+        transition: 0.2s;
+    }
+
+    #login-form-button:hover {
+        color: #F7F9FB;
+        box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0,0.4);
+        cursor: pointer;
+    }
+
+    #username {
+        size: 2rem;
+    }
+
+    #result-message {
+        text-align: center;
+        margin: 1rem;
+    }
+}
 
 
-}
-#login-heading {
-    text-align: center;
-    font-size: 3.6rem;
-    font-family: 'Montserrat', sans-serif;
- }
 
-#enticement-paragraph {
-   text-align: center;
-    font-size: 2.4rem;
-    padding: 0.5rem 0.5rem 2rem;
-}
 
-.login-box {
-    width: 100%;
-    height: 100%;
-    border: #303030 solid 0.2rem;
-    border-radius: 1rem;
-    background-color: rgba(0,0,0,0.2);
-    box-shadow: 0 0 0.5rem 0.5rem rgba(0,0,0,0.3);
-}
-
-#input-box {
-    display: flex;
-    justify-content: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-#button-box {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 5rem;
-}
-
-#username {
-    height: 3rem;
-    padding-left: 0.5rem;
-    border: black solid 0.1rem;
-    margin-right: 0.5rem;
-    font-size: 1.6rem;
-    width: 100%;
-    border-radius: 0.5rem;
-}
-#password {
-    height: 3rem;
-    padding-left: 0.5rem;
-    border: black solid 0.1rem;
-    margin-left: 0.5rem;
-    font-size: 1.6rem;
-    width: 100%;
-    border-radius: 0.5rem;
-}
-
-#sign-up {
-    margin: 0.5rem 17.5rem 0.5rem 0.8rem;
-    text-align: center;
-    width: 10rem;
-    font-weight: bold;
-    height: auto;
-    padding: 0.5rem;
-    background-color: #D18E35;
-    border-radius: 0.5rem;
-    font-size: 1.6rem;
-    transition: 0.2s;
-}
-#sign-up:hover {
-    color: #F7F9FB;
-    box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.4);
-    cursor: pointer;
-}
-
-#login-form-button {
-    text-align: center;
-    margin: 0.5rem 0.8rem 0.5rem 17.5rem;
-    height: 3rem;
-    font-weight: bold;
-    width: 10rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    background-color: #D18E35;
-    border-radius: 0.5rem;
-    font-size: 1.6rem;
-    transition: 0.2s;
-}
-#login-form-button:hover {
-    color: #F7F9FB;
-    box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0,0.4);
-    cursor: pointer;
-}
-#username{
-    size: 2rem;
-}
-#result-message{
-    text-align: center;
-    margin: 1rem;
-}
