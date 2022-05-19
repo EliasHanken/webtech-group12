@@ -45,15 +45,14 @@ function createNavigation() {
 
 function createItems(){
     const authenticatedUser = getAuthenticatedUser();
-    const testUser = parseJwtUser("eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dLCJpYXQiOjE2NTI5ODI3NzYsImV4cCI6MTY1Mjk4NjM3Nn0.c8jNbE9mHJyHc9q0tISKePPyYiqW5KKp5oRWK31wavQ");
-    if(testUser){
-        if(!isAdmin(testUser)){
+    if(authenticatedUser){
+        if(isAdmin(authenticatedUser)){
             addNavDiv("Admin","/html/admin.html");
         }else{
             addNavDiv("About","/html/about.html");
             addNavDiv("Store","/html/store.html");
             addNavDiv("Support","/html/support.html");
-            addNavDivCustom(`Welcome ${testUser.username}!`,null,".nav-personal-box");
+            addNavDivCustom(`Welcome ${authenticatedUser.username}!`,null,".nav-personal-box");
             addNavDivCustom("Logout",null,".nav-personal-box",null,doLogout);
             addNavDivCustomWithI(".nav-personal-box","<a class=icons><i size=0.5rem id=login class='fa-solid fa-cart-shopping fa-2x'></i></a>",openCart);
         }
