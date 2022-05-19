@@ -1,4 +1,5 @@
-
+//TODO Fix sending cart info to backend
+//TODO add waiting symbol when waiting for cart response
 //Basic setup for the cart
 
 let cartList = [];
@@ -20,28 +21,52 @@ cartTemplate.innerHTML = `
     </div>
 </div>
 `
-
-function requestCartList() {
+function requestCartID() {
+  let cartID = "";
+  let cartUser = getAuthenticatedUser().username;
   let request = new XMLHttpRequest();
-  request.open("GET", "http://localhost:8080/getItem");
+  request.open("GET","http://localhost:8080/users/" + cartUser + "/cartID");
   request.send();
 
-  request.onload = parseList;
+  request.onload = extractCartID;
 
-  function parseList() {
-    let response = request.responseText;
+  function extractCartID() {
+    cartID = request.responseText;
+  }
+  return cartID;
+}
+function requestCartList(cartID) {
+  let requestItems = new XMLHttpRequest();
+  requestItems.open("GET", "http://localhost:8080/cart/" + cartID + "/items");
+  requestItems.send();
+
+  requestItems.onload = parseListItems;
+
+  function parseListItems() {
+    let response = requestItems.responseText;
     cartList = JSON.parse(response)
-    addItemsFromStoredCart(cartList)
+    addItemsFromRetrievedList(cartList)
   }
 
-  function addItemsFromStoredCart(cartList) {
+  let requestBikes = new XMLHttpRequest();
+  requestBikes.open("GET", "http://localhost:8080/cart/" + cartID + "/bikes");
+  requestBikes.send();
 
+  requestBikes.onload = parseListBikes;
+
+  function parseListBikes() {
+    let response = requestBikes.responseText;
+    cartList = JSON.parse(response)
+    addItemsFromRetrievedList(cartList)
+  }
+
+  function addItemsFromRetrievedList(cartList) {
     if (cartList.length <= 0) {
       //Empty cart
     } else {
       for (let i = 0; i < cartList.length; i++) {
           if (cartList[i].itemID[2] === "1") {
-          addBike(cartList[i].price);
+            addBike(cartList[i].price);
           }
           if (cartList[i].itemID[2] === "2") {
             addHelmet(cartList[i].price);
@@ -59,7 +84,7 @@ function requestCartList() {
   function openCart() {
     document.getElementById("cartModalDiv").appendChild(cartTemplate.content);
     document.getElementById("cartModalDiv").style.display = "block";
-    requestCartList();
+    requestCartList(requestCartID());
   }
 
   function emptyCart() {
