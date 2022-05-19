@@ -32,13 +32,16 @@
         font-weight: 600;
     }
 
+    .main-nav-links a{
+        margin: 2rem;
+    }
+
     .nav-personal-box{
         display: flex;
         align-items: center;
         justify-content: end;
         height: 4rem;
-        width: 9rem;
-
+        width: auto;
     }
 
     .nav-account-box{
@@ -97,13 +100,14 @@
 
     .nav-bar-container a {
         text-decoration: none;
-        font-size: 1.8rem;
+        font-size: 2rem;
         letter-spacing: 0.1rem;
         color: #303030;
         font-family: TradeGothicLTCom-BdCn20, Helvetica, Arial, serif;
-        margin: 0.5rem;
+        margin: 2rem;
         font-weight: 600;
     }
+
     .nav-bar-hamburger-menu {
         display: none;
     }
