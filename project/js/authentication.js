@@ -57,6 +57,7 @@ function sendAuthenticationRequest(username, password, successCallback, errorCal
     );
 }
 
+
 /**
  * Parse JWT string, extract information from it
  * Code copied from https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library

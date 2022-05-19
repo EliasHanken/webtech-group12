@@ -6,13 +6,11 @@
         background-image: url("../images/aalesund.jpg");
         background-size: 100%;
         max-height: 100%;
-
     }
     .hero-section-header {
         display: flex;
         justify-content: center;
         margin-top: 20rem;
-
     }
 
     #hook-text {
@@ -27,7 +25,7 @@
         color: #F7F9FB;
         font-family: 'Montserrat', sans-serif;
         text-align: center;
-
+        
     }
 
     .hero-section-button {
