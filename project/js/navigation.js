@@ -48,7 +48,10 @@ function createItems(){
     if(authenticatedUser){
         if(isAdmin(authenticatedUser)){
             addNavDiv("Admin","/html/admin.html");
-            addNavDivCustom(`Welcome ${authenticatedUser.username}!`,null,".nav-personal-box");
+            addNavDiv("About", "/html/about.html");
+            addNavDiv("Store", "/html/store.html");
+            addNavDiv("Support", "/html/support.html");
+            addNavDivCustom(`${authenticatedUser.username}`,null,".nav-personal-box");
             addNavDivCustom("Logout",null,".nav-personal-box",null,doLogout);
             addNavDivCustomWithI(".nav-personal-box","<a class=icons><i size=0.5rem id=login class='fa-solid fa-cart-shopping fa-2x'></i></a>",openCart);
         }else{
@@ -116,6 +119,7 @@ function addNavDivCustom(title, relativeUrl,querySelector,customElement,handlerF
         anchor.innerHTML = customElement;
     }
     navDiv.appendChild(anchor);
+    /*
 
     navDiv.style.display = "flex";
     navDiv.style.justifyContent = "center";
@@ -123,7 +127,7 @@ function addNavDivCustom(title, relativeUrl,querySelector,customElement,handlerF
 
     anchor.style.textAlign = "center";
     anchor.style.width = "100%";
-    anchor.style.fontSize = "2rem";
+    anchor.style.fontSize = "2rem"; */
     navContent.appendChild(navDiv);
 }
 

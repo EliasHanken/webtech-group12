@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-@media(min-width:650px){
+@media(min-width:800px){
     .nav-bar-container{
         background-color:#f9f9f9;
         display: flex;
@@ -60,9 +60,16 @@
         justify-content: flex-end;
         padding: 0.7rem;
     }
+    .nav-shopping-cart-box:hover {
+        cursor: pointer;
+    }
 
     .icons {
         margin-right: 0.5rem;
+    }
+
+    .icons:hover {
+        cursor: pointer;
     }
 
     .nav-bar-logo-box{
@@ -79,7 +86,7 @@
     }
 }
 
-@media(max-width:650px) {
+@media(max-width:800px) {
     .nav-bar-container {
         display: flex;
         height: 4rem;
@@ -93,18 +100,20 @@
         width: 100%;
         display: flex;
         justify-content: flex-start;
+        font-size: 1.4rem;
         align-items: center;
         padding-left: 0.3rem;
         border-left: 0.1rem #303030 solid;
+
     }
 
     .nav-bar-container a {
         text-decoration: none;
-        font-size: 2rem;
+        font-size: 1.4rem;
         letter-spacing: 0.1rem;
         color: #303030;
         font-family: TradeGothicLTCom-BdCn20, Helvetica, Arial, serif;
-        margin: 2rem;
+        margin: 0.5rem;
         font-weight: 600;
     }
 
@@ -114,8 +123,18 @@
 
     .nav-personal-box {
         display: flex;
-        align-content: center;
+        align-items: center;
         justify-content: flex-end;
+    }
+
+    .nav-personal-box a {
+        text-decoration: none;
+        font-size: 1.4rem;
+        letter-spacing: 0.1rem;
+        color: #303030;
+        font-family: TradeGothicLTCom-BdCn20, Helvetica, Arial, serif;
+        margin: 0.5rem;
+        font-weight: 600;
     }
     .nav-account-box {
         cursor: pointer;
