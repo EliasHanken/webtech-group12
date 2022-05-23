@@ -53,7 +53,7 @@ function createItems(){
             addNavDiv("Support", "/html/support.html");
             addNavDivCustom(`${authenticatedUser.username}`,null,".nav-personal-box");
             addNavDivCustom("Logout",null,".nav-personal-box",null,doLogout);
-            addNavDivCustomWithI(".nav-personal-box","<a class=icons><i size=0.5rem id=login class='fa-solid fa-cart-shopping fa-2x'></i></a>",openCart);
+            // addNavDivCustomWithI(".nav-personal-box","<a class=icons><i size=0.5rem id=login class='fa-solid fa-cart-shopping fa-2x'></i></a>",openCart);
         }else{
             addNavDiv("About","/html/about.html");
             addNavDiv("Store","/html/store.html");
@@ -105,6 +105,7 @@ function addNavDiv(title, relativeUrl,handlerFunction){
     navDiv.appendChild(anchor);
     navContent.appendChild(navDiv);
 }
+
 
 function addNavDivCustom(title, relativeUrl,querySelector,customElement,handlerFunction){
     const navContent = document.querySelector(querySelector);
