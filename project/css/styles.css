@@ -20,7 +20,7 @@ html {
     display: none;
 }
 
-/* Navigation */
+/* Navigation 
 .navigation {
     display: flex;
     gap: 3rem;
@@ -28,6 +28,7 @@ html {
     background-color: #d6edf8;
     padding: 2rem 0;
 }
+*/
 
 nav li {
     list-style-type: none;
