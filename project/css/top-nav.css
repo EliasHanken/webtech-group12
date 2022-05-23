@@ -74,6 +74,16 @@
         height: 4rem;
         filter: contrast(120%);
     }
+
+    .nav-bar-container a {
+        text-decoration: none;
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+        color: #303030;
+        font-family: TradeGothicLTCom-BdCn20, Helvetica, Arial, serif;
+        margin: 2rem;
+        font-weight: 600;
+    }
 }
 
 @media(max-width:800px) {
