@@ -5,28 +5,41 @@
     <title>Sign up</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/x-icon" href="../images/logo-notext-white.png">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/sign-up-page.css">
-
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/tools.js"></script>
+    <script src="../js/requests.js"></script>
+    <script src="../js/authentication.js"></script>
+    <script src="../js/navigation.js"></script>
 </head>
 <body>
 <form class="sign-up">
     <div class="signup-box">
         <h2 id="sign-up-heading">Sign up</h2>
         <p id="enticement-paragraph">Sign up to receive special deals</p>
-        <div id="input-box1">
-            <input id="email-input" type="email" name="email" placeholder="Email Address">
-            <input id="name-input" type="text" name="name" placeholder="Full Name">
-        </div>
-        <div id="input-box2">
-            <input id="password-input" type="password" name="password" placeholder="Password">
-            <input id="confirm-password-input" type="password" name="confirm-password" placeholder="Confirm Password">
-        </div>
-        <div id="button-box">
-            <a href="login.html"><button type="button" id="login-button">Log in</button></a>
-            <a><input type="submit" value="Sign Up" id="sign-up"></a>
-        </div>
+        <form method="post" action="">
+            <div id="input-box1">
+                <label class="sr-only" for="email">Email</label>
+                <input type="text" id="email-input" name="email" placeholder="Email">
+                <label class="sr-only" for="username">Username</label>
+                <input type="text" id="username-input" name="username" placeholder="Username">
+            </div>
+            <div id="input-box2">
+                <label class="sr-only" for="username">Password</label>
+                <input type="password" id="password-input" name="password" placeholder="Password">
+                <label class="sr-only" for="password">Password</label>
+                <input type="password" id="confirm-password-input" name="confirm-password" placeholder="Confirm password">
+            </div>
+            <div id="button-box">
+                <a href="login.html"> <button type="button" id="login-button" >Sign in</button></a>
+                <button type="submit" id="sign-up-button">Sign up</button>
+            </div>
+        <p id="result-message" class="hidden"></p>
     </div>
+
+    <script src="../js/register.js"></script>
 </form>
 </body>
 </html>

@@ -1,4 +1,5 @@
-
+//TODO Fix sending cart info to backend
+//TODO add waiting symbol when waiting for cart response
 //Basic setup for the cart
 
 let cartList = [];
@@ -10,38 +11,67 @@ cartTemplate.innerHTML = `
     <div class="cartContainer">
         <div class="cartHeader">
             <h1 class="cartH1">Shopping Cart</h1>
-            <h2 class="removeH2" onclick="addBike(123)">Remove all items</h2>
+            <h2 class="removeH2" onclick="addHelmetToCart()">Remove all items</h2>
         </div>
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <a href="../html/checkout.html"><button class="checkOutButton">To Checkout!</button>
+            <a href="/html/checkout.html"><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
 </div>
 `
-
-function requestCartList() {
+function requestCartID() {
+  let cartUser = getAuthenticatedUser().username;
   let request = new XMLHttpRequest();
-  request.open("GET", "http://localhost:8080/getItem");
+  request.open("GET","http://localhost:8080/users/" + cartUser + "/cartID");
   request.send();
 
-  request.onload = parseList;
+  request.onload = extractCartID;
 
-  function parseList() {
-    let response = request.responseText;
-    cartList = JSON.parse(response)
-    addItemsFromStoredCart(cartList)
+  //TODO fix waiting for response, ugly
+  function extractCartID() {
+    let cartID = request.responseText;
+    alert(cartID);
+    requestCartList(cartID)
   }
 
-  function addItemsFromStoredCart(cartList) {
 
+}
+
+function requestCartList(cartID) {
+  let requestItems = new XMLHttpRequest();
+  requestItems.open("GET", "http://localhost:8080/cart/" + cartID + "/items");
+  requestItems.send();
+
+  requestItems.onload = parseListItems;
+
+  function parseListItems() {
+    let response = requestItems.responseText;
+    cartList = JSON.parse(response)
+    console.log(cartList)
+    addItemsFromRetrievedList(cartList)
+  }
+
+  let requestBikes = new XMLHttpRequest();
+  requestBikes.open("GET", "http://localhost:8080/cart/" + cartID + "/bikes");
+  requestBikes.send();
+
+  requestBikes.onload = parseListBikes;
+
+  function parseListBikes() {
+    let response = requestBikes.responseText;
+    cartList = JSON.parse(response)
+    addItemsFromRetrievedList(cartList)
+  }
+
+  function addItemsFromRetrievedList(cartList) {
     if (cartList.length <= 0) {
       //Empty cart
     } else {
       for (let i = 0; i < cartList.length; i++) {
           if (cartList[i].itemID[2] === "1") {
-          addBike(cartList[i].price);
+            addBike(cartList[i].price);
           }
           if (cartList[i].itemID[2] === "2") {
             addHelmet(cartList[i].price);
@@ -59,7 +89,7 @@ function requestCartList() {
   function openCart() {
     document.getElementById("cartModalDiv").appendChild(cartTemplate.content);
     document.getElementById("cartModalDiv").style.display = "block";
-    requestCartList();
+    requestCartID();
   }
 
   function emptyCart() {
@@ -164,4 +194,23 @@ function requestCartList() {
         </div>
     </div>
   `
+}
+
+//Functions to add items to the shopping cart
+function addHelmetToCart() {
+  let cartUser = getAuthenticatedUser().username;
+  let request = new XMLHttpRequest();
+  request.open("GET","http://localhost:8080/users/" + cartUser + "/cartID");
+  request.send();
+
+  request.onload = sendItem;
+
+  function sendItem() {
+    const helmet = JSON.stringify({itemID: "002", modelNumber: "123", price: "123"});
+    let cartID = request.responseText;
+    let requestPost = new XMLHttpRequest();
+    requestPost.open("PUT", "http://localhost:8080/cart/" + cartID + "/addItem");
+    requestPost.setRequestHeader("Content-Type", "application/json");
+    requestPost.send(helmet);
+  }
 }

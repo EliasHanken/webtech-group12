@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/x-icon" href="../images/logo-notext-white.png">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/top-nav.css">
     <link rel="stylesheet" href="../css/about-section.css">
@@ -11,9 +12,20 @@
     <link rel="stylesheet" href="../css/footer-section.css">
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
     <script defer src="../js/cart.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+    <!-- Owl Slider  -->
+    <script src="../js/owl.carousel.js"></script>
+
+    <script src="../js/authentication.js"></script>
+    <script src="../js/tools.js"></script>
+    <script src="../js/navigation.js"></script>
     <title>Info</title>
 </head>
-<body>
+<body onload="createItems()">
 <div class="nav-bar-container">
     <div class="nav-bar-logo-box">
         <a href="../index.html">
@@ -21,6 +33,7 @@
         </a>
     </div>
     <div class="nav-bar-content">
+        <!--
         <div class="nav-info-box">
             <a href="about.html">About</a>
         </div>
@@ -30,14 +43,17 @@
         <div class="nav-support-box">
             <a href="support.html">Support</a>
         </div>
+        -->
     </div>
     <div class="nav-personal-box">
+        <!--
         <div class="nav-shopping-cart-box">
             <a onclick="openCart()"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
         </div>
         <div class="nav-account-box">
             <a href="login.html"><i class="fa-solid fa-circle-user fa-2x"></i></a>
         </div>
+        -->
     </div>
 </div>
 

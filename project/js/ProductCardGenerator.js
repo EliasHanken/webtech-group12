@@ -154,10 +154,10 @@ function generateProductCardsTotal(){
     generateProductCardSkeleton();
 
     generateProductCardImgTags(
-        '<img src="images/bike.png" alt="Image of a bike">',
-        '<img src="images/canvas-bag.png" alt="Image of a canvas bag">',
-        '<img src="images/borsalino_helmet.png" alt="Image of a borsalino helmet">',
-        '<img src="images/chalk.png" alt="Image of sticks of chalk">'
+        '<img src="images/bike.jpg" alt="Image of a bike">',
+        '<img src="images/textile-bag-cropped.jpg" alt="Image of a canvas bag">',
+        '<img src="images/bike-helmet-cropped.jpg" alt="Image of a borsalino helmet">',
+        '<img src="images/chalk.jpg" alt="Image of sticks of chalk">'
     )
 
     generateProductCardNameTags(
@@ -175,8 +175,23 @@ function generateProductCardsTotal(){
     )
 }
 
-function requestProductCardImage() {
-    let request = new XMLHttpRequest();
-    request.open("GET", "http://localhost:8080/getItem");
-    request.send();
+/**
+ * Makes request for one product each from bike, textile bag, helmet and chalk.
+ * NB: ONLY GETTING BIKE FOR NOW.
+ */
+function requestProduct() {
+    let bikeRequest = new XMLHttpRequest();
+    bikeRequest.open("GET", "http://localhost:8080/bikes/")
+    bikeRequest.send();
+
+    bikeRequest.onload = parseBikeResponse;
+
+    function parseBikeResponse() {
+        const response = bikeRequest.responseText;
+        const bike = JSON.parse(response)
+        alert(response);
+
+        //alert("Bike ID: " + bike[0].bikeId + "\nDescription: " + bike[0].description + "\nModel:" +
+        //    bike[0].bikeModel + "\nimgLink: " + bike[0].imgLink);
+    }
 }
