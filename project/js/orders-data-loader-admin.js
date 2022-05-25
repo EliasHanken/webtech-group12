@@ -1,6 +1,8 @@
 // Dynamically load product data
 
+
 runOnLoad(sendOrderDataRequest);
+
 
 /**
  * Send an Ajax request to backend, fetch product data
@@ -85,18 +87,25 @@ function showOrders(orders) {
 
         })
     }
+
+    
 }
 
 function showInfo(id){
-
+    const div = document.createElement("div");
+    sendApiRequest("GET","/orders/"+id+"",showInfoSuccessfull(id),null,showInfoError);
 }
 
 function showUpdate(id){
-    
+    const div = document.createElement("div");
+    sendApiRequest("GET","/orders/"+id+"",showUpdateSuccessfull(id),null,showOrderError);
+}
+
+function showUpdateSuccessfull(id){
+    alert("showing order with id #"+id);
 }
 
 function removeOrder(id){
-    
     sendApiRequest("DELETE","/orders/"+id+"",orderSuccessfullyDeleted(id),{"transactionId":id},orderDeleteError);
 }
 
@@ -105,7 +114,23 @@ function orderSuccessfullyDeleted(id){
     location.reload(true);
 }
 
+function showInfoSuccessfull(id){
+    document.querySelector(".popup").classList.add("active");
+    document.querySelector(".popup .close-btn").addEventListener("click",function(){
+        document.querySelector(".popup").classList.remove("active");
+    });
+}
+
+function showInfoError(id){
+    alert("Error getting data from order #"+id+"");
+}
+
 function orderDeleteError(){
+    alert("Error deleting order");
+    location.reload(true);
+}
+
+function showOrderError(){
     alert("Error deleting order");
     location.reload(true);
 }
@@ -114,3 +139,6 @@ function orderLoadingFailed() {
     const main = document.querySelector("order-container");
     main.innerHTML = "<p class='error'>Could not load orders from the API. Perhaps the backend is not accessible?</p>";
 }
+
+
+
