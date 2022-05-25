@@ -26,15 +26,15 @@ function showOrders(orders) {
 
         const infoButton = document.createElement("button");
         infoButton.classList.add("order-info-button")
-        infoButton.innerText = "info";
+        infoButton.innerText = "INFO";
 
         const updateButton = document.createElement("button");
         updateButton.classList.add("order-update-button")
-        updateButton.innerText = "update";
+        updateButton.innerText = "UPDATE";
 
         const removeButton = document.createElement("button");
         removeButton.classList.add("order-remove-button")
-        removeButton.innerText = "remove";
+        removeButton.innerText = "DELETE";
 
         orderElement.appendChild(orderText);
         orderContainer.appendChild(orderElement);
@@ -55,9 +55,15 @@ function showOrders(orders) {
             orderText.appendChild(shippedText);
         }
 
-        infoButton.addEventListener("click",showInfo(i));
-        updateButton.addEventListener("click",showUpdate(i));
-        removeButton.addEventListener("click",removeOrder(i));
+        infoButton.addEventListener('click',function(){
+            showInfo(order.transactionId);
+        })
+        updateButton.addEventListener('click',function(){
+            showUpdate(order.transactionId);
+        })
+        removeButton.addEventListener('click',function(){
+            removeOrder(order.transactionId);
+        })
     }
 }
 
@@ -70,12 +76,18 @@ function showUpdate(id){
 }
 
 function removeOrder(id){
-    orderDeleteError;
+    sendApiRequest("DELETE","/orders/"+id+"",orderSuccessfullyDeleted(id),{"transactionId":id},orderDeleteError);
+    
+}
+
+function orderSuccessfullyDeleted(id){
+    alert("Deleted order #"+id+"");
+    location.reload(true);
 }
 
 function orderDeleteError(){
-    const main = document.querySelector("order-container");
-    main.innerHTML = "<p class='error'>Could not delete order</p>";
+    alert("Error deleting order");
+    location.reload(true);
 }
 
 function orderLoadingFailed() {
