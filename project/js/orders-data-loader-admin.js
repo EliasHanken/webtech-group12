@@ -43,13 +43,15 @@ function showOrders(orders) {
         orderText.appendChild(updateButton);
         orderText.appendChild(removeButton);
 
+        const shippedText = document.createElement("p");
+
         if(order.shippedFlag == true){
-            const shippedText = document.createElement("p");
             shippedText.innerText = "Shipped";
             shippedText.style.color = "#36f676";
             orderText.appendChild(shippedText);
+
+            removeButton.innerText = "CONFIRM SHIPMENT";
         }else{
-            const shippedText = document.createElement("p");
             shippedText.innerText = "Not shipped";
             shippedText.style.color = "#fd4646";
             orderText.appendChild(shippedText);
@@ -62,7 +64,25 @@ function showOrders(orders) {
             showUpdate(order.transactionId);
         })
         removeButton.addEventListener('click',function(){
-            removeOrder(order.transactionId);
+            
+            var shipped = false;
+            if(shippedText.innerText == "Shipped"){
+                shipped = true;
+            }
+
+            
+            if(shipped){
+                let confirmCheck = confirm("\nYou are about to confirm order #"+order.transactionId+"\n\nRemember checking the details.\n\nProceed?");
+                if(confirmCheck){
+                    removeOrder(order.transactionId);
+                }
+            }else{
+                let deleteCheck = confirm("\nConfirm deleting order #"+order.transactionId+"?\n\nThis can't be undone.");
+                if(deleteCheck){
+                    removeOrder(order.transactionId);
+                }
+            }
+
         })
     }
 }
@@ -76,8 +96,8 @@ function showUpdate(id){
 }
 
 function removeOrder(id){
-    sendApiRequest("DELETE","/orders/"+id+"",orderSuccessfullyDeleted(id),{"transactionId":id},orderDeleteError);
     
+    sendApiRequest("DELETE","/orders/"+id+"",orderSuccessfullyDeleted(id),{"transactionId":id},orderDeleteError);
 }
 
 function orderSuccessfullyDeleted(id){
