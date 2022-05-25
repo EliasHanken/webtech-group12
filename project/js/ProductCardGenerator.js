@@ -174,3 +174,9 @@ function generateProductCardsTotal(){
         "250"
     )
 }
+
+function requestProductCardImage() {
+    let request = new XMLHttpRequest();
+    request.open("GET", "http://localhost:8080/getItem");
+    request.send();
+}
