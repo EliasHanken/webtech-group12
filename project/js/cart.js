@@ -11,18 +11,17 @@ cartTemplate.innerHTML = `
     <div class="cartContainer">
         <div class="cartHeader">
             <h1 class="cartH1">Shopping Cart</h1>
-            <h2 class="removeH2" onclick="addBike(123)">Remove all items</h2>
+            <h2 class="removeH2" onclick="addHelmetToCart()">Remove all items</h2>
         </div>
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <a href="../html/checkout.html"><button class="checkOutButton">To Checkout!</button>
+            <a href="/html/checkout.html"><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
 </div>
 `
 function requestCartID() {
-  let cartID = "";
   let cartUser = getAuthenticatedUser().username;
   let request = new XMLHttpRequest();
   request.open("GET","http://localhost:8080/users/" + cartUser + "/cartID");
@@ -30,11 +29,16 @@ function requestCartID() {
 
   request.onload = extractCartID;
 
+  //TODO fix waiting for response, ugly
   function extractCartID() {
-    cartID = request.responseText;
+    let cartID = request.responseText;
+    alert(cartID);
+    requestCartList(cartID)
   }
-  return cartID;
+
+
 }
+
 function requestCartList(cartID) {
   let requestItems = new XMLHttpRequest();
   requestItems.open("GET", "http://localhost:8080/cart/" + cartID + "/items");
@@ -45,6 +49,7 @@ function requestCartList(cartID) {
   function parseListItems() {
     let response = requestItems.responseText;
     cartList = JSON.parse(response)
+    console.log(cartList)
     addItemsFromRetrievedList(cartList)
   }
 
@@ -84,7 +89,7 @@ function requestCartList(cartID) {
   function openCart() {
     document.getElementById("cartModalDiv").appendChild(cartTemplate.content);
     document.getElementById("cartModalDiv").style.display = "block";
-    requestCartList(requestCartID());
+    requestCartID();
   }
 
   function emptyCart() {
@@ -189,4 +194,23 @@ function requestCartList(cartID) {
         </div>
     </div>
   `
+}
+
+//Functions to add items to the shopping cart
+function addHelmetToCart() {
+  let cartUser = getAuthenticatedUser().username;
+  let request = new XMLHttpRequest();
+  request.open("GET","http://localhost:8080/users/" + cartUser + "/cartID");
+  request.send();
+
+  request.onload = sendItem;
+
+  function sendItem() {
+    const helmet = JSON.stringify({itemID: "002", modelNumber: "123", price: "123"});
+    let cartID = request.responseText;
+    let requestPost = new XMLHttpRequest();
+    requestPost.open("PUT", "http://localhost:8080/cart/" + cartID + "/addItem");
+    requestPost.setRequestHeader("Content-Type", "application/json");
+    requestPost.send(helmet);
+  }
 }
