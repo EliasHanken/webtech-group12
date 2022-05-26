@@ -105,3 +105,9 @@
                 transform 200ms ease-in-out 0ms;       
 }
 
+.form-element .submit-message {
+    text-align: center;
+    color: rgb(17, 189, 17);
+}
+
+

@@ -139,16 +139,45 @@ function showUpdateSuccessfull(order){
     if(document.getElementById("form-destination").value == "on"){
         newShippedFlag = true;
     }
-
-    var requestBody = {"transactionId":""+order.transactionId+"","destination":""+newDestination+"","shippedFlag":""+newShippedFlag+""};
     
     document.querySelector(".form-button-submit").addEventListener("click",function(){
-        sendApiPostRequest("/orders/"+order.transactionId+"",orderSuccessfullyUpdated,requestBody,orderUpdateError);
+        /*
+        sendApiRequest("POST","/orders/"+order.transactionId+"",orderSuccessfullyUpdated,{
+            "transactionId":order.transactionId,
+            "destination":newDestination,
+            "shippedFlag":newShippedFlag
+        },orderUpdateError);
+        */
+       sendApiRequest("PUT","/orders/"+order.transactionId,orderSuccessfullyUpdated,
+       {"transactionId":order.transactionId,"destination":newDestination,"shippedFlag":newShippedFlag},orderUpdateError);
     })
 
     document.querySelector(".popup .close-btn").addEventListener("click",function(){
         document.querySelector(".popup").classList.remove("active");
+        document.querySelector(".submit-message").innerText = "";
     });
+}
+
+/**
+ * Function to update order with order body.
+ * @param {*} endpoint endpoint in backend
+ * @param {*} method the http request method
+ * @param {*} successCallback function for success
+ * @param {*} order order to be updated
+ * @param {*} errorCallback function for error
+ */
+async function sendOrderUpdateRequest(endpoint,method,successCallback,id,newDest,newShipFlag,errorCallback){
+    try {
+        await axios.put('https://localhost:8080'+endpoint,{
+            "transactionId":id,
+            "destination":newDest,
+            "shippedFlag":newShipFlag
+        })
+        successCallback();
+    } catch (err) {
+        errorCallback();
+        console.log(err.message);
+    }
 }
 
 function removeOrder(id){
@@ -156,13 +185,23 @@ function removeOrder(id){
 }
 
 function orderSuccessfullyUpdated(id){
-    //alert("Updated order #"+id.transactionId+"");
-    //location.reload(true);
+    document.querySelector(".submit-message").innerText = "Order successfully updated";
+    document.querySelector(".submit-message").style.color = "rgb(17, 189, 17)";
+    setTimeout(function(){
+        document.querySelector(".popup").classList.remove("active");
+        document.querySelector(".submit-message").innerText = "";
+        location.reload(true);
+    },1000);
 }
 
 function orderUpdateError(id){
-    alert("Error updating order #"+id+"");
-    location.reload(true);
+    document.querySelector(".submit-message").innerText = "Error updating order";
+    document.querySelector(".submit-message").style.color = "rgb(255, 77, 77)";
+    setTimeout(function(){
+        document.querySelector(".popup").classList.remove("active");
+        document.querySelector(".submit-message").innerText = "";
+        location.reload(true);
+    },1000);
 }
 
 function orderSuccessfullyDeleted(id){
