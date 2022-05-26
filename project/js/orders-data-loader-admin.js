@@ -104,6 +104,11 @@ function showUpdate(order){
 function showUpdateSuccessfull(order){
     document.querySelector(".popup").classList.add("active");
 
+    document.getElementById("form-order-id").value = "";
+    document.getElementById("form-destination").value = "";
+    var isChecked = false;
+    document.getElementById("order-items").innerHTML = "<option></option>";
+
     document.getElementById("form-order-id").value = order.transactionId;
     document.getElementById("form-destination").value = order.destination;
     var isChecked = false;
@@ -111,15 +116,23 @@ function showUpdateSuccessfull(order){
         isChecked = true;
     }
     document.getElementById("form-shipped").checked = isChecked;
-    var items = order.items;
 
     var str = "";
-
-    for(var item of items){
-        str += "<option>" + item + "</option>";
+    var i = order.itemId.length;
+    var index = i-1;
+    if(i > 0){
+        for(var index = i-1; index<i; index++){
+            str += "<option>id: " + order.itemId[index]['itemID'] +", model: "+ 
+            order.itemId[index]['modelNumber'] +", price: " +
+            order.itemId[index]['price'] + "</option>";
+        }
+    
+        document.getElementById("order-items").innerHTML = str;
+    }else{
+        document.getElementById("order-items").innerHTML = "<option>none</option>";
     }
 
-    document.getElementById("order-items").innerHTML = str;
+    //document.getElementById("order-items").innerHTML = str;
     
     document.querySelector(".form-button-submit").addEventListener("click",function(){
 
@@ -142,6 +155,11 @@ function orderSuccessfullyDeleted(id){
 function showInfoSuccessfull(order){
     document.querySelector(".popup").classList.add("active");
 
+    document.getElementById("form-order-id").value = "";
+    document.getElementById("form-destination").value = "";
+    var isChecked = false;
+    document.getElementById("order-items").innerHTML = "<option></option>";
+
     document.getElementById("form-order-id").value = order.transactionId;
     document.getElementById("form-destination").value = order.destination;
     var isChecked = false;
@@ -149,15 +167,22 @@ function showInfoSuccessfull(order){
         isChecked = true;
     }
     document.getElementById("form-shipped").checked = isChecked;
-    var items = order.items;
 
     var str = "";
-
-    for(var item of items){
-        str += "<option>" + item + "</option>";
+    var i = order.itemId.length;
+    var index = i-1;
+    if(i > 0){
+        for(var index = i-1; index<i; index++){
+            str += "<option>id: " + order.itemId[index]['itemID'] +", model: "+ 
+            order.itemId[index]['modelNumber'] +", price: " +
+            order.itemId[index]['price'] + "</option>";
+        }
+    
+        document.getElementById("order-items").innerHTML = str;
+    }else{
+        document.getElementById("order-items").innerHTML = "<option>none</option>";
     }
-
-    document.getElementById("order-items").innerHTML = str;
+    
 
     document.querySelector(".popup .close-btn").addEventListener("click",function(){
         document.querySelector(".popup").classList.remove("active");
