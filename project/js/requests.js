@@ -2,7 +2,54 @@
 
 // The base path where the API is running
 // TODO - make this dynamic
-const API_BASE_URL = "http://localhost:8080/api";
+export const API_BASE_URL = "http://localhost:8080/api";
+
+
+/**
+ * Semd HTTP GET REST-API request to backend
+ * @param url relative URL of the API endpoint
+ * @param callback  Callback function to call on success, with response data (JSON-decoded) as the parameter
+ * @param errorCallback A function called when the response code is NOT 200. Two parameters will
+ * be passed to the function: HTTP response code and response body (as text)
+ */
+export function sendApiGetRequest(url, callback, errorCallback){
+    sendApiRequest("get", url, callback, null, errorCallback)
+}
+
+/**
+ * Send HTTP PUT RESP-API request to backend
+ * @param url relative URL of the API endpoint
+ * @param callback Callback function to call on seccess, with response data (JSON-encoded) as the parameter
+ * @param requestBody When supplied, send this data in the request body.
+ * @param errorCallback Function called when the response code is not 200. Two parameters will
+ * be passed to the function. HTTP response code and response body (as text)
+ */
+export function sendApiPostRequest(url, callback, requestBody, errorCallback){
+    sendApiRequest("put", url, callback, requestBody, errorCallback)
+}
+
+/**
+ * Send an HTTP GET REST-API request to the backend
+ * @param url relative URL of the API endpoint
+ * @param callback Callback function to call on success, with response data (JSON-decoded) as the parameter
+ * @param errorCallback A function called when the response code is not 200. Two parameters will be passed
+ * to the function: HTTP response code and response body (as text)
+ */
+export function sendApiDeleteRequest(url, callback, errorCallback) {
+    sendApiRequest("delete", url, callback, null, errorCallback)
+}
+
+/**
+ * Send an HTTP POST REST-API request with multipart form-data to the backend
+ * @param url relative URL of the API endpoint
+ * @param fileContent Content of the file to upload
+ * @param callback Callback function to call on success, with response data (JSON-decoded) as the parameter
+ * @param errorCallback A function called when the response code is not 200. Two parameters will be passed
+ * to the function: HTTP response code and response body (as text)
+ */
+export function sendApiFileUploadRequest(url, fileContent, callback, errorCallback) {
+    sendApiRequest("post", url, callback, null, errorCallback, fileContent)
+}
 
 /**
  * Send a REST-API request to the backend
