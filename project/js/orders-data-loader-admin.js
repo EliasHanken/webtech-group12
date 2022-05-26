@@ -133,9 +133,17 @@ function showUpdateSuccessfull(order){
     }
 
     //document.getElementById("order-items").innerHTML = str;
+
+    var newDestination = document.getElementById("form-destination").value;
+    var newShippedFlag = false;
+    if(document.getElementById("form-destination").value == "on"){
+        newShippedFlag = true;
+    }
+
+    var requestBody = {"transactionId":""+order.transactionId+"","destination":""+newDestination+"","shippedFlag":""+newShippedFlag+""};
     
     document.querySelector(".form-button-submit").addEventListener("click",function(){
-
+        sendApiPostRequest("/orders/"+order.transactionId+"",orderSuccessfullyUpdated,requestBody,orderUpdateError);
     })
 
     document.querySelector(".popup .close-btn").addEventListener("click",function(){
@@ -144,7 +152,17 @@ function showUpdateSuccessfull(order){
 }
 
 function removeOrder(id){
-    sendApiRequest("DELETE","/orders/"+id+"",orderSuccessfullyDeleted(id),{"transactionId":id},orderDeleteError);
+    sendApiRequest("DELETE","/orders/"+id+"",orderSuccessfullyDeleted,{"transactionId":id},orderDeleteError);
+}
+
+function orderSuccessfullyUpdated(id){
+    //alert("Updated order #"+id.transactionId+"");
+    //location.reload(true);
+}
+
+function orderUpdateError(id){
+    alert("Error updating order #"+id+"");
+    location.reload(true);
 }
 
 function orderSuccessfullyDeleted(id){
