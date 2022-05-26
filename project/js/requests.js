@@ -12,7 +12,7 @@ const API_BASE_URL = "http://localhost:8080/api";
  * @param errorCallback A function called when the response code is NOT 200. Two parameters will
  * be passed to the function: HTTP response code and response body (as text)
  */
-export function sendApiGetRequest(url, callback, errorCallback){
+function sendApiGetRequest(url, callback, errorCallback){
     sendApiRequest("get", url, callback, null, errorCallback)
 }
 
@@ -24,7 +24,7 @@ export function sendApiGetRequest(url, callback, errorCallback){
  * @param errorCallback Function called when the response code is not 200. Two parameters will
  * be passed to the function. HTTP response code and response body (as text)
  */
-export function sendApiPostRequest(url, callback, requestBody, errorCallback){
+function sendApiPostRequest(url, callback, requestBody, errorCallback){
     sendApiRequest("put", url, callback, requestBody, errorCallback)
 }
 
@@ -35,7 +35,7 @@ export function sendApiPostRequest(url, callback, requestBody, errorCallback){
  * @param errorCallback A function called when the response code is not 200. Two parameters will be passed
  * to the function: HTTP response code and response body (as text)
  */
-export function sendApiDeleteRequest(url, callback, errorCallback) {
+function sendApiDeleteRequest(url, callback, errorCallback) {
     sendApiRequest("delete", url, callback, null, errorCallback)
 }
 
@@ -47,7 +47,7 @@ export function sendApiDeleteRequest(url, callback, errorCallback) {
  * @param errorCallback A function called when the response code is not 200. Two parameters will be passed
  * to the function: HTTP response code and response body (as text)
  */
-export function sendApiFileUploadRequest(url, fileContent, callback, errorCallback) {
+function sendApiFileUploadRequest(url, fileContent, callback, errorCallback) {
     sendApiRequest("post", url, callback, null, errorCallback, fileContent)
 }
 
