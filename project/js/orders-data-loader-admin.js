@@ -134,13 +134,14 @@ function showUpdateSuccessfull(order){
 
     //document.getElementById("order-items").innerHTML = str;
 
-    var newDestination = document.getElementById("form-destination").value;
-    var newShippedFlag = false;
-    if(document.getElementById("form-destination").value == "on"){
-        newShippedFlag = true;
-    }
+    
     
     document.querySelector(".form-button-submit").addEventListener("click",function(){
+        var newDestination = document.getElementById("form-destination").value;
+        var newShippedFlag = "false";
+        if(document.getElementById("form-shipped").checked){
+            newShippedFlag = "true";
+        }
         /*
         sendApiRequest("POST","/orders/"+order.transactionId+"",orderSuccessfullyUpdated,{
             "transactionId":order.transactionId,
@@ -149,7 +150,7 @@ function showUpdateSuccessfull(order){
         },orderUpdateError);
         */
        sendApiRequest("PUT","/orders/"+order.transactionId,orderSuccessfullyUpdated,
-       {"transactionId":order.transactionId,"destination":newDestination,"shippedFlag":newShippedFlag},orderUpdateError);
+       {"id":order.transactionId,"destination":newDestination,"shippedFlag":newShippedFlag},orderUpdateError);
     })
 
     document.querySelector(".popup .close-btn").addEventListener("click",function(){
