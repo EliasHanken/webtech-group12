@@ -1,8 +1,10 @@
 //TODO Fix sending cart info to backend
 //TODO add waiting symbol when waiting for cart response
-//Basic setup for the cart
 
+
+//Basic setup for the cart
 let cartList = [];
+cartUser = getAuthenticatedUser().username;
 
 let cartTemplate = document.createElement("template");
 
@@ -11,7 +13,7 @@ cartTemplate.innerHTML = `
     <div class="cartContainer">
         <div class="cartHeader">
             <h1 class="cartH1">Shopping Cart</h1>
-            <h2 class="removeH2" onclick="addHelmetToCart()">Remove all items</h2>
+            <h2 class="removeH2" onclick="addItem(2)">Remove all items</h2>
         </div>
         <div id="cartItems">
         </div>
@@ -22,9 +24,8 @@ cartTemplate.innerHTML = `
 </div>
 `
 function requestCartID() {
-  let cartUser = getAuthenticatedUser().username;
   let request = new XMLHttpRequest();
-  request.open("GET","http://localhost:8080/users/" + cartUser + "/cartID");
+  request.open("GET","http://localhost:8080/api/users/" + cartUser + "/cartID");
   request.send();
 
   request.onload = extractCartID;
@@ -41,7 +42,7 @@ function requestCartID() {
 
 function requestCartList(cartID) {
   let requestItems = new XMLHttpRequest();
-  requestItems.open("GET", "http://localhost:8080/cart/" + cartID + "/items");
+  requestItems.open("GET", "http://localhost:8080/api/cart/" + cartID + "/items");
   requestItems.send();
 
   requestItems.onload = parseListItems;
@@ -54,7 +55,7 @@ function requestCartList(cartID) {
   }
 
   let requestBikes = new XMLHttpRequest();
-  requestBikes.open("GET", "http://localhost:8080/cart/" + cartID + "/bikes");
+  requestBikes.open("GET", "http://localhost:8080/api/cart/" + cartID + "/bikes");
   requestBikes.send();
 
   requestBikes.onload = parseListBikes;
@@ -70,15 +71,20 @@ function requestCartList(cartID) {
       //Empty cart
     } else {
       for (let i = 0; i < cartList.length; i++) {
-          if (cartList[i].itemID[2] === "1") {
-            addBike(cartList[i].price);
-          }
-          if (cartList[i].itemID[2] === "2") {
-            addHelmet(cartList[i].price);
-          }
-          if (cartList[i].itemID[2] === "5") {
-            addBag(cartList[i].price);
-          }
+        if (cartList[i].modelNumber === "1") {
+          addBike(cartList[i].price);
+        }
+        if (cartList[i].modelNumber === "2") {
+          addHelmet(cartList[i].price);
+        }
+        if (cartList[i].modelNumber === "3") {
+        }
+        if (cartList[i].modelNumber === "4") {
+          addBag(cartList[i].price);
+        }
+        if (cartList[i].modelNumber === "5") {
+          addChalk(cartList[i].price);
+        }
       }
     }
   }
@@ -196,21 +202,42 @@ function requestCartList(cartID) {
   `
 }
 
-//Functions to add items to the shopping cart
-function addHelmetToCart() {
-  let cartUser = getAuthenticatedUser().username;
-  let request = new XMLHttpRequest();
-  request.open("GET","http://localhost:8080/users/" + cartUser + "/cartID");
-  request.send();
+  function addChalk(price) {
+  let itemTemplate = document.createElement("template")
 
+  itemTemplate.innerHTML = `
+    <div class="item">
+        <div class="cartImages">
+            <img src="../images/canvas-bag.png" alt="helmet" height="50rem" width="50rem">
+        </div>
+        <div class="itemInfo">
+            <h3 class="itemTitle">
+                Bag
+            </h3>
+            <h4 class="itemDescription">
+                ${price} KR     
+            </h4>
+        </div>
+        <div class="itemCounter">
+            <div class="addButton">-</div>
+            <div class="itemCount">1</div>
+            <div class="removeButton">+</div>
+        </div>
+    </div>
+  `
+}
+
+//Functions to add items to the shopping cart
+function addItem(modelNumber) {
+  let request = new XMLHttpRequest();
+  request.open("GET","http://localhost:8080/api/users/" + cartUser + "/cartID");
+  request.send();
   request.onload = sendItem;
 
   function sendItem() {
-    const helmet = JSON.stringify({itemID: "002", modelNumber: "123", price: "123"});
     let cartID = request.responseText;
-    let requestPost = new XMLHttpRequest();
-    requestPost.open("PUT", "http://localhost:8080/cart/" + cartID + "/addItem");
-    requestPost.setRequestHeader("Content-Type", "application/json");
-    requestPost.send(helmet);
+    let requestPUT = new XMLHttpRequest();
+    requestPUT.open("PUT", "http://localhost:8080/api/cart/" + cartID + "/addItem/" + modelNumber);
+    requestPUT.send();
   }
 }
