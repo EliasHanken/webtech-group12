@@ -48,17 +48,21 @@
     }
 
     .item-cell img {
-        max-height: 60%;
-        max-width: 60%;
-        margin-left: 20%;
+        max-height: 50%;
+        max-width: 50%;
+        width: 50%;
         border: 0.2rem solid black;
         border-radius: 1rem;
         box-shadow: 0 0 1rem 1rem rgba(0,0,0, 0.4);
     }
+
+    .item-images {
+        text-align: center;
+    }
     .main-item img {
-        margin-left: 20%;
-        max-height: 60%;
-        max-width: 60%;
+        max-height: 50%;
+        max-width: 50%;
+        width: 50%;
         border: 0.2rem solid black;
         border-radius: 1rem;
         box-shadow: 0 0 1rem 1rem rgba(0,0,0, 0.4);
@@ -108,11 +112,10 @@
         border-radius: 0.5rem;
         padding: 0.5rem;
         width: auto;
-        height: 5.2rem;
-        font-size: 2rem;
+        height: 5.5rem;
+        font-size: 2.4rem;
         border:0.2rem solid #2C2A2A;
-        box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.2);
-        margin: 3rem 11rem 3rem 100%;
+        margin: 3rem 0 3rem 2rem;
     }
 
     .item-description {
@@ -212,9 +215,9 @@
     }
 
     .main-item img {
-        max-height: 60%;
-        max-width: 60%;
-        margin-left: 20%;
+        max-height: 50%;
+        max-width: 50%;
+        width: 50%;
         margin-top: 2rem;
         border: 0.2rem solid black;
         border-radius: 1rem;
@@ -222,13 +225,17 @@
     }
 
     .item-cell img {
-        max-height: 60%;
-        max-width: 60%;
-        margin-left: 20%;
+        max-height: 50%;
+        max-width: 50%;
+        width: 50%;
         margin-top: 2rem;
         border: 0.2rem solid black;
         border-radius: 1rem;
         box-shadow: 0 0 1rem 1rem rgba(0,0,0, 0.4);
+    }
+
+    .item-images {
+        text-align: center;
     }
 
     .item-header {
