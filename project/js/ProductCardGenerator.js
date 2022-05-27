@@ -6,7 +6,8 @@ Class for generating and add product cards to HTML.
 /**
  * Generates product card skeleton, with ids for easy access to elements
  */
-function generateProductCardSkeleton(){
+function generateProductCardSkeleton(products){
+    console.log(products)
     document.getElementById("owl-carousel-index-page").innerHTML =
         //FIRST CARD
         '<article class="card" id="carousel-card-1">' +
@@ -33,14 +34,14 @@ function generateProductCardSkeleton(){
         '<!-- Img tag goes here -->' +
         '</div>' +
         '<div class="card-name" id="card-name-2">' +
-        '<!-- p tag with card name goes here --> ' +
+        '<p>' + products[0].name + '</p>' +
         '</div>' +
         '<div class="card__precis">' +
         '   <a href="" class="card-icon">' +
         '       <ion-icon name="heart-outline"></ion-icon>' +
         '   </a>' +
         '   <div>' +
-        '       <span class="card-price" id="card-price-2"></span>' +
+        '       <span class="card-price" id="card-price-2">' + products[0].price + '</span>' +
         '   </div>' +
         '   <a href="" class="card-icon">' +
         '       <ion-icon name="cart-outline"></ion-icon>' +
@@ -52,14 +53,14 @@ function generateProductCardSkeleton(){
         '<!-- Img tag goes here -->' +
         '</div>' +
         '<div class="card-name" id="card-name-3">' +
-        '<!-- p tag with card name goes here --> ' +
+        '<p>' + products[1].name +'</p>' +
         '</div>' +
         '<div class="card__precis">' +
         '   <a href="" class="card-icon">' +
         '       <ion-icon name="heart-outline"></ion-icon>' +
         '   </a>' +
         '   <div>' +
-        '       <span class="card-price" id="card-price-3"></span>' +
+        '       <span class="card-price" id="card-price-3">' + products[1].price + '</span>' +
         '   </div>' +
         '   <a href="" class="card-icon">' +
         '       <ion-icon name="cart-outline"></ion-icon>' +
@@ -71,24 +72,20 @@ function generateProductCardSkeleton(){
         '<!-- Img tag goes here -->' +
         '</div>' +
         '<div class="card-name" id="card-name-4">' +
-        '<!-- p tag with card name goes here --> ' +
+        '<p>' + products[2].name + '</p>' +
         '</div>' +
         '<div class="card__precis">' +
         '   <a href="" class="card-icon">' +
         '       <ion-icon name="heart-outline"></ion-icon>' +
         '   </a>' +
         '   <div>' +
-        '       <span class="card-price" id="card-price-4"></span>' +
+        '       <span class="card-price" id="card-price-4">' + products[2].price + '</span>' +
         '   </div>' +
         '   <a href="" class="card-icon">' +
         '       <ion-icon name="cart-outline"></ion-icon>' +
         '   </a>' +
         '</div>' +
         '</article>'
-
-
-
-
 }
 
 /**
@@ -178,7 +175,7 @@ function generateProductCardsTotalOld(){
 
 function generateProductCardsTotal(products){
     getProductDataForCards();
-    generateProductCardSkeleton();
+    //generateProductCardSkeleton(products);
 
     generateProductCardImgTags(
         '<img src="images/bike.jpg" alt="Image of a bike">',
@@ -187,19 +184,23 @@ function generateProductCardsTotal(products){
         '<img src="images/chalk.jpg" alt="Image of sticks of chalk">'
     )
 
+    /*
     generateProductCardNameTags(
         '<p>Bike</p>',
         '<p>Canvas bag</p>',
         '<p>Borsalino helmet</p>',
         '<p>Chalk</p>'
     )
+     */
 
+    /*
     generateProductCardPriceTags(
         "1/min",
         "100",
         "150",
         "250"
     )
+     */
 }
 
 /**
@@ -227,16 +228,16 @@ function requestProduct() {
 
 function getProductDataForCards(){
     console.log("Requesting product data for cards...");
-    sendApiGetRequest("/products", productCallback, productCallbackOnFail);
+    sendApiGetRequest("/products", generateProductCardSkeleton, productCallbackOnFail, false);
     console.log("Request done")
     //sendProductDataRequest();
 }
 
 function productCallback(products){
+    console.log("sendApiGetRequest success")
     console.log(products)
-
 }
 
 function productCallbackOnFail(){
-
+    console.log("An error occurred on sendApiGetRequest.")
 }

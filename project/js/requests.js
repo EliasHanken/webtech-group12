@@ -15,7 +15,6 @@ const API_BASE_URL = "http://localhost:8080/api";
  * for answer. Else, leave as false;
  */
 function sendApiGetRequest(url, callback, errorCallback, async = true){
-    console.log(async)
     sendApiRequest("get", url, callback, null, errorCallback, async)
 }
 

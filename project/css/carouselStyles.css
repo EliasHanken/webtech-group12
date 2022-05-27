@@ -71,14 +71,15 @@ article:nth-child(4){
     justify-content: space-between;
     align-items: flex-end;
     transition: 1.5s;
+    z-index: 999;
 }
 .card-price{
     display: block;
     text-align: center;
-}
-.card-price{
+    font-size: 2rem;
     font-weight: bold;
 }
+
 /*Move left*/
 .card:hover{
     box-shadow: 0 .5rem 1rem #D1D9E6;
@@ -89,13 +90,12 @@ article:nth-child(4){
 .card:hover .card-img{
     transform: rotate(30deg);
     margin-left: 3.5rem;
+    padding-bottom: 5rem;
 }
 .card:hover .card__precis{
     margin-left: 3.5rem;
     padding: 0 1.5rem;
 }
-
-
 
 .owl-carousel .owl-nav .owl-prev {
     padding: 0 !important;
