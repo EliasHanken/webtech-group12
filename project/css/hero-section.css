@@ -64,7 +64,7 @@
 
     .hero-section {
         border: 1px solid black;
-        height: auto;
+        height: 20rem;
         background-image: url("../images/aalesund.jpg");
         background-size: 100%;
         justify-content: center;
