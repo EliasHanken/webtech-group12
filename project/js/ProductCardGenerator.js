@@ -2,6 +2,7 @@
 @Author: Thomas Ystenes
 Class for generating and add product cards to HTML.
  */
+
 /**
  * Generates product card skeleton, with ids for easy access to elements
  */
@@ -150,7 +151,33 @@ function generateProductCardPriceTags(priceTag1, priceTag2, priceTag3, priceTag4
 /**
  * Master function calling all other functions related to generating product cards.
  */
-function generateProductCardsTotal(){
+function generateProductCardsTotalOld(){
+    generateProductCardSkeleton();
+
+    generateProductCardImgTags(
+        '<img src="images/bike.jpg" alt="Image of a bike">',
+        '<img src="images/textile-bag-cropped.jpg" alt="Image of a canvas bag">',
+        '<img src="images/bike-helmet-cropped.jpg" alt="Image of a borsalino helmet">',
+        '<img src="images/chalk.jpg" alt="Image of sticks of chalk">'
+    )
+
+    generateProductCardNameTags(
+        '<p>Bike</p>',
+        '<p>Canvas bag</p>',
+        '<p>Borsalino helmet</p>',
+        '<p>Chalk</p>'
+    )
+
+    generateProductCardPriceTags(
+        "1/min",
+        "100",
+        "150",
+        "250"
+    )
+}
+
+function generateProductCardsTotal(products){
+    getProductDataForCards();
     generateProductCardSkeleton();
 
     generateProductCardImgTags(
@@ -180,6 +207,7 @@ function generateProductCardsTotal(){
  * NB: ONLY GETTING BIKE FOR NOW.
  */
 function requestProduct() {
+    /*
     let bikeRequest = new XMLHttpRequest();
     bikeRequest.open("GET", "http://localhost:8080/bikes/")
     bikeRequest.send();
@@ -194,4 +222,21 @@ function requestProduct() {
         //alert("Bike ID: " + bike[0].bikeId + "\nDescription: " + bike[0].description + "\nModel:" +
         //    bike[0].bikeModel + "\nimgLink: " + bike[0].imgLink);
     }
+     */
+}
+
+function getProductDataForCards(){
+    console.log("Requesting product data for cards...");
+    sendApiGetRequest("/products", productCallback, productCallbackOnFail);
+    console.log("Request done")
+    //sendProductDataRequest();
+}
+
+function productCallback(products){
+    console.log(products)
+
+}
+
+function productCallbackOnFail(){
+
 }
