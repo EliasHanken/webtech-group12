@@ -58,7 +58,7 @@ function createItems(){
             addNavDiv("About","/html/about.html");
             addNavDiv("Store","/html/store.html");
             addNavDiv("Support","/html/support.html");
-            addNavDivCustom(`Welcome ${authenticatedUser.username}!`,null,".nav-personal-box");
+            addNavDivCustom(`${authenticatedUser.username}`,null,".nav-personal-box");
             addNavDivCustom("Logout",null,".nav-personal-box",null,doLogout);
             addNavDivCustomWithI(".nav-personal-box","<a class=icons><i size=0.5rem id=login class='fa-solid fa-cart-shopping fa-2x'></i></a>",openCart);
         }
