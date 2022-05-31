@@ -177,6 +177,7 @@ function close() {
 
 
 //Functions for adding independent items to the cart
+//TODO Combine functions
 /**
  * Creates and adds a Bike html template to the cart
  * @param price the price of the bike

@@ -10,9 +10,10 @@
     <script src="../js/requests.js"></script>
     <script src="../js/authentication.js"></script>
     <script src="../js/navigation.js"></script>
-    <script src="../js/cart.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
 </head>
-<body>
+<body onload="createCartItems()">
 <div clasS="checkoutLargeDiv">
     <div class="checkoutDiv">
         <div class="checkoutBanner">
@@ -21,7 +22,17 @@
         <div class="checkoutItems">
             <div class="cartItems"></div>
         </div>
-        <button class="finishCheckout">To Payment</button>
+        <div class="BottomDiv">
+            <form action="">
+                <label>Choose Pickup Point</label>
+                <select class="pickUpPoint">
+                    <option value="Brosundet">Brosundet</option>
+                    <option value="Moa">Moa</option>
+                </select>
+                <input type="submit" value="Checkout" onclick="createCartItems()">
+            </form>
+        </div>
+
     </div>
 </div>
 </body>

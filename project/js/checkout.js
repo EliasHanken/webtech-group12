@@ -2,8 +2,6 @@ function createCartItems() {
     requestCartList();
 }
 
-
-
 function finishCheckout() {
     loadingSymbol();
     sendApiPostRequest("/orders/new", successfulCheckout())

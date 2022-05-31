@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: #F7F9FB;
     padding: 2rem;
     margin: 2rem;
@@ -21,4 +22,15 @@
 .checkoutBanner {
     border: 0.1rem solid black;
     border-radius: 2rem;
+    padding: 1rem;
+}
+
+.checkoutItems {
+    padding: 20rem;
+    width: 60%;
+}
+
+.bottomDiv {
+    display: flex;
+    align-items: end;
 }
