@@ -14,7 +14,7 @@ cartTemplate.innerHTML = `
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <a href="../html/checkout.html"><button class="checkOutButton">To Checkout!</button>
+            <a onclick="emptyCart()"><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
 </div>
@@ -144,9 +144,9 @@ function requestCartList(cartID) {
   }
 
 /**
- * Empties the cart of its content by deleting every child of cartItems class.
+ * Empties the cart of its HTML content by deleting every child of cartItems class.
  */
-function emptyCart() {
+function emptyHTMLCart() {
     let cartChildren = document.getElementById("cartItems");
 
     while (cartChildren.hasChildNodes()) {
@@ -156,18 +156,22 @@ function emptyCart() {
 
 
 /**
- * Sets the cartModalDiv display to "None" to it when the cart is closed. Also calls on emptyCart() to clear the html
+ * Sets the cartModalDiv display to "None" to it when the cart is closed. Also calls on emptyHTMLCart() to clear the html
  * cart of its content.
  */
 function close() {
     document.getElementById("cartModalDiv").style.display = "none";
-    emptyCart();
+    emptyHTMLCart();
   }
 
+/**
+ * Closes the cart when something outside the cartModalDiv is clicked.
+ * @param event the type of event
+ */
   window.onclick = function (event) {
     if (event.target === document.getElementById("cartModalDiv")) {
       document.getElementById("cartModalDiv").style.display = "none";
-      emptyCart();
+      emptyHTMLCart();
     }
   }
 
@@ -293,7 +297,7 @@ function close() {
   `
   }
 //TODO combine into 1 method
-//Functions to add items to the shopping cart backend
+//Functions to add or remove items to the shopping cart backend
 /**
  * Methods for adding items to the cart in the backend. First sends a GET request for the cart ID to the current user
  * then sends a PUT request with the model Number of the item to be added to the cart backend.
@@ -309,4 +313,13 @@ function close() {
     function addedSuccess() {
       alert("Item was successfully added to cart")
     }
+}
+
+function emptyCart() {
+  sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
+
+  function sendRequest(cartID){
+    sendApiRequest("PUT", "/api/cart/" + cartID + "/emptyCart", console.log, null)
+    emptyHTMLCart();
+  }
 }
