@@ -38,7 +38,7 @@ article:nth-child(3){
 article:nth-child(4){
     background-color: var(--second-color);
 }
-.card-img{
+.card-img-div{
     width: 180px;
     height: 15rem;
     padding: 3rem 0;

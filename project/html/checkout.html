@@ -5,15 +5,34 @@
     <title>Checkout</title>
     <link rel="icon" type="images/x-icon" href="../images/Logo-notext-white.png">
     <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="../js/tools.js"></script>
+    <script src="../js/requests.js"></script>
+    <script src="../js/authentication.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
 </head>
-<body>
+<body onload="createCartItems()">
 <div clasS="checkoutLargeDiv">
     <div class="checkoutDiv">
         <div class="checkoutBanner">
             <h1>You are almost there, just one more easy step!</h1>
         </div>
         <div class="checkoutItems">
+            <div class="cartItems"></div>
         </div>
+        <div class="BottomDiv">
+            <form action="">
+                <label>Choose Pickup Point</label>
+                <select class="pickUpPoint">
+                    <option value="Brosundet">Brosundet</option>
+                    <option value="Moa">Moa</option>
+                </select>
+                <input type="submit" value="Checkout" onclick="createCartItems()">
+            </form>
+        </div>
+
     </div>
 </div>
 </body>

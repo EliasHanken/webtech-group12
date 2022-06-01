@@ -1,9 +1,5 @@
-//TODO Fix sending cart info to backend
-//TODO add waiting symbol when waiting for cart response
-
 
 //Basic setup for the cart
-let cartList = [];
 cartUser = getAuthenticatedUser().username;
 
 let cartTemplate = document.createElement("template");
@@ -18,28 +14,73 @@ cartTemplate.innerHTML = `
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <a href="/html/checkout.html"><button class="checkOutButton">To Checkout!</button>
+            <a onclick="emptyCart()"><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
 </div>
 `
+
+/**
+ * Sends a GET XML request to the backend to retrieve the id of the cart belonging to the user.
+ */
 function requestCartID() {
-  let request = new XMLHttpRequest();
-  request.open("GET","http://localhost:8080/api/users/" + cartUser + "/cartID");
-  request.send();
-
-  request.onload = extractCartID;
-
-  //TODO fix waiting for response, ugly
-  function extractCartID() {
-    let cartID = request.responseText;
-    alert(cartID);
-    requestCartList(cartID)
-  }
-
-
+  alert(cartUser)
+  sendApiRequest("GET", "/users/" + cartUser + "/cartID", requestCartList, null)
 }
 
+/**
+ * Sends two different XML GET requests to retrieve the item and bike content that is stored in the cart in the backend.
+ * @param cartID the ID of the cart belonging to the current user.
+ */
+function requestCartList(cartID) {
+  sendApiGetRequest("/cart/" + cartID + "/items", setItemList)
+
+  sendApiGetRequest("/cart/" + cartID + "/bikes", setBikeList)
+
+  /**
+   * Simple function that sends the Items from the cart XML GET requests to the addItemsFromRetrievedList() function.
+   * @param response ArrayList from the cart containing the items
+   */
+  function setItemList(response) {
+    addItemsFromRetrievedList(response)
+  }
+
+  /**
+   * Simple function that sends the Bikes from the cart XML GET requests to the addItemsFromRetrievedList() function.
+   * @param response ArrayList from the cart containing the bikes
+   */
+  function setBikeList(response) {
+    addItemsFromRetrievedList(response)
+  }
+
+  /**
+   * Takes a list from the Cart and adds items or bikes depending on the model ID
+   * @param cartList the list from the cart containing items/bikes.
+   */
+  function addItemsFromRetrievedList(cartList) {
+    if (cartList.length <= 0) {
+      //Empty cart
+    } else {
+      for (let i = 0; i < cartList.length; i++) {
+        if (cartList[i].modelNumber === "1") {
+          addBike(cartList[i].price);
+        }
+        if (cartList[i].modelNumber === "2") {
+          addHelmet(cartList[i].price);
+        }
+        if (cartList[i].modelNumber === "3") {
+        }
+        if (cartList[i].modelNumber === "4") {
+          addBag(cartList[i].price);
+        }
+        if (cartList[i].modelNumber === "5") {
+          addChalk(cartList[i].price);
+        }
+      }
+    }
+  }
+}
+/*
 function requestCartList(cartID) {
   let requestItems = new XMLHttpRequest();
   requestItems.open("GET", "http://localhost:8080/api/cart/" + cartID + "/items");
@@ -89,16 +130,23 @@ function requestCartList(cartID) {
     }
   }
 }
+*/
 
 //Functions for showing and hiding the cart
-
+/**
+ * Opens the cart by appending the cart-template to the CartModalDiv, sets it to block to make it shown, then calls on
+ * further cart requests to set up its content.
+ */
   function openCart() {
     document.getElementById("cartModalDiv").appendChild(cartTemplate.content);
     document.getElementById("cartModalDiv").style.display = "block";
     requestCartID();
   }
 
-  function emptyCart() {
+/**
+ * Empties the cart of its HTML content by deleting every child of cartItems class.
+ */
+function emptyHTMLCart() {
     let cartChildren = document.getElementById("cartItems");
 
     while (cartChildren.hasChildNodes()) {
@@ -107,22 +155,33 @@ function requestCartList(cartID) {
   }
 
 
-  function close() {
+/**
+ * Sets the cartModalDiv display to "None" to it when the cart is closed. Also calls on emptyHTMLCart() to clear the html
+ * cart of its content.
+ */
+function close() {
     document.getElementById("cartModalDiv").style.display = "none";
-    emptyCart();
+    emptyHTMLCart();
   }
 
+/**
+ * Closes the cart when something outside the cartModalDiv is clicked.
+ * @param event the type of event
+ */
   window.onclick = function (event) {
     if (event.target === document.getElementById("cartModalDiv")) {
       document.getElementById("cartModalDiv").style.display = "none";
-      emptyCart();
+      emptyHTMLCart();
     }
   }
 
 
 //Functions for adding independent items to the cart
-
-//TODO images not showing correctly on index
+//TODO Combine functions
+/**
+ * Creates and adds a Bike html template to the cart
+ * @param price the price of the bike
+ */
   function addBike(price) {
     let itemTemplate = document.createElement("template")
 
@@ -150,6 +209,10 @@ function requestCartList(cartID) {
     document.getElementById("cartItems").appendChild(itemTemplate.content)
   }
 
+/**
+ * Creates and adds a helmet html template to the cart
+ * @param price the price of the helmet
+ */
   function addHelmet(price) {
     let itemTemplate = document.createElement("template")
 
@@ -177,6 +240,10 @@ function requestCartList(cartID) {
     document.getElementById("cartItems").appendChild(itemTemplate.content)
   }
 
+/**
+ * Creates and adds a bag html template to the cart
+ * @param price the price of the bag
+ */
   function addBag(price) {
     let itemTemplate = document.createElement("template")
 
@@ -200,12 +267,16 @@ function requestCartList(cartID) {
         </div>
     </div>
   `
-}
+  }
 
+/**
+ * Creates and adds a chalk html template to the cart
+ * @param price the price of the chalk
+ */
   function addChalk(price) {
-  let itemTemplate = document.createElement("template")
+    let itemTemplate = document.createElement("template")
 
-  itemTemplate.innerHTML = `
+    itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
             <img src="../images/canvas-bag.png" alt="helmet" height="50rem" width="50rem">
@@ -225,19 +296,31 @@ function requestCartList(cartID) {
         </div>
     </div>
   `
+  }
+//TODO combine into 1 method
+//Functions to add or remove items to the shopping cart backend
+/**
+ * Methods for adding items to the cart in the backend. First sends a GET request for the cart ID to the current user
+ * then sends a PUT request with the model Number of the item to be added to the cart backend.
+ * @param modelNumber the model number of the item to be added to the cart backend.
+ */
+  function addItem(modelNumber) {
+    sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendItem, null)
+
+    function sendItem(cartID) {
+      sendApiRequest("PUT", "/cart/" + cartID + "/addItem/" + modelNumber, addedSuccess)
+    }
+
+    function addedSuccess() {
+      alert("Item was successfully added to cart")
+    }
 }
 
-//Functions to add items to the shopping cart
-function addItem(modelNumber) {
-  let request = new XMLHttpRequest();
-  request.open("GET","http://localhost:8080/api/users/" + cartUser + "/cartID");
-  request.send();
-  request.onload = sendItem;
+function emptyCart() {
+  sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
 
-  function sendItem() {
-    let cartID = request.responseText;
-    let requestPUT = new XMLHttpRequest();
-    requestPUT.open("PUT", "http://localhost:8080/api/cart/" + cartID + "/addItem/" + modelNumber);
-    requestPUT.send();
+  function sendRequest(cartID){
+    sendApiRequest("PUT", "/api/cart/" + cartID + "/emptyCart", console.log, null)
+    emptyHTMLCart();
   }
 }
