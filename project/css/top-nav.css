@@ -7,6 +7,8 @@
         height: 6rem;
         align-items: center;
         justify-content: center;
+        position: sticky;
+        border-bottom: 0.1rem #303030 solid;
     }
 
     .nav-bar-content {
@@ -94,6 +96,8 @@
         background-color: #f9f9f9;
         justify-content: flex-start;
         align-items: center;
+        position: sticky;
+        border-bottom: 0.1rem #303030 solid;
     }
     .nav-bar-content {
         height: 4rem;
