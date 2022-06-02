@@ -51,14 +51,14 @@ function createItems(){
             addNavDiv("About", "/html/about.html");
             addNavDiv("Store", "/html/store.html");
             addNavDiv("Support", "/html/support.html");
-            addNavDivCustom(`${authenticatedUser.username}`,null,".nav-personal-box");
+            addNavDivCustom(`${authenticatedUser.username}`,null,".nav-personal-box",null,redirectToProfile);
             addNavDivCustom("Logout",null,".nav-personal-box",null,doLogout);
             // addNavDivCustomWithI(".nav-personal-box","<a class=icons><i size=0.5rem id=login class='fa-solid fa-cart-shopping fa-2x'></i></a>",openCart);
         }else{
             addNavDiv("About","/html/about.html");
             addNavDiv("Store","/html/store.html");
             addNavDiv("Support","/html/support.html");
-            addNavDivCustom(`${authenticatedUser.username}`,null,".nav-personal-box");
+            addNavDivCustom(`${authenticatedUser.username}`,null,".nav-personal-box",null,redirectToProfile);
             addNavDivCustom("Logout",null,".nav-personal-box",null,doLogout);
             addNavDivCustomWithI(".nav-personal-box","<a class=icons><i size=0.5rem id=login class='fa-solid fa-cart-shopping fa-2x'></i></a>",openCart);
         }
@@ -73,6 +73,7 @@ function createItems(){
         //addNavDivCustomWithI(".nav-personal-box","<a href=html/login.html class=icons><i size=0.5rem id=login class='fa-solid fa-circle-user fa-2x'></i></a>");
     }
 }
+
 
 /**
  * Add a single navigation link to the navigation area
@@ -155,4 +156,12 @@ function redirectTo(frontendUrl) {
 
 function redirectToNoBase(frontendUrl) {
     window.location = frontendUrl;
+}
+
+/**
+ * Needs to be added in order for the browser to not reload infinite times if added
+ * to custom div.
+ */
+function redirectToProfile(){
+    redirectTo("/html/profile.html");
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/x-icon" href="../images/Logo-notext-white.png">
+    <title>Profile page</title>
+    <script src="../js/authentication.js"></script>
+    <script src="../js/tools.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/requests.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/top-nav.css">
+    <link rel="stylesheet" href="../css/footer-section.css">
+    <link rel="stylesheet" href="../css/hero-section.css">
+    <link rel="stylesheet" href="../css/profile-page.css">
+    
+    <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
+    <!-- ICONS -->
+    <script  src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</head>
+
+<body onload="createItems()">
+    <div class="nav-bar-container" id="topNav">
+        <div class="nav-bar-logo-box">
+            <a href="../index.html">
+                <img src="../images/logo-no-text-gray.png" alt="logo">
+            </a>
+        </div>
+        <div class="nav-bar-content">
+
+        </div>
+
+        <div class="nav-personal-box">
+            <!--
+            <div class="nav-shopping-cart-box">
+                <a onclick="openCart()"><i class="fa-solid fa-cart-shopping fa-2x"></i></a>
+            </div>
+            <div class="nav-account-box">
+                 <a href="html/login.html" class="icons"><i id="login" class="fa-solid fa-circle-user fa-2x"></i></a>
+            </div>
+            -->
+            
+        </div>
+    </div>
+
+    
+
+    <div class="hero-section">
+        <div class="color-overlay"></div>
+
+        <div class="hero-section-header">
+            <h1 id="hook-text">Profile page<br></h1>
+        </div>
+    </div>
+
+    <div class="profile-content">
+        <!--
+            Popup for updating orders and showing info.
+        -->
+        
+        <form action="" method="post" class="bio">
+            <h1 id="profile-welcome"></h1>
+            <p id="profile-info-text">Here you can see and modify your profile<br>as you wish:</p>
+            <label for="bio" class="sr-only"></label>
+            <textarea name="bio" id="bio">Loading data...</textarea>
+            <p id="result-message" class="hidden"></p>
+            <input type="submit" id="profile-save-button" value="Save">
+        </form>
+    </div>
+
+    <div class="footer-container">
+        <div class="logo">
+            <img class="footer-logo" src="../images/logo-no-text-gray.png">
+            <p class="footer-name">Keep Rolling Rolling Rolling</p>
+        </div>
+        <div class="footer-support">
+            <a class="footer-support-text" href="html/support.html">Support</a><br>
+            <a class="footer-support-text" href="html/about.html">About</a>
+        </div>
+        <div class="footer-credits">
+            Logo made with <a href="https://logomakr.com/app">https://www.logomakr.com/app</a>
+        </div>
+    </div>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>
