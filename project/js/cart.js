@@ -14,7 +14,7 @@ cartTemplate.innerHTML = `
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <a onclick="emptyCart()"><button class="checkOutButton">To Checkout!</button>
+            <a href="../html/checkout.html"><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
 </div>
