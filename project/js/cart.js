@@ -9,12 +9,13 @@ cartTemplate.innerHTML = `
     <div class="cartContainer">
         <div class="cartHeader">
             <h1 class="cartH1">Shopping Cart</h1>
-            <h2 class="removeH2" onclick="addItem(2)">Remove all items</h2>
+            <h2 class="removeH2" onclick="emptyCart()">Remove all items</h2>
         </div>
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <a onclick="emptyCart()"><button class="checkOutButton">To Checkout!</button>
+            <button onclick="addItem(2)">Add Test Item</button>
+            <a href="../html/checkout.html"><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
 </div>
