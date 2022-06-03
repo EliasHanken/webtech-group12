@@ -106,6 +106,7 @@ function showUpdateSuccessfull(order){
 
     document.getElementById("form-order-id").value = "";
     document.getElementById("form-destination").value = "";
+    document.getElementById("form-shipped").disabled = false;
     var isChecked = false;
     document.getElementById("order-items").innerHTML = "<option></option>";
 
@@ -114,6 +115,11 @@ function showUpdateSuccessfull(order){
     var isChecked = false;
     if(order.shippedFlag == true){
         isChecked = true;
+        document.getElementById("form-destination").disabled = true;
+        document.getElementById("form-shipped").disabled = true;
+    }else{
+        document.getElementById("form-destination").disabled = false;
+        document.getElementById("form-shipped").disabled = false;
     }
     document.getElementById("form-shipped").checked = isChecked;
 
@@ -224,7 +230,9 @@ function showInfoSuccessfull(order){
     if(order.shippedFlag == true){
         isChecked = true;
     }
-    document.getElementById("form-shipped").checked = isChecked;
+    document.getElementById("form-destination").disabled = true;
+    document.getElementById("form-shipped").disabled = true;
+    document.getElementById("form-shipped")
 
     var str = "";
     var i = order.itemId.length;
