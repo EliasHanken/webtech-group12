@@ -15,7 +15,7 @@ cartTemplate.innerHTML = `
         </div>
         <div class="cartFooter">
             <button onclick="addItem(2)">Add Test Item</button>
-            <a href="/project/html/checkout.html"><button class="checkOutButton">To Checkout!</button>
+            <a href=`+calculatePath(2)+`/html/checkout.html><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
 </div>

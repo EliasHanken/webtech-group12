@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="images/x-icon" href="../images/Logo-notext-white.png">
-    <title>Admin page</title>
+    <title>Profile page</title>
     <script src="../js/authentication.js"></script>
     <script src="../js/tools.js"></script>
     <script src="../js/navigation.js"></script>
     <script src="../js/requests.js"></script>
-    <script src="../js/admin.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -18,14 +17,11 @@
     <link rel="stylesheet" href="../css/top-nav.css">
     <link rel="stylesheet" href="../css/footer-section.css">
     <link rel="stylesheet" href="../css/hero-section.css">
-    <link rel="stylesheet" href="../css/admin-page.css">
-    <link rel="stylesheet" href="../css/admin-order-form.css">
+    <link rel="stylesheet" href="../css/profile-page.css">
     
-
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
     <!-- ICONS -->
     <script  src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-    <script defer src="../js/cart.js"></script>
 </head>
 
 <body onload="createItems()">
@@ -58,50 +54,23 @@
         <div class="color-overlay"></div>
 
         <div class="hero-section-header">
-            <h1 id="hook-text">Admin page<br></h1>
+            <h1 id="hook-text">Profile page<br></h1>
         </div>
     </div>
 
-    <div class="popup">
-        <div class="close-btn">&times;</div>
-        <div class="form">
-            <h2>Update Order</h2>
-            <div class="form-element">
-                <label for="id">Transaction ID</label>
-                <input type="text" id="form-order-id" placeholder="transaction id" disabled>
-            </div>
-            <div class="form-element">
-                <label for="destination">Destination (Pick-Up)</label>
-                <input type="text" id="form-destination" placeholder="destination">
-            </div>
-            <div class="form-element">
-                <label for="shipped-flag">Shipped</label>
-                <input type="checkbox" id="form-shipped" placeholder="true/false">
-            </div>
-            <div class="form-element">
-                <label for="items">Items</label>
-                <select name="items" id="order-items">
-                    <option value="red_bike">red bike (test item)</option>
-                    <option value="blue_bike">blue bike (test item)</option>
-                </select>
-            </div>
-            <div class="form-element">
-                <button class="form-button-submit">Update</button>
-            </div>
-            <div class="form-element">
-                <p class="submit-message"></p>
-            </div>
-        </div>
-    </div>
-    <div class="admin-content">
+    <div class="profile-content">
         <!--
             Popup for updating orders and showing info.
         -->
         
-
-        <div class="floating-div">
-        
-        </div>
+        <form action="" method="post" class="bio">
+            <h1 id="profile-welcome"></h1>
+            <p id="profile-info-text">Here you can see and modify your profile<br>as you wish:</p>
+            <label for="bio" class="sr-only"></label>
+            <textarea name="bio" id="bio">Loading data...</textarea>
+            <p id="result-message" class="hidden"></p>
+            <input type="submit" id="profile-save-button" value="Save">
+        </form>
     </div>
 
     <div class="footer-container">
@@ -118,6 +87,6 @@
         </div>
     </div>
 
-    <script src="../js/orders-data-loader-admin.js"></script>
+    <script src="../js/profile.js"></script>
 </body>
 </html>

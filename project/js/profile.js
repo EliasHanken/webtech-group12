@@ -29,6 +29,7 @@ function loadProfileData() {
     } else {
         redirectTo("/no-access.html");
     }
+
 }
 
 /**
@@ -36,6 +37,7 @@ function loadProfileData() {
  * @param profileData User profile data received from the backend
  */
 function showProfileData(profileData) {
+    console.log(profileData);
     if (profileData) {
         bioElement.innerText = profileData.bio ? profileData.bio : "";
         bioElement.disabled = false;

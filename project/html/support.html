@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/hero-section.css">
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/footer-section.css">
+    <link rel="stylesheet" href="../css/faqSection.css">
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
     <script defer src="../js/cart.js"></script>
     <script
@@ -63,9 +64,63 @@
         <h1 id="hook-text">Order your bike <br> here</h1>
     </div>
 </div>
-<!--
-    Basic container for the shopping cart modal
--->
+<!--FAQ here-->
+<section id="faq-section">
+    <div id="faq-container-div">
+        <button class="faq-question-button-collapsable">
+            <div class="faq-question-text">
+                FAQ text goes here
+            </div>
+            <div class="faq-caret">
+                &#9660;
+            </div>
+            <div class="new-flex-line"></div>
+            <div class="faq-answer">
+                The answer to the FAQ goes here
+            </div>
+        </button>
+
+        <button class="faq-question-button-collapsable">
+            <div class="faq-question-text">
+                FAQ text goes here
+            </div>
+            <div class="faq-caret">
+                &#9660;
+            </div>
+            <div class="new-flex-line"></div>
+            <div class="faq-answer">
+                The answer to the FAQ goes here
+            </div>
+        </button>
+
+        <button class="faq-question-button-collapsable">
+            <div class="faq-question-text">
+                FAQ text goes here
+            </div>
+            <div class="faq-caret">
+                &#9660;
+            </div>
+            <div class="new-flex-line"></div>
+            <div class="faq-answer">
+                The answer to the FAQ goes here
+            </div>
+        </button>
+
+        <button class="faq-question-button-collapsable">
+            <div class="faq-question-text">
+                FAQ text goes here
+            </div>
+            <div class="faq-caret">
+                &#9660;
+            </div>
+            <div class="new-flex-line"></div>
+            <div class="faq-answer">
+                The answer to the FAQ goes here
+            </div>
+        </button>
+    </div>
+</section>
+
 <div id="cartModalDiv">
 </div>
 
@@ -82,5 +137,30 @@
         Logo made with <a href="https://logomakr.com/app">https://www.logomakr.com/app</a>
     </div>
 </div>
+
+<script>
+    var collapsableFAQs = document.getElementsByClassName("faq-question-button-collapsable");
+    var i;
+
+    for (i=0; i < collapsableFAQs.length; i++){
+        collapsableFAQs[i].addEventListener("click", function (){
+            this.classList.toggle("active");
+            var faqAnswerObject = this.querySelector('.faq-answer');
+            if(faqAnswerObject.style.display === "block"){
+                faqAnswerObject.style.display = "none";
+                faqAnswerObject.style.opacity = "0";
+            } else {
+                faqAnswerObject.style.display = "block";
+                faqAnswerObject.style.opacity = "100";
+            }
+            var caretObject = this.querySelector('.faq-caret');
+            if(caretObject.innerHTML === '\n            ▼\n        '){
+                caretObject.innerHTML = '\n            ▲\n        ';
+            } else {
+                caretObject.innerHTML = '\n            ▼\n        ';
+            }
+        });
+    }
+</script>
 </body>
 </html>
