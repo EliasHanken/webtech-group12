@@ -262,7 +262,7 @@ function showOrderError(){
 }
 
 function orderLoadingFailed() {
-    const main = document.querySelector("order-container");
+    const main = document.querySelector(".order-container");
     main.innerHTML = "<p class='error'>Could not load orders from the API. Perhaps the backend is not accessible?</p>";
 }
 

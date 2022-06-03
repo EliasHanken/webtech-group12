@@ -88,8 +88,12 @@ function sendApiRequest(method, url, callback, requestBody, errorCallback, async
                 }
                 callback(responseJson);
             } else if (errorCallback) {
+                doLogout();
+                console.log("JWT token might me expired");
                 errorCallback(request.responseText);
             } else {
+                doLogout();
+                console.log("JWT token might me expired");
                 console.error("Error in API request");
             }
         }
