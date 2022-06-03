@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Checkout</title>
     <link rel="icon" type="images/x-icon" href="../images/Logo-notext-white.png">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../css/checkout.css">
     <link rel="stylesheet" href="../css/cart.css">
     <script src="../js/tools.js"></script>
@@ -12,6 +13,16 @@
     <script src="../js/navigation.js"></script>
     <script src="../js/cart.js"></script>
     <script src="../js/checkout.js"></script>
+=======
+    <link rel="stylesheet" href="/project/css/checkout.css">
+    <script defer src="/project/js/cart.js"></script>
+    <script src="/project/js/checkout.js"></script>
+    <link rel="stylesheet" href="/project/css/cart.css">
+    <script src="/project/js/tools.js"></script>
+    <script src="/project/js/requests.js"></script>
+    <script src="/project/js/authentication.js"></script>
+    <script src="/project/js/navigation.js"></script>
+>>>>>>> 32372fece4b93ec19f010ef7421c442112e768c1
 </head>
 <body onload="createCartItems()">
 <div clasS="checkoutLargeDiv">
@@ -20,7 +31,7 @@
             <h1>You are almost there, just one more easy step!</h1>
         </div>
         <div class="checkoutItems">
-            <div class="cartItems"></div>
+            <div id="cartItems"></div>
         </div>
         <div class="BottomDiv">
             <form action="">
@@ -29,7 +40,7 @@
                     <option value="Brosundet">Brosundet</option>
                     <option value="Moa">Moa</option>
                 </select>
-                <input type="submit" value="Checkout" onclick="createCartItems()">
+                <input type="submit" value="Checkout" onclick="finishCheckout()">
             </form>
         </div>
 

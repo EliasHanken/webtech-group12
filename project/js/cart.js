@@ -80,57 +80,6 @@ function requestCartList(cartID) {
     }
   }
 }
-/*
-function requestCartList(cartID) {
-  let requestItems = new XMLHttpRequest();
-  requestItems.open("GET", "http://localhost:8080/api/cart/" + cartID + "/items");
-  requestItems.send();
-
-  requestItems.onload = parseListItems;
-
-  function parseListItems() {
-    let response = requestItems.responseText;
-    cartList = JSON.parse(response)
-    console.log(cartList)
-    addItemsFromRetrievedList(cartList)
-  }
-
-  let requestBikes = new XMLHttpRequest();
-  requestBikes.open("GET", "http://localhost:8080/api/cart/" + cartID + "/bikes");
-  requestBikes.send();
-
-  requestBikes.onload = parseListBikes;
-
-  function parseListBikes() {
-    let response = requestBikes.responseText;
-    cartList = JSON.parse(response)
-    addItemsFromRetrievedList(cartList)
-  }
-
-  function addItemsFromRetrievedList(cartList) {
-    if (cartList.length <= 0) {
-      //Empty cart
-    } else {
-      for (let i = 0; i < cartList.length; i++) {
-        if (cartList[i].modelNumber === "1") {
-          addBike(cartList[i].price);
-        }
-        if (cartList[i].modelNumber === "2") {
-          addHelmet(cartList[i].price);
-        }
-        if (cartList[i].modelNumber === "3") {
-        }
-        if (cartList[i].modelNumber === "4") {
-          addBag(cartList[i].price);
-        }
-        if (cartList[i].modelNumber === "5") {
-          addChalk(cartList[i].price);
-        }
-      }
-    }
-  }
-}
-*/
 
 //Functions for showing and hiding the cart
 /**
@@ -320,7 +269,11 @@ function emptyCart() {
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
 
   function sendRequest(cartID){
+<<<<<<< HEAD
     sendApiRequest("PUT", "/cart/" + cartID + "/emptyCart", console.log, null)
+=======
+    sendApiRequest("POST", "/cart/" + cartID + "/emptyCart", console.log)
+>>>>>>> 32372fece4b93ec19f010ef7421c442112e768c1
     emptyHTMLCart();
   }
 }
