@@ -6,31 +6,35 @@
     <link rel="icon" type="images/x-icon" href="../images/Logo-notext-white.png">
     <link rel="stylesheet" href="/project/css/checkout.css">
     <script defer src="/project/js/cart.js"></script>
-    <script src="/project/js/checkout.js"></script>
+
     <link rel="stylesheet" href="/project/css/cart.css">
     <script src="/project/js/tools.js"></script>
     <script src="/project/js/requests.js"></script>
     <script src="/project/js/authentication.js"></script>
     <script src="/project/js/navigation.js"></script>
+    <script src="/project/js/checkout.js"></script>
 </head>
 <body onload="createCartItems()">
 <div clasS="checkoutLargeDiv">
     <div class="checkoutDiv">
         <div class="checkoutBanner">
+            <a href=../index.html>Back</a>
             <h1>You are almost there, just one more easy step!</h1>
         </div>
         <div class="checkoutItems">
             <div id="cartItems"></div>
         </div>
         <div class="BottomDiv">
-            <form action="">
-                <label>Choose Pickup Point</label>
-                <select class="pickUpPoint">
+            <form >
+                <label>Choose Pickup Point
+                <select id="pickUpPoint">
                     <option value="Brosundet">Brosundet</option>
                     <option value="Moa">Moa</option>
                 </select>
-                <input type="submit" value="Checkout" onclick="finishCheckout()">
+                </label>
             </form>
+            <button onclick="finishCheckout()">Checkout</button>
+            <button onclick="getOrder()">Get order</button>
         </div>
 
     </div>
