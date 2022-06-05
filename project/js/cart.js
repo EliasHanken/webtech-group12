@@ -25,7 +25,6 @@ cartTemplate.innerHTML = `
  * Sends a GET XML request to the backend to retrieve the id of the cart belonging to the user.
  */
 function requestCartID() {
-  alert(cartUser)
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", requestCartList, null)
 }
 
@@ -270,7 +269,7 @@ function emptyCart() {
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
 
   function sendRequest(cartID){
-    sendApiRequest("POST", "/cart/" + cartID + "/emptyCart", console.log)
+    sendApiRequest("PUT", "/cart/" + cartID + "/emptyCart")
     emptyHTMLCart();
   }
 }
