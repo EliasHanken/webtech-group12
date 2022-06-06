@@ -40,6 +40,8 @@
 
 .faq-answer {
     display: none;
+    color: navy;
+    font-size: 1.6rem;
     opacity: 0;
     transition: all 2s linear;
 }
