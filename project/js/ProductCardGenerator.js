@@ -5,9 +5,7 @@ Class for generating and add product cards to HTML.
 
 /* Lists containing bikes/products/images for generating product cards */
 let PRODUCT_CARD_BIKES = [];
-let PRODUCT_CARD_BIKE_IMAGES = [];
 let PRODUCT_CARD_PRODUCTS = [];
-let PRODUCT_CARD_PRODUCT_IMAGES = [];
 
 /**
  * Generates product card skeleton, with ids for easy access to elements
@@ -17,7 +15,7 @@ function generateProductCardSkeleton(){
         //FIRST CARD
         '<article class="card" id="carousel-card-1">' +
         '<div class="card-img-div">' +
-        '<img src="" alt="A red bike of our Commuter model" id="card-img-1" height="150px" width="200px">' +
+        '<img src="" alt="" id="card-img-1" height="150px" width="200px">' +
         '</div>' +
         '<div class="card-name" id="card-name-1">' +
         '<P>' + PRODUCT_CARD_BIKES[0].bikeModelName + '</P>' +
@@ -35,8 +33,8 @@ function generateProductCardSkeleton(){
         '</div>' +
         //SECOND CARD
         '</article>' +'<article class="card" id="carousel-card-2">' +
-        '<div class="card-img-div" id="card-img-2">' +
-        '<!-- Img tag goes here -->' +
+        '<div class="card-img-div">' +
+        '<img src="" alt="" id="card-img-2" height="150px" width="200px">' +
         '</div>' +
         '<div class="card-name" id="card-name-2">' +
         '<p>' + PRODUCT_CARD_PRODUCTS[0].name + '</p>' +
@@ -54,8 +52,8 @@ function generateProductCardSkeleton(){
         '</div>' +
         //THIRD CARD
         '</article>' +'<article class="card" id="carousel-card-3">' +
-        '<div class="card-img-div" id="card-img-3">' +
-        '<!-- Img tag goes here -->' +
+        '<div class="card-img-div">' +
+        '<img src="" alt="" id="card-img-3" height="150px" width="200px">' +
         '</div>' +
         '<div class="card-name" id="card-name-3">' +
         '<p>' + PRODUCT_CARD_PRODUCTS[1].name +'</p>' +
@@ -73,11 +71,11 @@ function generateProductCardSkeleton(){
         '</div>' +
         //FOURTH CARD
         '</article>' +'<article class="card" id="carousel-card-4">' +
-        '<div class="card-img-div" id="card-img-4">' +
-        '<!-- Img tag goes here -->' +
+        '<div class="card-img-div">' +
+        '<img src="" alt="" id="card-img-4" height="150px" width="200px">' +
         '</div>' +
         '<div class="card-name" id="card-name-4">' +
-        '<p>' + PRODUCT_CARD_PRODUCTS[2].name + '</p>' +
+        '<p>' + PRODUCT_CARD_PRODUCTS[2].name +'</p>' +
         '</div>' +
         '<div class="card__precis">' +
         '   <a href="" class="card-icon">' +
@@ -89,8 +87,7 @@ function generateProductCardSkeleton(){
         '   <a href="" class="card-icon">' +
         '       <ion-icon name="cart-outline"></ion-icon>' +
         '   </a>' +
-        '</div>' +
-        '</article>'
+        '</div>'
 }
 
 /**
@@ -102,72 +99,29 @@ function generateProductCardSkeleton(){
  * @param imgTag4 img tag for the fourth card
  */
 function generateProductCardImgTags(){
+    const dataType = "data:image/jpg;base64,"
+    let imgTag1 = document.getElementById("card-img-1");
+    imgTag1.src = dataType + PRODUCT_CARD_BIKES[0].imgData;
+    imgTag1.alt = PRODUCT_CARD_BIKES[0].description;
 
-    console.log("generateProductCardImgTags() -> " + PRODUCT_CARD_BIKES[0].imgData)
-    document.getElementById("card-img-1").src =
-        "data:image/png;base64," + PRODUCT_CARD_BIKES[0].imgData;
+    let imgTag2 = document.getElementById("card-img-2");
+    imgTag2.src = dataType + PRODUCT_CARD_PRODUCTS[0].imgData;
+    imgTag2.alt = PRODUCT_CARD_PRODUCTS[0].description;
 
+    let imgTag3 = document.getElementById("card-img-3");
+    imgTag3.src = dataType + PRODUCT_CARD_PRODUCTS[1].imgData;
+    imgTag3.alt = PRODUCT_CARD_PRODUCTS[1].description;
 
-    console.log(document.getElementById("card-img-1").innerHTML)
-    //document.getElementById("card-img-1").innerHTML =
-    //    '<img src="images/textile-bag-cropped.jpg" alt="Image of a canvas bag">'
-    document.getElementById("card-img-1").innerHTML =
-        '<img src="' + PRODUCT_CARD_PRODUCT_IMAGES[0] + '" alt="Image of a canvas bag">'
-        document.getElementById("card-img-2").innerHTML =
-            '<img src="images/textile-bag-cropped.jpg" alt="Image of a canvas bag">'
-    document.getElementById("card-img-3").innerHTML =
-        '<img src="images/bike-helmet-cropped.jpg" alt="Image of a borsalino helmet">',
-    document.getElementById("card-img-4").innerHTML =
-        '<img src="images/chalk.jpg" alt="Image of sticks of chalk">'
-
-    /*
-    const imgTag = document.getElementById("card-img-1")
-    console.log("src before: " + imgTag.src);
-    //document.getElementById("card-img-1").src = PRODUCT_CARD_PRODUCT_IMAGES[0].src;
-    console.log("src after: " + document.getElementById("card-img-1").src)
-     */
-}
-
-/**
- * Master function calling all other functions related to generating product cards.
- */
-function generateProductCardsTotalOld(){
-    generateProductCardSkeleton();
-
-    generateProductCardImgTags(
-        '<img src="images/bike.jpg" alt="Image of a bike">',
-        '<img src="images/textile-bag-cropped.jpg" alt="Image of a canvas bag">',
-        '<img src="images/bike-helmet-cropped.jpg" alt="Image of a borsalino helmet">',
-        '<img src="images/chalk.jpg" alt="Image of sticks of chalk">'
-    )
-
-    generateProductCardNameTags(
-        '<p>Bike</p>',
-        '<p>Canvas bag</p>',
-        '<p>Borsalino helmet</p>',
-        '<p>Chalk</p>'
-    )
-
-    generateProductCardPriceTags(
-        "1/min",
-        "100",
-        "150",
-        "250"
-    )
+    let imgTag4 = document.getElementById("card-img-4");
+    imgTag4.src = dataType + PRODUCT_CARD_PRODUCTS[2].imgData;
+    imgTag4.alt = PRODUCT_CARD_PRODUCTS[2].description;
 }
 
 function generateProductCardsTotal(products){
     getProductDataForCards();
     generateProductCardSkeleton();
-    //generateProductCardSkeleton(products);
 
-    generateProductCardImgTags(
-        //'<img src="images/bike.jpg" alt="Image of a bike">',
-    //'<img src="https://i5.walmartimages.com/asr/3f3091dd-b7fe-4182-8596-87fc0aa7f83f.ef8ba555d0f1375798000d14d92bc733.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Picture of bike">',
-        '<img src="images/textile-bag-cropped.jpg" alt="Image of a canvas bag">',
-        '<img src="images/bike-helmet-cropped.jpg" alt="Image of a borsalino helmet">',
-        '<img src="images/chalk.jpg" alt="Image of sticks of chalk">'
-    )
+    generateProductCardImgTags()
 }
 
 
@@ -178,13 +132,6 @@ function generateProductCardsTotal(products){
 function getProductDataForCards(){
     sendApiGetRequest("/bikes", assignBikesToProductCardProducts, productCallbackOnFail, false);
     sendApiGetRequest("/products", assignProductsToProductCardProducts, productCallbackOnFail, false);
-    //--- CURRENTLY NOT BEING USED, AS IMAGES ARE NOW STORED IN THE BIKE OBJECT IN BACK END --->
-    //sendApiGetRequest("/images/" + PRODUCT_CARD_PRODUCTS[0].imgId,
-    //    populateImageTag, productCallbackOnFail, false);
-    //let image  = null;
-    //image = sendApiGetImageRequest("/images/" + PRODUCT_CARD_BIKES[0].bikeModelName.toLowerCase(),
-    //    assignToProductCardImages, productCallbackOnFail, false);
-
     console.log("End of getProductDataForCards()");
 }
 
@@ -209,27 +156,6 @@ function assignBikesToProductCardProducts(bikes){
         PRODUCT_CARD_BIKES.push(bikes[i]);
     }
 }
-
-
-/**
- * Assigns the supplied image(s) to the PRODUCT_CARD_PRODUCT_IMAGES array;
- * @param image Images to be assigned to the list.
- */
-function assignToProductCardImages(images){
-    //console.log("Is this it?: " + image)
-    //document.getElementById("card-img-1").src = image.src;
-
-    //If images is an array
-    if(Array.isArray(images)) {
-        for (let i = 0; i < images.length; i++) {
-            PRODUCT_CARD_PRODUCT_IMAGES.push((images[i]))
-        }
-    } else {    //If images is NOT an array, I.E, single item
-        PRODUCT_CARD_PRODUCT_IMAGES.push(images);
-    }
-}
-
-
 
 function productCallbackOnFail(){
     console.log("An error occurred on sendApiGetRequest.")
