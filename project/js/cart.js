@@ -269,11 +269,7 @@ function emptyCart() {
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
 
   function sendRequest(cartID){
-<<<<<<< HEAD
     sendApiRequest("PUT", "/cart/" + cartID + "/emptyCart", console.log, null)
-=======
-    sendApiRequest("POST", "/cart/" + cartID + "/emptyCart", console.log)
->>>>>>> 32372fece4b93ec19f010ef7421c442112e768c1
     emptyHTMLCart();
   }
 }
