@@ -29,21 +29,29 @@
 
 .faq-question-text {
     display: flex;
-    font-size: 1.6rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: start;
+
 }
 
 .faq-caret {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
+    margin-left: auto;
 }
 
 .faq-answer {
+    margin-top: 1rem;
+    padding-right: 0.5rem;
+    max-width: 70%;
     display: none;
-    color: navy;
+    color: black;
     font-size: 1.6rem;
     opacity: 0;
     transition: all 2s linear;
+    text-align: start;
 }
 
 .new-flex-line{
