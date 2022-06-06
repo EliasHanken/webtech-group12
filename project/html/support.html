@@ -69,53 +69,57 @@
     <div id="faq-container-div">
         <button class="faq-question-button-collapsable">
             <div class="faq-question-text">
-                FAQ text goes here
+                How do I rent one of your bikes?
             </div>
             <div class="faq-caret">
-                &#9660;
+                ▼
+
             </div>
             <div class="new-flex-line"></div>
-            <div class="faq-answer">
-                The answer to the FAQ goes here
+            <div class="faq-answer">To rent a bike, simply log into our website (or create a user, if you haven't already), select
+                the bike model you want to rent, and a pick-up point (currently, these are located Brosundet and Moa, Ålesund),
+                add it to your cart and check out. You are now good to go.
             </div>
         </button>
 
         <button class="faq-question-button-collapsable">
             <div class="faq-question-text">
-                FAQ text goes here
+                Ok, I've rented a bike, and am now ready to return it. How do I do that?
             </div>
             <div class="faq-caret">
                 &#9660;
             </div>
             <div class="new-flex-line"></div>
-            <div class="faq-answer">
-                The answer to the FAQ goes here
+            <div class="faq-answer">Simple. Just leave the bike at one of our designated pickup zones. Alternatively, you can leave it
+                any place outside these designated zones, and our pickup crew will soon collect it and bring it back.
+                Note that this will incur an additional fee of 100 NOK.
             </div>
         </button>
 
         <button class="faq-question-button-collapsable">
             <div class="faq-question-text">
-                FAQ text goes here
+                How does bike customization work?
             </div>
             <div class="faq-caret">
                 &#9660;
             </div>
             <div class="new-flex-line"></div>
-            <div class="faq-answer">
-                The answer to the FAQ goes here
+            <div class="faq-answer">When you register your bike rental, you have the option to add customization to your order.
+                This will unlock a small container on the bike you have selected, with specially developed chalks to be
+                used on your bike to customize the visual however you want.
             </div>
         </button>
 
         <button class="faq-question-button-collapsable">
             <div class="faq-question-text">
-                FAQ text goes here
+                How does purchase of your other products work?
             </div>
             <div class="faq-caret">
                 &#9660;
             </div>
             <div class="new-flex-line"></div>
-            <div class="faq-answer">
-                The answer to the FAQ goes here
+            <div class="faq-answer">Our other products (textile bags and Borsalino helmets) can be ordered from our website, and will be
+                shipped to you via mail.
             </div>
         </button>
     </div>
@@ -154,10 +158,13 @@
                 faqAnswerObject.style.opacity = "100";
             }
             var caretObject = this.querySelector('.faq-caret');
-            if(caretObject.innerHTML === '\n            ▼\n        '){
-                caretObject.innerHTML = '\n            ▲\n        ';
+            //Some spaces are added when converting HTML entity into caret symbol first time. Remove all spaces to circumvent this.
+            if(caretObject.innerHTML.replace(/\s/g, '') === '\n            ▼\n        '.replace(/\s/g, '')){
+                console.log("was facing down")
+                caretObject.innerHTML = '\n              ▲\n        ';
             } else {
-                caretObject.innerHTML = '\n            ▼\n        ';
+                caretObject.innerHTML = '\n              ▼\n        ';
+                console.log("was facing up")
             }
         });
     }

@@ -25,7 +25,8 @@ cartTemplate.innerHTML = `
  * Sends a GET XML request to the backend to retrieve the id of the cart belonging to the user.
  */
 function requestCartID() {
-  sendApiRequest("GET", "/users/" + cartUser + "/cartID", requestCartList, null)
+  //alert(cartUser)
+  sendApiRequest("GET", "/users/" + cartUser + "/cartID", requestCartList, null);
 }
 
 /**
@@ -34,7 +35,6 @@ function requestCartID() {
  */
 function requestCartList(cartID) {
   sendApiGetRequest("/cart/" + cartID + "/items", setItemList)
-
   sendApiGetRequest("/cart/" + cartID + "/bikes", setBikeList)
 
   /**
@@ -269,7 +269,7 @@ function emptyCart() {
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
 
   function sendRequest(cartID){
-    sendApiRequest("PUT", "/cart/" + cartID + "/emptyCart")
+    sendApiRequest("PUT", "/cart/" + cartID + "/emptyCart", console.log, null)
     emptyHTMLCart();
   }
 }
