@@ -113,7 +113,7 @@ function sendApiRequest(method, url, callback, requestBody, errorCallback, async
 }
 
 function sendApiImageRequest(method, url, callback, requestBody, errorCallback, async = true){
-    console.log("Calling sendApiGetImageRequest()")
+    console.log("Calling sendApiGetImageRequest() -> " + API_BASE_URL + url)
     let image = document.createElement("img");
     const request = new XMLHttpRequest();
     request.onreadystatechange = function () {
