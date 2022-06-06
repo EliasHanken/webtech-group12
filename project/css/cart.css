@@ -7,7 +7,7 @@ TODO Change all colours and fonts to the chosen ones for the site
     position: fixed;
     z-index: 2;
     left: 0;
-    top: -10rem;
+    top: 2rem;
     width: 100%;
     height: 100%;
     /*
@@ -20,8 +20,8 @@ TODO Change all colours and fonts to the chosen ones for the site
 }
 
 @keyframes animateTop {
-    from {top: -10rem; opacity: 0}
-    to {top: -10rem; opacity: 1}
+    from {top: 2rem; opacity: 0}
+    to {top: 2rem; opacity: 1}
 }
 
 .cartDiv{
@@ -101,7 +101,7 @@ TODO Change all colours and fonts to the chosen ones for the site
 }
 
 .itemDescription {
-    padding: 1rem;
+    padding: 2rem;
     line-height: 1rem;
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
@@ -165,6 +165,177 @@ TODO Change all colours and fonts to the chosen ones for the site
     color: #F7F9FB;
     box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.4);
     cursor: pointer;
+}
+
+/*
+TODO add and remove are a bit small and is 1% pixel away from spilling over the cart div.
+ */
+@media (max-width: 810px) {
+    #cartModalDiv {
+        display: none;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 20rem;
+        width: 100%;
+        height: 80%;
+        /*
+        TODO fix, scroll is ugly
+         */
+        overflow-y: auto;
+
+        animation-name: animateTop;
+        animation-duration: 1s;
+    }
+
+    @keyframes animateTop {
+        from {top: 20rem; opacity: 0}
+        to {top: 20rem; opacity: 1}
+    }
+
+    .cartDiv{
+        margin: 5%;
+        padding: 0.5rem;
+        background-color: #D18E35;
+        min-height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2rem;
+        border: 0.1rem solid black;
+    }
+    .cartContainer {
+        width: 98%;
+        height: 98%;
+        background-color: #ffffff;
+        border-radius: 2rem;
+    }
+
+    .cartHeader {
+        margin: auto;
+        width: 90%;
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem
+    }
+
+    .cartH1 {
+        font-size: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+    }
+
+    .removeH2 {
+        font-size: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #E44C4C;
+        cursor: pointer;
+        border-bottom: 1px solid #E44C4C;
+    }
+
+    #cartItems {
+        margin: auto;
+        width: 90%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+    .cartImages {
+        width: 15%;
+        text-align: center;
+    }
+
+    .itemInfo {
+        height: 100%;
+    }
+
+    .itemTitle {
+        padding-top: 0.5rem;
+        line-height: 0.5rem;
+        font-size: 1.5rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 200;
+        color: #202020;
+    }
+
+    .itemDescription {
+        padding: 1.5rem;
+        line-height: 0.5rem;
+        font-size: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #909090;
+    }
+
+    .itemCounter {
+        width: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .addButton, .removeButton {
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: #d9d9d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        color: #202020;
+        cursor: pointer;
+    }
+
+    .itemCount {
+        padding: 1rem;
+        font-size: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        color: #202020;
+    }
+
+    .cartFooter {
+        margin: auto;
+        width: 90%;
+        height: 15%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 0.5rem
+    }
+
+    .checkOutButton {
+        font-size: 1rem;
+        text-align: center;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: #2F3841;
+        padding: 0.5rem;
+        background-color: #D18E35;
+        border: 0.1rem solid black;
+        transition: 0.2s;
+    }
+
+    .checkOutButton:hover {
+        color: #F7F9FB;
+        box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.4);
+        cursor: pointer;
+    }
 }
 
 

@@ -168,7 +168,7 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/borsalino_helmet.png" alt="helmet" height="50rem" width="50rem">
+            <img src="/project/images/borsalino_helmet.png" alt="helmet" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
@@ -228,7 +228,7 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/canvas-bag.png" alt="helmet" height="50rem" width="50rem">
+            <img src="../images/chalk.png" alt="helmet" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
