@@ -5,44 +5,39 @@ function createCartItems() {
 }
 
 function finishCheckout() {
-    loadingSymbol();
+    loadingSymbolOn();
     let pickUpSelector = document.getElementById("pickUpPoint");
     let pickUpPoint = pickUpSelector.options[pickUpSelector.selectedIndex].value;
-
-
-    let order = {
-        transactionId: null,
-        destination: pickUpPoint,
-        shippedFlag: false,
-        items: null,
-        user: null
-    };
 
     let toSend = [];
 
     toSend.push(pickUpPoint);
     toSend.push(cartUser)
 
-    console.log(toSend[0])
-    console.log(toSend[1])
-
-    sendApiRequest("post","/orders/new2", successfulCheckout, toSend, failedCheckout)
+    sendOrderApiRequest("post","/orders/new2", successfulCheckout, toSend, failedCheckout)
 }
 
-function loadingSymbol() {
+function loadingSymbolOn() {
+    document.getElementById("loader").style.visibility = "visible"
+}
 
+function loadingSymbolOff() {
+    document.getElementById("loader").style.visibility = "hidden"
 }
 
 function successfulCheckout() {
     emptyCart();
+    loadingSymbolOff();
     alert("Order complete");
+    window.location.href = "../index.html"
 }
 
 function failedCheckout() {
+    loadingSymbolOff();
     alert("Order failed")
 }
 
 function getOrder() {
-    sendApiGetRequest("/orders/123", console.log)
+    sendApiGetRequest("/orders", console.log)
 }
 

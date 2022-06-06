@@ -111,3 +111,38 @@ function sendApiRequest(method, url, callback, requestBody, errorCallback, async
         request.send();
     }
 }
+
+function sendOrderApiRequest(method, url, callback, requestBody, errorCallback, async = true) {
+    const request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                let responseJson = "";
+                if (request.responseText) {
+                    responseJson = request.responseText;
+                }
+                callback(responseJson);
+            } else if (errorCallback) {
+                errorCallback(request.responseText);
+            } else {
+                console.error("Error in API request");
+            }
+        }
+    };
+    request.open(method, API_BASE_URL + url, async);
+    const jwtToken = getCookie("jwt");
+    if (jwtToken) {
+        request.setRequestHeader("Authorization", "Bearer " + jwtToken);
+    }
+    if (requestBody) {
+        if (method.toLowerCase() !== "get") {
+            request.setRequestHeader('Content-Type', 'application/json');
+            request.send(JSON.stringify(requestBody));
+        } else {
+            console.error("Trying to send request data with HTTP GET, not allowed!")
+            request.send();
+        }
+    } else {
+        request.send();
+    }
+}

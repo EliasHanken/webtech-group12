@@ -20,17 +20,143 @@
 }
 
 .checkoutBanner {
-    border: 0.1rem solid black;
-    border-radius: 2rem;
     padding: 1rem;
 }
 
 .checkoutItems {
-    padding: 20rem;
-    width: 60%;
+    padding: 2rem;
+    width: 80%;
+}
+#cartItems {
+    margin: auto;
+    padding: 2rem;
 }
 
-.bottomDiv {
+.item {
+    width: 100%;
     display: flex;
-    align-items: end;
+    justify-content: space-between;
+    padding: 2rem;
 }
+
+.cartImages {
+    width: 25%;
+    text-align: center;
+}
+
+.itemInfo {
+    height: 100%
+}
+
+.itemTitle {
+    line-height: 1rem;
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: #202020;
+}
+
+.itemDescription {
+    line-height: 1rem;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #909090;
+}
+.itemCounter {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addButton, .removeButton {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #202020;
+    cursor: pointer;
+}
+
+.itemCount {
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #202020;
+}
+
+
+.bottomDiv {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.backButton {
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2F3841;
+    background-color: #f7f9fb;
+    border: 0.1rem solid black;
+    transition: 0.2s;
+}
+
+.backButton:hover {
+    padding: 2rem;
+    color: #f7f9fb;
+    background-color: #D18E35;
+    box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.4);
+    cursor: pointer;
+}
+
+.checkoutButton {
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2F3841;
+    padding: 2rem;
+    background-color: #D18E35;
+    border: 0.1rem solid black;
+    transition: 0.2s;
+}
+
+.checkoutButton:hover {
+    z-index: 2;
+    color: #F7F9FB;
+    box-shadow: 0 0 0.3rem 0.3rem rgba(0,0,0, 0.4);
+    cursor: pointer;
+}
+
+#loader {
+    visibility: hidden;
+    border: 2rem solid rgba(0, 0, 0, 0.4);
+    border-top: 2rem solid rgb(209, 142, 53);
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
