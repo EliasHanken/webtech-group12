@@ -82,6 +82,7 @@ input, button {
 #bio {
     width: 100%;
     height: 10rem;
+    padding: 0.3rem;
     max-width: 100%;
     min-width: 10rem;
     max-height: 30rem;
