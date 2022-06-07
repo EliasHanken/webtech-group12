@@ -24,6 +24,7 @@
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 
@@ -32,7 +33,7 @@
     font-size: 2rem;
     font-weight: bold;
     text-align: start;
-
+    cursor: pointer;
 }
 
 .faq-caret {
