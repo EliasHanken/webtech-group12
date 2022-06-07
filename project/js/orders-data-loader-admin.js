@@ -57,15 +57,21 @@ function showOrders(orders) {
 
         if(order.shippedFlag == true){
             shippedText.innerText = "Shipped";
-            shippedText.style.color = "#36f676";
+            shippedText.style.color = "rgb(0,128,0)";
             orderText.appendChild(shippedText);
 
-            removeButton.innerText = "CONFIRM SHIPMENT";
+            removeButton.innerText = "CONFIRM";
         }else{
             shippedText.innerText = "Not shipped";
-            shippedText.style.color = "#fd4646";
+            shippedText.style.color = "rgb(128,0,0)";
             orderText.appendChild(shippedText);
         }
+
+        
+        shippedText.style.backgroundColor = "rgb(128,128,128,0.4)";
+        shippedText.style.padding = "0.2rem 0.7rem";
+        shippedText.style.borderRadius = "2rem";
+        shippedText.style.fontWeight = "500";
 
         infoButton.addEventListener('click',function(){
             showInfo(order);
@@ -143,12 +149,26 @@ function showUpdateSuccessfull(order){
     console.log(order)
     if(i > 0){
         for(var index = 0; index<i; index++){
-            str += "<option>id: " + order.itemId[index]['itemID'] +", model: "+ 
+            str += "<option>Item -> id: " + order.itemId[index]['itemID'] +", model: "+ 
             order.itemId[index]['modelNumber'] +", price: " +
             order.itemId[index]['price'] + "</option>";
         }
         document.getElementById("order-items").innerHTML = str;
-    }else{
+    }
+
+    var bikeStr = "";
+    var x = order.bikes.length;
+    if(x > 0){
+        for(var index = 0; index<x; index++){
+            bikeStr += "<option>Bike -> id: " + order.bikes[index]['bikeID'] +", model: "+ 
+            order.bikes[index]['bikeModel'] +", price: " +
+            order.bikes[index]['price'] + "</option>";
+        }
+        document.getElementById("order-items").innerHTML += bikeStr;
+    }
+
+    var hasItems = i + x;
+    if(hasItems <= 0){
         document.getElementById("order-items").innerHTML = "<option>none</option>";
     }
 

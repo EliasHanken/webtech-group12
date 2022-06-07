@@ -84,28 +84,50 @@ function showUserOrders(orders) {
         console.log(order)
         if(x > 0){
             for(var index = 0; index<x; index++){
-                str += "<option>id: " + order.itemId[index]['itemID'] +", model: "+ 
+                str += "<option>Items -> id: " + order.itemId[index]['itemID'] +", model: "+ 
                 order.itemId[index]['modelNumber'] +", price: " +
                 order.itemId[index]['price'] + "</option>";
             }
-            document.querySelector(".order-items-"+i).innerHTML = str;
-            var status = order.shippedFlag;
-            var statusMessage = "";
-            if(status == false){
-                statusMessage = "In process";
-                document.getElementById("order-status-"+i+"").style.color = "red";
-            }else{
-                statusMessage = "Delivered to pickup";
-                document.getElementById("order-status-"+i+"").style.color = "rgb(0,220,25)";
+            document.querySelector(".order-items-"+i).innerHTML += str;
+        }
+
+
+        var bikeStr = "";
+        var z = order.bikes.length;
+        if(z > 0){
+            for(var index = 0; index<z; index++){
+                bikeStr += "<option>Bike -> id: " + order.bikes[index]['bikeID'] +", model: "+ 
+                order.bikes[index]['bikeModel'] +", price: " +
+                order.bikes[index]['price'] + "</option>";
             }
-            document.getElementById("order-status-"+i).innerText = statusMessage;
-        }else{
+            document.querySelector(".order-items-"+i).innerHTML += bikeStr;   
+        }
+
+        var hasItems = x + z;
+        if(hasItems <= 0){
             document.querySelector(".order-items-"+i).innerHTML = "<option>none</option>";
             document.getElementById("order-status-"+i).innerText = "No items";
             document.getElementById("order-status-"+i+"").style.color = "rgb(240,0,25)";
         }
 
-        
+        var status = order.shippedFlag;
+        var statusMessage = "";
+        if(status == false){
+            statusMessage = "In process";
+            document.getElementById("order-status-"+i+"").style.color = "rgb(128,0,0)";
+            document.getElementById("order-status-"+i+"").style.backgroundColor = "rgb(128,128,128,0.4)";
+            document.getElementById("order-status-"+i+"").style.padding = "0.2rem 0.7rem";
+            document.getElementById("order-status-"+i+"").style.borderRadius = "2rem";
+            document.getElementById("order-status-"+i+"").style.fontWeight = "500";
+        }else{
+            statusMessage = "Delivered to pickup";
+            document.getElementById("order-status-"+i+"").style.color = "rgb(0,128,0)";
+            document.getElementById("order-status-"+i+"").style.backgroundColor = "rgb(128,128,128,0.4)";
+            document.getElementById("order-status-"+i+"").style.padding = "0.2rem 0.7rem";
+            document.getElementById("order-status-"+i+"").style.borderRadius = "2rem";
+            document.getElementById("order-status-"+i+"").style.fontWeight = "500";
+        }
+        document.getElementById("order-status-"+i).innerText = statusMessage;
     }
 }
 
