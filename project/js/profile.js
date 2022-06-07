@@ -47,7 +47,6 @@ function loadOrderData(){
 function showOrderData(profileId){
     console.log(profileId);
     sendOrderDataRequest(profileId);
-    
 }
 
 function sendOrderDataRequest(profileId) {
@@ -92,7 +91,7 @@ function showUserOrders(orders) {
             document.querySelector(".order-items-"+i).innerHTML = str;
             var status = order.shippedFlag;
             var statusMessage = "";
-            if(status == true){
+            if(status == false){
                 statusMessage = "In process";
                 document.getElementById("order-status-"+i+"").style.color = "red";
             }else{
