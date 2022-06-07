@@ -1,6 +1,10 @@
 
 //Basic setup for the cart
-cartUser = getAuthenticatedUser().username;
+let cartUser;
+
+if(getAuthenticatedUser.username != null){
+  cartUser = getAuthenticatedUser().username;
+}
 
 let cartTemplate = document.createElement("template");
 
