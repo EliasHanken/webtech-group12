@@ -34,6 +34,9 @@
     margin-right: 4rem;
 
 }
+.footer-support a {
+    font-size: 1.4rem;
+}
 
 .footer-support-text{
     color: black;
@@ -50,5 +53,6 @@
 .footer-credits a {
     color: black;
     text-underline: none;
+    font-size: 1.2rem;
 }
 
