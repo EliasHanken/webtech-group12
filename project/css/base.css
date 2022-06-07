@@ -30,7 +30,12 @@ html {
 }
 
 main {
-    min-width: 80rem;
+    /*min-width: 80rem;*/
+    background-color:#F7F9FB;
+}
+
+body{
+    background-color:#F7F9FB;
 }
 
 h1 {
