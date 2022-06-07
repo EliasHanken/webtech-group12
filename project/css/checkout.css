@@ -45,6 +45,13 @@
     justify-content: center;
 }
 
+.cartImage {
+    border: 0.2rem solid black;
+    border-radius: 1rem;
+    min-height: 10rem;
+    min-width: 10rem;
+}
+
 .itemInfo {
     height: 100%
 }
@@ -71,14 +78,8 @@
     align-items: center;
 }
 
-.addButton, .removeButton {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background-color: #d9d9d9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.removeSingle {
+    padding: 1rem;
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
@@ -86,12 +87,8 @@
     cursor: pointer;
 }
 
-.itemCount {
-    padding: 1rem;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    color: #202020;
+.removeSingle:hover {
+    color: #E44C4C;
 }
 
 

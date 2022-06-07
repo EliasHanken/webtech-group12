@@ -137,7 +137,7 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/bike.png" alt="bike" height="50rem" width="50rem">
+            <img class="cartImage" src="../images/bike.jpg" alt="bike" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
@@ -148,9 +148,7 @@ function close() {
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="addButton">-</div>
-            <div class="itemCount">1</div>
-            <div class="removeButton">+</div>
+            <div class="removeSingle" onclick="removeSingleItem(1)">Remove</div>
         </div>
     </div>
   `
@@ -168,7 +166,7 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="/project/images/borsalino_helmet.png" alt="helmet" height="50rem" width="50rem">
+            <img class="cartImage" src="/project/images/bike-helmet-cropped.jpg" alt="helmet" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
@@ -179,9 +177,7 @@ function close() {
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="addButton">-</div>
-            <div class="itemCount">1</div>
-            <div class="removeButton">+</div>
+            <div class="removeSingle" onclick="removeSingleItem(2)">Remove</div>
         </div>
     </div>
   `
@@ -199,7 +195,7 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/canvas-bag.png" alt="helmet" height="50rem" width="50rem">
+            <img class="cartImage" src="../images/textile-bag-cropped.jpg" alt="helmet" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
@@ -210,9 +206,7 @@ function close() {
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="addButton">-</div>
-            <div class="itemCount">1</div>
-            <div class="removeButton">+</div>
+            <div class="removeSingle" onclick="removeSingleItem(4)">Remove</div>
         </div>
     </div>
   `
@@ -230,7 +224,7 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/chalk.png" alt="helmet" height="50rem" width="50rem">
+            <img class="cartImage" src="../images/chalk.jpg" alt="helmet" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
@@ -241,9 +235,7 @@ function close() {
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="addButton">-</div>
-            <div class="itemCount">1</div>
-            <div class="removeButton">+</div>
+            <div class="removeSingle" onclick="removeSingleItem(5)">Remove</div>
         </div>
     </div>
   `
@@ -275,5 +267,19 @@ function emptyCart() {
   function sendRequest(cartID){
     sendApiRequest("PUT", "/cart/" + cartID + "/emptyCart", console.log, null)
     emptyHTMLCart();
+  }
+}
+
+function removeSingleItem(modelNumber) {
+  sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
+
+  function sendRequest(cartID){
+    sendApiRequest("PUT", "/cart/" + cartID + "/removeItem/" + modelNumber, refreshCart, null)
+
+
+    function refreshCart() {
+      close();
+      openCart();
+    }
   }
 }
