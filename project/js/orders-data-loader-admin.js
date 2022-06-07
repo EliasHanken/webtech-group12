@@ -208,7 +208,7 @@ function orderUpdateError(id){
         document.querySelector(".popup").classList.remove("active");
         document.querySelector(".submit-message").innerText = "";
         location.reload(true);
-    },1000);
+    },100000);
 }
 
 function orderSuccessfullyDeleted(id){
