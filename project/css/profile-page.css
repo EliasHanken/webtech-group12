@@ -99,9 +99,24 @@ form.bio {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 #profile-info-text{
     text-align: center;
     margin: 2rem;
+}
+
+.order-element{
+    margin: 2rem;
+}
+
+.order-element p{
+    margin: 1rem;
+}
+
+.order-element select{
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    text-align: center;
 }

@@ -130,15 +130,14 @@ function showUpdateSuccessfull(order){
     document.getElementById("form-shipped").checked = isChecked;
 
     var str = "";
-    var i = order.itemId.length;
-    var index = i-1;
+    var i = order.items.length;
+    console.log(order)
     if(i > 0){
-        for(var index = i-1; index<i; index++){
+        for(var index = 0; index<i; index++){
             str += "<option>id: " + order.itemId[index]['itemID'] +", model: "+ 
             order.itemId[index]['modelNumber'] +", price: " +
             order.itemId[index]['price'] + "</option>";
         }
-    
         document.getElementById("order-items").innerHTML = str;
     }else{
         document.getElementById("order-items").innerHTML = "<option>none</option>";
