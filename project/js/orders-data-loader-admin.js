@@ -3,7 +3,6 @@
 
 runOnLoad(sendOrderDataRequest);
 
-
 /**
  * Send an Ajax request to backend, fetch product data
  */
@@ -112,6 +111,13 @@ function showUpdateSuccessfull(order){
 
     document.getElementById("form-order-id").value = order.transactionId;
     document.getElementById("form-destination").value = order.destination;
+    document.getElementById("form-customer").value = order.userId;
+    if(order.userId !== null){
+        sendApiRequest("GET","/userbyid/"+order.userId,function(userData){
+            document.getElementById("form-customer").value = "USERNAME: "+userData.username + ", ID:"+userData.id;
+        },null,function(){console.log})
+    }
+    
     var isChecked = false;
     if(order.shippedFlag == true){
         isChecked = true;
@@ -163,6 +169,13 @@ function showUpdateSuccessfull(order){
         document.querySelector(".popup").classList.remove("active");
         document.querySelector(".submit-message").innerText = "";
     });
+}
+
+async function getUserData(id){
+    let res =  axios.get('https://localhost:8080/api/userbyid/' + id);
+
+    console.log(res);
+
 }
 
 /**
