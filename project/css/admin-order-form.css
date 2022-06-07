@@ -8,12 +8,8 @@
     font-family: "Raleway",sans-serif;
 }
 
-.order-update-button{
-    
-}
-
 .popup{
-    position: absolute;
+    position: fixed; 
     top: -150%;
     left: 50%;
     opacity: 0;
@@ -102,12 +98,12 @@
     transform: translate(-50%,-50%) scale(1);
     transition: top 0ms ease-in-out 0ms, 
                 opacity 200ms ease-in-out 0ms ,
-                transform 200ms ease-in-out 0ms;       
+                transform 200ms ease-in-out 0ms;      
+    position: fixed; 
 }
 
 .form-element .submit-message {
     text-align: center;
     color: rgb(17, 189, 17);
 }
-
 

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/testimonial-css.css">
     <link rel="stylesheet" href="css/carouselStyles.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="css/footer-section.css">
 
@@ -160,8 +162,11 @@
     <!--
         Slide show container.
     -->
-    <main class="owl-carousel" id="owl-carousel-index-page">
-    </main>
+    <div id="index-carousel-div">
+        <main class="owl-carousel owl-theme"  id="owl-carousel-index-page">
+        </main>
+    </div>
+
 
 
 
@@ -234,20 +239,26 @@
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 15,
-            nav: true,
-            navSpeed: 1000,
-            items: 3,
+            nav: false,
+            navSpeed: 2000,
+            dots: true,
+            dotsSpeed: 2000,
             autoplay: true,
             autoplayTimeout: 5000,
             autoplaySpeed: 2000,
             autoplayHoverPause: true,
+            center: false,
+            mergeFit: true,
             responsive: {
                 0: {
-                    items: 2
+                    autoWidth: true,
                 },
                 600: {
-                    items: 3
+                    autoWidth: true
                 },
+                900: {
+                    items: 3
+                }
             }
         })
     </script>

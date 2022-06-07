@@ -14,79 +14,66 @@ function generateProductCardSkeleton(){
     document.getElementById("owl-carousel-index-page").innerHTML =
         //FIRST CARD
         '<article class="card" id="carousel-card-1">' +
-        '<div class="card-img-div">' +
-        '<img src="" alt="" id="card-img-1" height="150px" width="200px">' +
-        '</div>' +
+        '<a href="' + BASE_URL + '/html/store.html#commuter">' +
+            '<div class="card-img-div">' +
+                '<img src="" alt="" id="card-img-1" height="150px" width="200px">' +
+            '</div>' +
+        '</a>' +
         '<div class="card-name" id="card-name-1">' +
-        '<P>' + PRODUCT_CARD_BIKES[0].bikeModelName + '</P>' +
+            '<P>' + PRODUCT_CARD_BIKES[0].bikeModelName + '</P>' +
         '</div>' +
-        '<div class="card__precis">' +
-        '   <a href="" class="card-icon">' +
-        '       <ion-icon name="heart-outline"></ion-icon>' +
-        '   </a>' +
+        '<div class="card-precis">' +
         '   <div>' +
-        '       <span class="card-price" id="card-price-1">' + PRODUCT_CARD_BIKES[0].price + ' /min</span>' +
+        '       <span class="card-price" id="card-price-1">' + PRODUCT_CARD_BIKES[0].price + ' kroner /min</span>' +
         '   </div>' +
-        '   <a href="" class="card-icon">' +
-        '       <ion-icon name="cart-outline"></ion-icon>' +
-        '   </a>' +
         '</div>' +
+        '</article>' +
         //SECOND CARD
-        '</article>' +'<article class="card" id="carousel-card-2">' +
-        '<div class="card-img-div">' +
-        '<img src="" alt="" id="card-img-2" height="150px" width="200px">' +
-        '</div>' +
+        '<article class="card" id="carousel-card-2">' +
+        '<a href="' + BASE_URL + '/html/store.html#textile-bag">' +
+            '<div class="card-img-div">' +
+                '<img src="" alt="" id="card-img-2" height="150px" width="200px">' +
+            '</div>' +
+        '</a>' +
         '<div class="card-name" id="card-name-2">' +
-        '<p>' + PRODUCT_CARD_PRODUCTS[0].name + '</p>' +
+            '<p>' + PRODUCT_CARD_PRODUCTS[0].name + '</p>' +
         '</div>' +
-        '<div class="card__precis">' +
-        '   <a href="" class="card-icon">' +
-        '       <ion-icon name="heart-outline"></ion-icon>' +
-        '   </a>' +
+        '<div class="card-precis">' +
         '   <div>' +
-        '       <span class="card-price" id="card-price-2">' + PRODUCT_CARD_PRODUCTS[0].price + '</span>' +
+        '       <span class="card-price" id="card-price-2">' + PRODUCT_CARD_PRODUCTS[0].price + ' kroner</span>' +
         '   </div>' +
-        '   <a href="" class="card-icon">' +
-        '       <ion-icon name="cart-outline"></ion-icon>' +
-        '   </a>' +
         '</div>' +
+        '</article>' +
         //THIRD CARD
-        '</article>' +'<article class="card" id="carousel-card-3">' +
-        '<div class="card-img-div">' +
-        '<img src="" alt="" id="card-img-3" height="150px" width="200px">' +
-        '</div>' +
+        '<article class="card" id="carousel-card-3">' +
+        '<a href="' + BASE_URL + '/html/store.html#bicycle-helmet">' +
+            '<div class="card-img-div">' +
+                '<img src="" alt="" id="card-img-3" height="150px" width="200px">' +
+            '</div>' +
+        '</a>' +
         '<div class="card-name" id="card-name-3">' +
-        '<p>' + PRODUCT_CARD_PRODUCTS[1].name +'</p>' +
+            '<p>' + PRODUCT_CARD_PRODUCTS[1].name +'</p>' +
         '</div>' +
-        '<div class="card__precis">' +
-        '   <a href="" class="card-icon">' +
-        '       <ion-icon name="heart-outline"></ion-icon>' +
-        '   </a>' +
+        '<div class="card-precis">' +
         '   <div>' +
-        '       <span class="card-price" id="card-price-3">' + PRODUCT_CARD_PRODUCTS[1].price + '</span>' +
+        '       <span class="card-price" id="card-price-3">' + PRODUCT_CARD_PRODUCTS[1].price + ' kroner</span>' +
         '   </div>' +
-        '   <a href="" class="card-icon">' +
-        '       <ion-icon name="cart-outline"></ion-icon>' +
-        '   </a>' +
         '</div>' +
         //FOURTH CARD
-        '</article>' +'<article class="card" id="carousel-card-4">' +
-        '<div class="card-img-div">' +
-        '<img src="" alt="" id="card-img-4" height="150px" width="200px">' +
-        '</div>' +
+        '</article>' +
+        '<article class="card" id="carousel-card-4">' +
+        '<a href="' + BASE_URL + '/html/store.html#custom-customization">' +
+            '<div class="card-img-div">' +
+                '<img src="" alt="" id="card-img-4" height="150px" width="200px">' +
+            '</div>' +
+        '</a>' +
         '<div class="card-name" id="card-name-4">' +
-        '<p>' + PRODUCT_CARD_PRODUCTS[2].name +'</p>' +
+            '<p>' + PRODUCT_CARD_PRODUCTS[2].name +'</p>' +
         '</div>' +
-        '<div class="card__precis">' +
-        '   <a href="" class="card-icon">' +
-        '       <ion-icon name="heart-outline"></ion-icon>' +
-        '   </a>' +
+        '<div class="card-precis">' +
         '   <div>' +
-        '       <span class="card-price" id="card-price-4">' + PRODUCT_CARD_PRODUCTS[2].price + '</span>' +
+        '       <span class="card-price" id="card-price-4">' + PRODUCT_CARD_PRODUCTS[2].price + ' kroner</span>' +
         '   </div>' +
-        '   <a href="" class="card-icon">' +
-        '       <ion-icon name="cart-outline"></ion-icon>' +
-        '   </a>' +
         '</div>'
 }
 

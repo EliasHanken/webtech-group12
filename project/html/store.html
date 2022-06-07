@@ -77,8 +77,8 @@
     <h2 id="store-header">Get what you need for your ride here</h2>
     <div class="items-for-sale">
         <div class="item-row">
-            <div class="main-item">
-                <h2 class="item-header">PavementShredder3004</h2>
+            <div class="main-item" id="commuter">
+                <h2 class="item-header">Commuter</h2>
                 <div class="item-images">
                     <img alt="helmet" src="../images/bike.jpg">
                 </div>
@@ -89,9 +89,9 @@
                     <div>
                         <select id="colors">
                             <option hidden>Colors</option>
-                            <option value="brown">Brown</option>
-                            <option value="Green">Green</option>
-                            <option value="yellow">Yellow</option>
+                            <option value="1">Brown</option>
+                            <option value="2">Green</option>
+                            <option value="3">Yellow</option>
                         </select>
                     </div>
 
@@ -109,7 +109,7 @@
                     <button class="store-button" id="main-item-button" onclick="addItem(1)">Add to cart</button>
                 </div>
             </div>
-            <div class="item-cell">
+            <div class="item-cell" id="custom-customization">
                 <h2 class="item-header">Custom customization</h2>
                 <div class="item-images">
                     <img alt="chalk" src="../images/chalk.jpg">
@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="item-row">
-            <div class="item-cell">
+            <div class="item-cell" id="textile-bag">
                 <h2 class="item-header">Textile bag</h2>
                 <div class="item-images">
                     <img alt="textile-bag" src="../images/textile-bag-cropped.jpg">
@@ -147,7 +147,7 @@
                     <button class="store-button" id="third-item-button" onclick="addItem(4)">Add to cart</button>
                 </div>
             </div>
-            <div class="item-cell">
+            <div class="item-cell" id="bicycle-helmet">
                 <h2 class="item-header">Bicycle Helmet</h2>
                 <div class="item-images">
                     <img alt="helmet" src="../images/bike-helmet-cropped.jpg">

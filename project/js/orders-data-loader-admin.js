@@ -22,8 +22,10 @@ function showOrders(orders) {
         const objectDiv = document.createElement("div");
         objectDiv.classList.add("order-obj");
         const orderElement = document.createElement("li");
+        const orderBlockContainer = document.createElement("div")
+        orderBlockContainer.classList.add("order-block");
         const orderText = document.createElement("a");
-        orderText.innerText = order.destination + " (ID: #" + order.transactionId + ")";
+        orderText.innerText = order.destination + " (ID: #" + order.transactionId + ") ";
 
         const infoButton = document.createElement("button");
         infoButton.classList.add("order-info-button")
@@ -37,14 +39,21 @@ function showOrders(orders) {
         removeButton.classList.add("order-remove-button")
         removeButton.innerText = "DELETE";
 
-        orderElement.appendChild(orderText);
+        orderBlockContainer.appendChild(orderText);
+        orderElement.appendChild(orderBlockContainer);
         orderContainer.appendChild(orderElement);
 
-        orderText.appendChild(infoButton);
-        orderText.appendChild(updateButton);
-        orderText.appendChild(removeButton);
+        const buttonContainer = document.createElement("div");
+        buttonContainer.classList.add("button-container");
 
-        const shippedText = document.createElement("p");
+
+        buttonContainer.appendChild(infoButton);
+        buttonContainer.appendChild(updateButton);
+        buttonContainer.appendChild(removeButton);
+
+        orderBlockContainer.appendChild(buttonContainer);
+
+        const shippedText = document.createElement("span");
 
         if(order.shippedFlag == true){
             shippedText.innerText = "Shipped";
@@ -130,15 +139,14 @@ function showUpdateSuccessfull(order){
     document.getElementById("form-shipped").checked = isChecked;
 
     var str = "";
-    var i = order.itemId.length;
-    var index = i-1;
+    var i = order.items.length;
+    console.log(order)
     if(i > 0){
-        for(var index = i-1; index<i; index++){
+        for(var index = 0; index<i; index++){
             str += "<option>id: " + order.itemId[index]['itemID'] +", model: "+ 
             order.itemId[index]['modelNumber'] +", price: " +
             order.itemId[index]['price'] + "</option>";
         }
-    
         document.getElementById("order-items").innerHTML = str;
     }else{
         document.getElementById("order-items").innerHTML = "<option>none</option>";
