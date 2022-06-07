@@ -188,7 +188,7 @@ async function sendOrderUpdateRequest(endpoint,method,successCallback,id,newDest
 }
 
 function removeOrder(id){
-    sendApiRequest("DELETE","/orders/"+id+"",orderSuccessfullyDeleted,{"transactionId":id},orderDeleteError);
+    sendApiRequest("DELETE","/orders/delete/"+id+"",orderSuccessfullyDeleted,{"transactionId":id},orderDeleteError);
 }
 
 function orderSuccessfullyUpdated(id){
