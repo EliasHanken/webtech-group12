@@ -14,7 +14,7 @@ cartTemplate.innerHTML = `
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <button onclick="addItem(2)">Add Test Item</button>
+            <button onclick="addItem(4)">Add Test Item</button>
             <a href=`+calculatePath(2)+`/html/checkout.html><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
@@ -62,7 +62,7 @@ function requestCartList(cartID) {
       //Empty cart
     } else {
       for (let i = 0; i < cartList.length; i++) {
-        if (cartList[i].modelNumber === "1") {
+        if (cartList[i].bikeModel === "1") {
           addBike(cartList[i].price);
         }
         if (cartList[i].modelNumber === "2") {
@@ -137,7 +137,7 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/bike.png" alt="helmet" height="50rem" width="50rem">
+            <img src="../images/bike.png" alt="bike" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
@@ -216,6 +216,8 @@ function close() {
         </div>
     </div>
   `
+
+  document.getElementById("cartItems").appendChild(itemTemplate.content)
   }
 
 /**
@@ -245,6 +247,8 @@ function close() {
         </div>
     </div>
   `
+
+  document.getElementById("cartItems").appendChild(itemTemplate.content)
   }
 //TODO combine into 1 method
 //Functions to add or remove items to the shopping cart backend

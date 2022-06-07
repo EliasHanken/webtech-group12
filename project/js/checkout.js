@@ -26,8 +26,9 @@ function loadingSymbolOff() {
 }
 
 function successfulCheckout() {
-    emptyCart();
+
     loadingSymbolOff();
+    emptyCart();
     alert("Order complete");
     window.location.href = "../index.html"
 }

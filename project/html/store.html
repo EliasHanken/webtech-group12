@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/cart.css">
     <link rel="stylesheet" href="../css/footer-section.css">
     <script src="https://kit.fontawesome.com/b734771954.js" crossorigin="anonymous"></script>
-    <script defer src="../js/cart.js"></script>
+
     <script
             src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -20,10 +20,11 @@
     </script>
     <!-- Owl Slider  -->
     <script src="../js/owl.carousel.js"></script>
-
+    <script src="../js/requests.js"></script>
     <script src="../js/authentication.js"></script>
     <script src="../js/tools.js"></script>
     <script src="../js/navigation.js"></script>
+    <script defer src="../js/cart.js"></script>
     <title>Store</title>
 </head>
 <body onload="createItems()">
@@ -105,7 +106,7 @@
                     </p>
                 </div>
                 <div class="add-to-cart-flat">
-                    <button class="store-button" id="main-item-button">Add to cart</button>
+                    <button class="store-button" id="main-item-button" onclick="addItem(1)">Add to cart</button>
                 </div>
             </div>
             <div class="item-cell">
@@ -123,7 +124,7 @@
                     Colors holds for 30 minutes when there is no rain
                 </div>
                 <div class="add-to-cart-flat">
-                    <button class="store-button" id="fourth-item-button">Add to cart</button>
+                    <button class="store-button" id="fourth-item-button" onclick="addItem(5)">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -143,7 +144,7 @@
                     pick it up when renting a bike
                 </div>
                 <div class="add-to-cart">
-                    <button class="store-button" id="third-item-button" onclick="addItem(3)">Add to cart</button>
+                    <button class="store-button" id="third-item-button" onclick="addItem(4)">Add to cart</button>
                 </div>
             </div>
             <div class="item-cell">
