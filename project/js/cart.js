@@ -143,7 +143,7 @@ function close() {
                 Bike
             </h3>
             <h4 class="itemDescription">
-                ${price} KR     
+                ${price} KR/per minute
             </h4>
         </div>
         <div class="itemCounter">
@@ -230,7 +230,7 @@ function close() {
                 Chalk
             </h3>
             <h4 class="itemDescription">
-                ${price} KR/minute     
+                ${price} KR     
             </h4>
         </div>
         <div class="itemCounter">
