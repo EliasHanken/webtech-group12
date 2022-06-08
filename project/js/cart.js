@@ -1,9 +1,11 @@
 
 //Basic setup for the cart
+//Sets the cart user to the current user.
 cartUser = getAuthenticatedUser().username;
 
 let cartTemplate = document.createElement("template");
 
+//The basic html setup for the cart Div. Is appended to the proper html file when the shopping cart is opened.
 cartTemplate.innerHTML = `
 <div class="cartDiv">
     <div class="cartContainer">
@@ -24,7 +26,6 @@ cartTemplate.innerHTML = `
  * Sends a GET XML request to the backend to retrieve the id of the cart belonging to the user.
  */
 function requestCartID() {
-  //alert(cartUser)
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", requestCartList, null);
 }
 
@@ -260,15 +261,10 @@ function close() {
     }
 }
 
-function emptyCart() {
-  sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
-
-  function sendRequest(cartID){
-    sendApiRequest("PUT", "/cart/" + cartID + "/emptyCart", console.log, null)
-    emptyHTMLCart();
-  }
-}
-
+/**
+ * Removes a single item from the shopping cart in both the html and the backend.
+ * @param modelNumber the modelNumber if the item that is added.
+ */
 function removeSingleItem(modelNumber) {
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
 
@@ -283,6 +279,9 @@ function removeSingleItem(modelNumber) {
   }
 }
 
+/**
+ * Deletes the cart from the backend and refreshes the current cart.
+ */
 function deleteCart() {
     let refreshedCartUser = getAuthenticatedUser().username;
     sendApiRequest("GET", "/users/" + refreshedCartUser + "/cartID", sendRequest, null)
@@ -296,6 +295,9 @@ function deleteCart() {
   }
 }
 
+/**
+ * A simple confirmation alert for the user that warns them that the cart will empty completely with a yes or no alert.
+ */
 function confirmEmpty() {
     let confirmEmpty = confirm("This will empty the entire cart, are you sure?")
     if(confirmEmpty) {
