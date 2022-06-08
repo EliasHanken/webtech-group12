@@ -9,12 +9,11 @@ cartTemplate.innerHTML = `
     <div class="cartContainer">
         <div class="cartHeader">
             <h1 class="cartH1">Shopping Cart</h1>
-            <h2 class="removeH2" onclick="emptyCart()">Remove all items</h2>
+            <h2 class="removeH2" onclick="confirmEmpty()">Remove all items</h2>
         </div>
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <button onclick="addItem(4)">Add Test Item</button>
             <a href=`+calculatePath(2)+`/html/checkout.html><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
@@ -148,7 +147,7 @@ function close() {
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="removeSingle" onclick="removeSingleItem(1)">Remove</div>
+            <div class="removeSingle" onclick="confirmEmpty()">Remove</div>
         </div>
     </div>
   `
@@ -282,4 +281,27 @@ function removeSingleItem(modelNumber) {
       openCart();
     }
   }
+}
+
+function deleteCart() {
+    let refreshedCartUser = getAuthenticatedUser().username;
+    sendApiRequest("GET", "/users/" + refreshedCartUser + "/cartID", sendRequest, null)
+
+  function sendRequest(cartID){
+    sendOrderApiRequest("PUT", "/cart/" + cartID + "/delete", refreshCart, null)
+        function refreshCart() {
+          close();
+          openCart();
+    }
+  }
+}
+
+function confirmEmpty() {
+    let confirmEmpty = confirm("This will empty the entire cart, are you sure?")
+    if(confirmEmpty) {
+      deleteCart();
+  }
+    else {
+
+    }
 }

@@ -69,7 +69,7 @@
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    color: #909090;
+    color: #202020;
 }
 .itemCounter {
     width: 10%;
@@ -157,4 +157,6 @@
         transform: rotate(360deg);
     }
 }
+
+
 

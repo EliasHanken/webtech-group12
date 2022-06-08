@@ -14,7 +14,7 @@ function finishCheckout() {
     toSend.push(pickUpPoint);
     toSend.push(cartUser)
 
-    sendOrderApiRequest("post","/orders/new2", successfulCheckout, toSend, failedCheckout)
+    sendOrderApiRequest("post","/orders/new", successfulCheckout, toSend, failedCheckout)
 }
 
 function loadingSymbolOn() {
@@ -28,17 +28,17 @@ function loadingSymbolOff() {
 function successfulCheckout() {
 
     loadingSymbolOff();
-    emptyCart();
+    deleteCart();
     alert("Order complete");
     window.location.href = "../index.html"
 }
 
 function failedCheckout() {
     loadingSymbolOff();
-    alert("Order failed")
+    alert("Order failed");
 }
 
 function getOrder() {
-    sendApiGetRequest("/orders", console.log)
+    sendApiGetRequest("/orders", console.log);
 }
 
