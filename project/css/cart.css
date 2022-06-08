@@ -276,6 +276,7 @@ TODO add and remove are a bit small and is 1% pixel away from spilling over the 
         padding: 1.5rem;
         line-height: 0.5rem;
         font-size: 1rem;
+        text-align: end;
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         color: #909090;
