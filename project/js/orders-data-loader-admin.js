@@ -13,7 +13,7 @@ function sendOrderDataRequest() {
 
 /**
  * Show orders on the page
- * @param orders
+ * @param orders orders retrieved from the backend.
  */
 function showOrders(orders) {
     const orderContainer = document.querySelector(".order-data");
@@ -101,6 +101,10 @@ function showOrders(orders) {
     }
 }
 
+/**
+ * Show info of order on page.
+ * @param order order retrieved from the backend
+ */
 function showInfo(order){
     const div = document.createElement("div");
     const id = order.transactionId;
@@ -108,6 +112,10 @@ function showInfo(order){
     showInfoSuccessfull(order);
 }
 
+/**
+ * Show update of order on page.
+ * @param order order retrieved from the backend
+ */
 function showUpdate(order){
     const div = document.createElement("div");
     const id = order.transactionId;
@@ -115,6 +123,11 @@ function showUpdate(order){
     showUpdateSuccessfull(order);
 }
 
+/**
+ * When retrieving order from backend is successfull it will display the order
+ * as a form on the page.
+ * @param order order retrieved from the backend.
+ */
 function showUpdateSuccessfull(order){
     document.querySelector(".popup").classList.add("active");
 
@@ -257,6 +270,11 @@ function orderSuccessfullyDeleted(id){
     location.reload(true);
 }
 
+/**
+ * When retrieving order from backend is successfull it will display the order
+ * as a form on the page.
+ * @param order retrieved from the backend.
+ */
 function showInfoSuccessfull(order){
     document.querySelector(".popup").classList.add("active");
 

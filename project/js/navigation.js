@@ -43,6 +43,9 @@ function createNavigation() {
     }
 }
 
+/**
+ * Creates the different navigations for (authenticated used, not authenticated and admin).
+ */
 function createItems(){
     const authenticatedUser = getAuthenticatedUser();
     if(authenticatedUser){

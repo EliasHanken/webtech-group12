@@ -15,11 +15,16 @@ function protectAdminArea() {
 }
 
 
-
+/**
+ * Create admin elements
+ */
 function createAdminPage(){
     createOrderElement();
 }
 
+/**
+ * Creates the html structure for the admin page
+ */
 function createOrderElement(){
     const content = document.querySelector(".admin-content");
     const div = document.createElement("div");
