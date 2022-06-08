@@ -169,7 +169,7 @@ function close() {
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
-                Borsalino Helmet
+                Helmet
             </h3>
             <h4 class="itemDescription">
                 ${price} KR     
@@ -227,10 +227,10 @@ function close() {
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
-                Bag
+                Chalk
             </h3>
             <h4 class="itemDescription">
-                ${price} KR     
+                ${price} KR/minute     
             </h4>
         </div>
         <div class="itemCounter">
