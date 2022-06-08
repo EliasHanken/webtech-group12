@@ -289,7 +289,6 @@ function deleteCart() {
     
 
   function sendRequest(cartID){
-      console.log(cartID);
     sendOrderApiRequest("DELETE", "/cart/" + cartID + "/delete", refreshCart, null)
         function refreshCart() {
           close();
