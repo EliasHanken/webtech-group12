@@ -6,7 +6,7 @@ Class for generating and adding product cards to index.html with owl-carousel.
 /** List containing bikes for generating product cards */
 let PRODUCT_CARD_BIKES = [];
 
-/**List containing products for generating peoduct cards /*
+/**List containing products for generating product cards */
 let PRODUCT_CARD_PRODUCTS = [];
 
 /**
