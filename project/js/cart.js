@@ -288,7 +288,7 @@ function deleteCart() {
     sendApiRequest("GET", "/users/" + refreshedCartUser + "/cartID", sendRequest, null)
 
   function sendRequest(cartID){
-    sendOrderApiRequest("PUT", "/cart/" + cartID + "/delete", refreshCart, null)
+    sendOrderApiRequest("DELETE", "/cart/" + cartID + "/delete", refreshCart, null)
         function refreshCart() {
           close();
           openCart();
