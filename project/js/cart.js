@@ -147,9 +147,6 @@ function close() {
                 ${price} kr per minute
             </h4>
         </div>
-        <div class="itemCounter">
-            <div class="removeSingle" onclick="confirmEmpty()">Remove</div>
-        </div>
     </div>
   `
 
@@ -175,9 +172,6 @@ function close() {
             <h4 class="itemDescription">
                 ${price} KR     
             </h4>
-        </div>
-        <div class="itemCounter">
-            <div class="removeSingle" onclick="removeSingleItem(2)">Remove</div>
         </div>
     </div>
   `
@@ -206,9 +200,6 @@ function close() {
                 ${price} KR     
             </h4>
         </div>
-        <div class="itemCounter">
-            <div class="removeSingle" onclick="removeSingleItem(4)">Remove</div>
-        </div>
     </div>
   `
 
@@ -234,9 +225,6 @@ function close() {
             <h4 class="itemDescription">
                 ${price} KR     
             </h4>
-        </div>
-        <div class="itemCounter">
-            <div class="removeSingle" onclick="removeSingleItem(5)">Remove</div>
         </div>
     </div>
   `
