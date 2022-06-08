@@ -87,6 +87,12 @@ TODO Change all colours and fonts to the chosen ones for the site
     text-align: center;
 }
 
+.cartImage {
+    border: 0.2rem solid black;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 1rem rgba(0,0,0, 0.4);
+}
+
 .itemInfo {
     height: 100%
 }
@@ -106,7 +112,7 @@ TODO Change all colours and fonts to the chosen ones for the site
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    color: #909090;
+    color: #202020;
 }
 .itemCounter {
     width: 10%;
@@ -115,27 +121,17 @@ TODO Change all colours and fonts to the chosen ones for the site
     align-items: center;
 }
 
-.addButton, .removeButton {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-color: #d9d9d9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
+.removeSingle {
+    padding: 1rem;
+    font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     color: #202020;
     cursor: pointer;
 }
 
-.itemCount {
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    color: #202020;
+.removeSingle:hover {
+    color: #E44C4C;
 }
 
 .cartFooter {
@@ -257,6 +253,12 @@ TODO add and remove are a bit small and is 1% pixel away from spilling over the 
         text-align: center;
     }
 
+    .cartImage {
+        border: 0.2rem solid black;
+        border-radius: 1rem;
+        box-shadow: 0 0 1rem 1rem rgba(0,0,0, 0.4);
+    }
+
     .itemInfo {
         height: 100%;
     }
@@ -280,11 +282,12 @@ TODO add and remove are a bit small and is 1% pixel away from spilling over the 
     }
 
     .itemCounter {
-        width: 10%;
+        width: 25%;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
 
     .addButton, .removeButton {
         width: 0.5rem;
@@ -300,12 +303,17 @@ TODO add and remove are a bit small and is 1% pixel away from spilling over the 
         cursor: pointer;
     }
 
-    .itemCount {
+    .singleItem {
         padding: 1rem;
         font-size: 1rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: 900;
         color: #202020;
+        cursor: pointer;
+    }
+
+    .singleItem:hover {
+        color: #E44C4C;
     }
 
     .cartFooter {

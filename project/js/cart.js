@@ -1,20 +1,21 @@
 
 //Basic setup for the cart
+//Sets the cart user to the current user.
 cartUser = getAuthenticatedUser().username;
 
 let cartTemplate = document.createElement("template");
 
+//The basic html setup for the cart Div. Is appended to the proper html file when the shopping cart is opened.
 cartTemplate.innerHTML = `
 <div class="cartDiv">
     <div class="cartContainer">
         <div class="cartHeader">
             <h1 class="cartH1">Shopping Cart</h1>
-            <h2 class="removeH2" onclick="emptyCart()">Remove all items</h2>
+            <h2 class="removeH2" onclick="confirmEmpty()">Remove all items</h2>
         </div>
         <div id="cartItems">
         </div>
         <div class="cartFooter">
-            <button onclick="addItem(4)">Add Test Item</button>
             <a href=`+calculatePath(2)+`/html/checkout.html><button class="checkOutButton">To Checkout!</button>
         </div>
     </div>
@@ -25,7 +26,6 @@ cartTemplate.innerHTML = `
  * Sends a GET XML request to the backend to retrieve the id of the cart belonging to the user.
  */
 function requestCartID() {
-  //alert(cartUser)
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", requestCartList, null);
 }
 
@@ -137,20 +137,18 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/bike.png" alt="bike" height="50rem" width="50rem">
+            <img class="cartImage" src="../images/bike.jpg" alt="bike" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
                 Bike
             </h3>
             <h4 class="itemDescription">
-                ${price} KR     
+                ${price} KR/per minute
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="addButton">-</div>
-            <div class="itemCount">1</div>
-            <div class="removeButton">+</div>
+            <div class="removeSingle" onclick="confirmEmpty()">Remove</div>
         </div>
     </div>
   `
@@ -168,20 +166,18 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="/project/images/borsalino_helmet.png" alt="helmet" height="50rem" width="50rem">
+            <img class="cartImage" src="/project/images/bike-helmet-cropped.jpg" alt="helmet" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
-                Borsalino Helmet
+                Helmet
             </h3>
             <h4 class="itemDescription">
                 ${price} KR     
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="addButton">-</div>
-            <div class="itemCount">1</div>
-            <div class="removeButton">+</div>
+            <div class="removeSingle" onclick="removeSingleItem(2)">Remove</div>
         </div>
     </div>
   `
@@ -199,7 +195,7 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/canvas-bag.png" alt="helmet" height="50rem" width="50rem">
+            <img class="cartImage" src="../images/textile-bag-cropped.jpg" alt="helmet" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
@@ -210,9 +206,7 @@ function close() {
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="addButton">-</div>
-            <div class="itemCount">1</div>
-            <div class="removeButton">+</div>
+            <div class="removeSingle" onclick="removeSingleItem(4)">Remove</div>
         </div>
     </div>
   `
@@ -230,20 +224,18 @@ function close() {
     itemTemplate.innerHTML = `
     <div class="item">
         <div class="cartImages">
-            <img src="../images/chalk.png" alt="helmet" height="50rem" width="50rem">
+            <img class="cartImage" src="../images/chalk.jpg" alt="helmet" height="50rem" width="50rem">
         </div>
         <div class="itemInfo">
             <h3 class="itemTitle">
-                Bag
+                Chalk
             </h3>
             <h4 class="itemDescription">
                 ${price} KR     
             </h4>
         </div>
         <div class="itemCounter">
-            <div class="addButton">-</div>
-            <div class="itemCount">1</div>
-            <div class="removeButton">+</div>
+            <div class="removeSingle" onclick="removeSingleItem(5)">Remove</div>
         </div>
     </div>
   `
@@ -269,11 +261,49 @@ function close() {
     }
 }
 
-function emptyCart() {
+/**
+ * Removes a single item from the shopping cart in both the html and the backend.
+ * @param modelNumber the modelNumber if the item that is added.
+ */
+function removeSingleItem(modelNumber) {
   sendApiRequest("GET", "/users/" + cartUser + "/cartID", sendRequest, null)
 
   function sendRequest(cartID){
-    sendApiRequest("PUT", "/cart/" + cartID + "/emptyCart", console.log, null)
-    emptyHTMLCart();
+    sendApiRequest("PUT", "/cart/" + cartID + "/removeItem/" + modelNumber, refreshCart, null)
+
+
+    function refreshCart() {
+      close();
+      openCart();
+    }
   }
+}
+
+/**
+ * Deletes the cart from the backend and refreshes the current cart.
+ */
+function deleteCart() {
+    let refreshedCartUser = getAuthenticatedUser().username;
+    sendApiRequest("GET", "/users/" + refreshedCartUser + "/cartID", sendRequest, null)
+
+  function sendRequest(cartID){
+    sendOrderApiRequest("PUT", "/cart/" + cartID + "/delete", refreshCart, null)
+        function refreshCart() {
+          close();
+          openCart();
+    }
+  }
+}
+
+/**
+ * A simple confirmation alert for the user that warns them that the cart will empty completely with a yes or no alert.
+ */
+function confirmEmpty() {
+    let confirmEmpty = confirm("This will empty the entire cart, are you sure?")
+    if(confirmEmpty) {
+      deleteCart();
+  }
+    else {
+
+    }
 }

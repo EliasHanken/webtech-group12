@@ -1,10 +1,12 @@
 /*
 @Author: Thomas Ystenes
-Class for generating and add product cards to HTML.
+Class for generating and adding product cards to index.html with owl-carousel.
  */
 
-/* Lists containing bikes/products/images for generating product cards */
+/** List containing bikes for generating product cards */
 let PRODUCT_CARD_BIKES = [];
+
+/**List containing products for generating peoduct cards /*
 let PRODUCT_CARD_PRODUCTS = [];
 
 /**
@@ -104,7 +106,12 @@ function generateProductCardImgTags(){
     imgTag4.alt = PRODUCT_CARD_PRODUCTS[2].description;
 }
 
-function generateProductCardsTotal(products){
+
+/**
+ * Master function calling all other functions to call all other functions needed to generate product cards.
+ * @param products
+ */
+function generateProductCardsTotal(){
     getProductDataForCards();
     generateProductCardSkeleton();
 
@@ -144,6 +151,7 @@ function assignBikesToProductCardProducts(bikes){
     }
 }
 
+/**Callback function for failed api requests */
 function productCallbackOnFail(){
     console.log("An error occurred on sendApiGetRequest.")
 }
