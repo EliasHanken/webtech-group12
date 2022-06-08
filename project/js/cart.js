@@ -143,9 +143,9 @@ function close() {
             <h3 class="itemTitle">
                 Bike
             </h3>
-            <h4 class="itemDescription">
+            <h3 class="itemDescription">
                 ${price} kr per minute
-            </h4>
+            </h3>
         </div>
     </div>
   `
