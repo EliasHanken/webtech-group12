@@ -261,10 +261,11 @@ TODO add and remove are a bit small and is 1% pixel away from spilling over the 
 
     .itemInfo {
         height: 100%;
-        text-align: end;
+
     }
 
     .itemTitle {
+        text-align: end;
         padding-top: 0.5rem;
         line-height: 0.5rem;
         font-size: 1.5rem;
