@@ -286,8 +286,10 @@ function removeSingleItem(modelNumber) {
 function deleteCart() {
     let refreshedCartUser = getAuthenticatedUser().username;
     sendApiRequest("GET", "/users/" + refreshedCartUser + "/cartID", sendRequest, null)
+    
 
   function sendRequest(cartID){
+      console.log(cartID);
     sendOrderApiRequest("DELETE", "/cart/" + cartID + "/delete", refreshCart, null)
         function refreshCart() {
           close();
